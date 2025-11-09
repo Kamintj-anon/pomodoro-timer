@@ -49,6 +49,7 @@ func main() {
 		api.GET("/stats/total", controllers.GetTotalDuration)
 		api.GET("/stats/categories", controllers.GetCategoryStats)
 		api.GET("/stats/daily", controllers.GetDailyStats)
+n		api.GET("/leaderboard", controllers.GetLeaderboard)
 
 		// 用户设置
 		api.GET("/settings", controllers.GetSettings)

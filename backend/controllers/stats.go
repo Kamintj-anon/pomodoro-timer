@@ -153,3 +153,27 @@ func GetDailyStats(c *gin.Context) {
 
 	c.JSON(http.StatusOK, results)
 }
+
+// 获取排行榜
+func GetLeaderboard(c *gin.Context) {
+	type UserStat struct {
+		UserID       uint   `json:"user_id"`
+		Username     string `json:"username"`
+		TotalCount   int64  `json:"total_count"`
+		TotalDuration int   `json:"total_duration"`
+	}
+
+	var userStats []UserStat
+
+	// 查询所有用户的统计数据
+	database.DB.Table("pomodoros").
+		Select("users.id as user_id, users.username, COUNT(*) as total_count, SUM(pomodoros.duration) as total_duration").
+		Joins("JOIN users ON users.id = pomodoros.user_id").
+		Where("pomodoros.completed = ?", true).
+		Group("users.id, users.username").
+		Order("total_duration DESC").
+		Limit(100).
+		Scan(&userStats)
+
+	c.JSON(http.StatusOK, userStats)
+}

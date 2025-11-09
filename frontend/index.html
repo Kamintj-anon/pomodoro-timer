@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>番茄钟 - 专注时间管理</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=12">
+    <link rel="stylesheet" href="css/style.css?v=13">
 </head>
 <body>
     <!-- 登录/注册页面 -->
@@ -60,6 +60,9 @@
                     <span id="username-display"></span>
                     <button onclick="showProfileModal()" class="btn-profile">
                         <i class="fas fa-user-cog"></i> 个人资料
+                    </button>
+                    <button onclick="showLeaderboard()" class="btn-leaderboard">
+                        <i class="fas fa-trophy"></i> 排行榜
                     </button>
                     <button onclick="logout()" class="btn-logout">
                         <i class="fas fa-sign-out-alt"></i> 退出
@@ -225,17 +228,32 @@
         </div>
     </div>
 
+    <!-- 排行榜弹窗 -->
+    <div id="leaderboard-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-trophy"></i> 排行榜</h2>
+                <button onclick="closeLeaderboard()" class="btn-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="leaderboard-list" class="leaderboard-list"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- 提示消息 -->
     <div id="toast" class="toast"></div>
 
     <!-- JavaScript 文件 -->
-    <script src="js/config.js?v=11"></script>
-    <script src="js/auth.js?v=11"></script>
-    <script src="js/timer.js?v=11"></script>
-    <script src="js/stats.js?v=11"></script>
-    <script src="js/app.js?v=11"></script>
-    <script src="js/profile.js?v=11"></script>
+    <script src="js/config.js?v=13"></script>
+    <script src="js/auth.js?v=13"></script>
+    <script src="js/timer.js?v=13"></script>
+    <script src="js/stats.js?v=13"></script>
+    <script src="js/app.js?v=13"></script>
+    <script src="js/profile.js?v=13"></script>
+    <script src="js/leaderboard.js?v=13"></script>
 
     <!-- 密码显示/隐藏功能 -->
     <script>
