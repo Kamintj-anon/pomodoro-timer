@@ -395,7 +395,7 @@ main {
 }
 
 /* ==================== 计时器部分 ==================== */
-.timer-section {
+.timer-section-hero {
     margin-bottom: 48px;
 }
 
@@ -632,19 +632,60 @@ main {
 }
 
 /* ==================== 统计数据 ==================== */
-.stats-section {
+
+/* ==================== 两列网格布局 ==================== */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.stats-column,
+
+.stats-column h2,
+.history-column h2 {
+    margin-bottom: 24px;
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stats-column h3 {
+    font-size: 1em;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 响应式：小屏幕垂直堆叠 */
+@media (max-width: 968px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.stats-column {
     margin-bottom: 48px;
 }
 
-.stats-section h2,
-.stats-section h3 {
+.stats-column h2,
+.stats-column h3 {
     margin-bottom: 24px;
     color: var(--text-primary);
     font-weight: 600;
     letter-spacing: -0.01em;
 }
 
-.stats-section h3 {
+.stats-column h3 {
     font-size: 1em;
     margin-top: 40px;
     color: var(--text-secondary);
@@ -804,7 +845,7 @@ main {
 }
 
 /* ==================== 历史记录 ==================== */
-.history-section h2 {
+.history-column h2 {
     margin-bottom: 24px;
     color: var(--text-primary);
     font-weight: 600;
@@ -1310,9 +1351,9 @@ header h1 i {
 }
 
 .timer-card h2 i,
-.stats-section h2 i,
-.stats-section h3 i,
-.history-section h2 i {
+.stats-column h2 i,
+.stats-column h3 i,
+.history-column h2 i {
     margin-right: 8px;
     color: var(--primary-soft);
 }
