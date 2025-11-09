@@ -1,0 +1,32 @@
+# 数据库文件
+*.db
+*.log
+
+# Go 编译产物
+backend/pomodoro-api
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Go 依赖
+backend/go.sum
+
+# 前端
+frontend/node_modules/
+frontend/.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 备份文件
+*.bak
+*.tar.gz
+
+# 操作系统
+.DS_Store
+Thumbs.db

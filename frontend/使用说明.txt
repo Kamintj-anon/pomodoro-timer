@@ -1,0 +1,107 @@
+番茄钟前端部署说明
+====================
+
+前端文件已全部创建完成！
+
+文件结构：
+pomodoro-frontend/
+├── index.html          - 主页面
+├── css/
+│   └── style.css      - 样式文件
+├── js/
+│   ├── config.js      - API 配置（需要修改）
+│   ├── auth.js        - 认证逻辑
+│   ├── timer.js       - 计时器逻辑
+│   ├── stats.js       - 统计数据逻辑
+│   └── app.js         - 主应用逻辑
+└── assets/            - 静态资源（图标等，可选）
+
+部署步骤：
+====================
+
+1. 修改 API 配置
+   打开 js/config.js 文件，找到第 3 行：
+
+   BASE_URL: 'http://你的服务器IP:8080/api',
+
+   将"你的服务器IP"替换为实际的服务器 IP 地址，例如：
+   BASE_URL: 'http://123.456.789.0:8080/api',
+
+2. 上传到腾讯云 COS
+   方式一：使用腾讯云控制台
+   - 登录腾讯云 COS 控制台
+   - 选择你的存储桶
+   - 上传整个 pomodoro-frontend 文件夹的所有内容
+   - 设置 index.html 为默认首页
+   - 配置静态网站托管
+
+   方式二：使用 COS 命令行工具
+   - 安装 COSCMD 工具
+   - 配置密钥
+   - 执行：coscmd upload -r pomodoro-frontend/ /
+
+3. 配置 CORS（如果遇到跨域问题）
+   在服务器端（后端）已经配置了 CORS，但如果还有问题：
+   - 在 COS 控制台配置跨域访问规则
+   - 允许来源：*
+   - 允许方法：GET, POST, PUT, DELETE
+   - 允许头部：Authorization, Content-Type
+
+4. 测试
+   打开浏览器访问 COS 提供的访问地址
+   例如：https://你的存储桶名.cos.ap-guangzhou.myqcloud.com/index.html
+
+功能说明：
+====================
+
+1. 用户认证
+   - 注册新账号（用户名、邮箱、密码）
+   - 登录已有账号
+   - 自动保存登录状态
+
+2. 分类管理
+   - 创建自定义分类（如：学习、工作、游戏等）
+   - 每个分类可设置不同颜色
+   - 编辑和删除分类
+
+3. 番茄钟计时
+   - 选择分类开始计时（默认 25 分钟）
+   - 支持暂停、继续、重置
+   - 可添加备注信息
+   - 完成后自动保存记录
+
+4. 统计数据
+   - 总专注时长和番茄钟数量
+   - 各分类的时长、占比、数量
+   - 最近 20 条历史记录
+
+5. 键盘快捷键
+   - 空格键：开始/暂停
+   - ESC 键：重置
+   - C 键：打开分类管理
+
+注意事项：
+====================
+
+1. 确保后端 API 服务正在运行（端口 8080）
+
+2. 如果使用域名访问：
+   - 需要配置域名解析到 COS
+   - 修改 config.js 中的 BASE_URL
+
+3. 建议配置 CDN 加速访问
+
+4. 如果遇到问题，打开浏览器开发者工具（F12）查看控制台错误信息
+
+测试 API 连接：
+====================
+
+在浏览器控制台（F12）中输入以下命令测试：
+
+fetch('http://你的服务器IP:8080/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: 'test@example.com', password: 'test123' })
+}).then(r => r.json()).then(console.log)
+
+如果返回 "用户不存在" 说明 API 连接正常。

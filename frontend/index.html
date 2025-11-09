@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>番茄钟 - 专注时间管理</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=12">
+</head>
+<body>
+    <!-- 登录/注册页面 -->
+    <div id="auth-page" class="page active">
+        <div class="auth-container">
+            <h1><i class="fas fa-clock"></i> 番茄钟</h1>
+            <p class="subtitle">专注时间管理，提升工作效率</p>
+
+            <!-- 登录表单 -->
+            <div id="login-form" class="form-container active">
+                <h2>登录</h2>
+                <input type="email" id="login-email" placeholder="邮箱" required>
+                <div class="password-wrapper" style="position: relative; width: 100%; margin-bottom: 24px;">
+                    <input type="password" id="login-password" placeholder="密码" required style="padding-right: 50px;">
+                    <button type="button" class="toggle-password" onclick="togglePassword('login-password', this)" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%);">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                <button onclick="login()">登录</button>
+                <p class="toggle-form">
+                    还没有账号？<a href="#" onclick="showRegister()">立即注册</a>
+                </p>
+            </div>
+
+            <!-- 注册表单 -->
+            <div id="register-form" class="form-container">
+                <h2>注册</h2>
+                <input type="text" id="register-username" placeholder="用户名" required>
+                <input type="email" id="register-email" placeholder="邮箱" required>
+                <div class="password-wrapper" style="position: relative; width: 100%; margin-bottom: 24px;">
+                    <input type="password" id="register-password" placeholder="密码（至少6位）" required style="padding-right: 50px;">
+                    <button type="button" class="toggle-password" onclick="togglePassword('register-password', this)" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%);">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                <button onclick="register()">注册</button>
+                <p class="toggle-form">
+                    已有账号？<a href="#" onclick="showLogin()">立即登录</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主应用页面 -->
+    <div id="app-page" class="page">
+        <!-- 顶部导航 -->
+        <header>
+            <div class="container">
+                <h1><i class="fas fa-clock"></i> 番茄钟</h1>
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="username-display"></span>
+                    <button onclick="showProfileModal()" class="btn-profile">
+                        <i class="fas fa-user-cog"></i> 个人资料
+                    </button>
+                    <button onclick="logout()" class="btn-logout">
+                        <i class="fas fa-sign-out-alt"></i> 退出
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主内容区 -->
+        <main class="container">
+            <!-- 番茄钟计时器 -->
+            <section class="timer-section">
+                <div class="timer-card">
+                    <h2><i class="fas fa-tasks"></i> 当前任务</h2>
+
+                    <!-- 分类选择 -->
+                    <div class="category-selector">
+                        <label><i class="fas fa-folder"></i> 选择分类：</label>
+                        <select id="category-select"></select>
+                        <button onclick="showCategoryManager()" class="btn-icon">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+
+                    <!-- 倒计时显示 -->
+                    <div class="timer-display">
+                        <div id="timer">25:00</div>
+                        <div class="timer-label" id="timer-status">准备开始</div>
+                    </div>
+
+                    <!-- 控制按钮 -->
+                    <div class="timer-controls">
+                        <button id="start-btn" onclick="startTimer()" class="btn-primary">
+                            <i class="fas fa-play"></i> 开始
+                        </button>
+                        <button id="pause-btn" onclick="pauseTimer()" class="btn-secondary" style="display:none;">
+                            <i class="fas fa-pause"></i> 暂停
+                        </button>
+                        <button id="reset-btn" onclick="resetTimer()" class="btn-outline">
+                            <i class="fas fa-redo"></i> 重置
+                        </button>
+                    </div>
+
+                    <!-- 备注输入 -->
+                    <div class="note-input">
+                        <input type="text" id="pomodoro-note" placeholder="备注（可选）">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 统计数据 -->
+            <section class="stats-section">
+                <h2><i class="fas fa-chart-line"></i> 统计数据</h2>
+
+                <!-- 总时长卡片 -->
+                <div class="stats-card total-stats">
+                    <div class="stat-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-label">总专注时长</div>
+                        <div class="stat-value" id="total-duration">0 小时</div>
+                        <div class="stat-detail" id="total-count">0 个番茄钟</div>
+                    </div>
+                </div>
+
+                <!-- 分类统计 -->
+                <h3><i class="fas fa-pie-chart"></i> 分类统计</h3>
+                <div id="category-stats" class="category-stats-grid"></div>
+            </section>
+
+            <!-- 历史记录 -->
+            <section class="history-section">
+                <h2><i class="fas fa-history"></i> 最近记录</h2>
+                <div id="history-list" class="history-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 分类管理弹窗 -->
+    <div id="category-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-folder-open"></i> 分类管理</h2>
+                <button onclick="closeCategoryManager()" class="btn-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- 添加分类 -->
+                <div class="add-category">
+                    <input type="text" id="new-category-name" placeholder="分类名称">
+                    <input type="color" id="new-category-color" value="#FF6B6B">
+                    <button onclick="addCategory()">
+                        <i class="fas fa-plus"></i> 添加
+                    </button>
+                </div>
+
+                <!-- 分类列表 -->
+                <div id="category-list" class="category-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 个人资料弹窗 -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-user-circle"></i> 个人资料</h2>
+                <button onclick="closeProfileModal()" class="btn-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- 用户信息 -->
+                <div class="profile-section">
+                    <h3><i class="fas fa-info-circle"></i> 基本信息</h3>
+                    <div class="profile-info">
+                        <div class="info-item">
+                            <span class="info-label">用户名</span>
+                            <span class="info-value" id="profile-username">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">邮箱</span>
+                            <span class="info-value" id="profile-email">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">注册时间</span>
+                            <span class="info-value" id="profile-created">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 统计信息 -->
+                <div class="profile-section">
+                    <h3><i class="fas fa-chart-bar"></i> 我的统计</h3>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="profile-total-count">0</div>
+                            <div class="stat-label">完成番茄钟</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="profile-total-duration">0</div>
+                            <div class="stat-label">总专注时长</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 设置 -->
+                <div class="profile-section">
+                    <h3><i class="fas fa-cog"></i> 番茄钟设置</h3>
+                    <div class="settings-group">
+                        <div class="setting-item">
+                            <label for="setting-duration">默认时长（分钟）</label>
+                            <input type="number" id="setting-duration" min="1" max="60" value="25">
+                        </div>
+                        <button onclick="saveSettings()" class="btn-primary">
+                            <i class="fas fa-save"></i> 保存设置
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 提示消息 -->
+    <div id="toast" class="toast"></div>
+
+    <!-- JavaScript 文件 -->
+    <script src="js/config.js?v=11"></script>
+    <script src="js/auth.js?v=11"></script>
+    <script src="js/timer.js?v=11"></script>
+    <script src="js/stats.js?v=11"></script>
+    <script src="js/app.js?v=11"></script>
+    <script src="js/profile.js?v=11"></script>
+
+    <!-- 密码显示/隐藏功能 -->
+    <script>
+    function togglePassword(inputId, btn) {
+        const input = document.getElementById(inputId);
+        const icon = btn.querySelector('i');
+        if (input.type === "password") {
+            input.type = "text";
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        } else {
+            input.type = "password";
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        }
+    }
+    </script>
+</body>
+</html>
