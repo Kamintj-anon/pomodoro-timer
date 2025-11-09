@@ -673,26 +673,6 @@ main {
     }
 }
 
-.stats-column {
-    margin-bottom: 48px;
-}
-
-.stats-column h2,
-.stats-column h3 {
-    margin-bottom: 24px;
-    color: var(--text-primary);
-    font-weight: 600;
-    letter-spacing: -0.01em;
-}
-
-.stats-column h3 {
-    font-size: 1em;
-    margin-top: 40px;
-    color: var(--text-secondary);
-}
-
-.total-stats {
-    background: linear-gradient(135deg, var(--card-bg), var(--card-elevated));
     border: 1px solid var(--border-light);
     border-radius: 20px;
     padding: 40px;
