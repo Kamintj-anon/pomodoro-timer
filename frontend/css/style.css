@@ -395,7 +395,7 @@ main {
 }
 
 /* ==================== 计时器部分 ==================== */
-.timer-section-hero {
+.timer-section {
     margin-bottom: 48px;
 }
 
@@ -641,8 +641,8 @@ main {
     margin-top: 48px;
 }
 
-.stats-column h2,
-.history-column h2 {
+.stats-section h2,
+.history-section h2 {
     margin-bottom: 24px;
     color: var(--text-primary);
     font-weight: 600;
@@ -652,7 +652,7 @@ main {
     gap: 8px;
 }
 
-.stats-column h3 {
+.stats-section h3 {
     font-size: 1em;
     margin-top: 32px;
     margin-bottom: 16px;
@@ -823,7 +823,7 @@ main {
 }
 
 /* ==================== 历史记录 ==================== */
-.history-column h2 {
+.history-section h2 {
     margin-bottom: 24px;
     color: var(--text-primary);
     font-weight: 600;
@@ -1329,9 +1329,9 @@ header h1 i {
 }
 
 .timer-card h2 i,
-.stats-column h2 i,
-.stats-column h3 i,
-.history-column h2 i {
+.stats-section h2 i,
+.stats-section h3 i,
+.history-section h2 i {
     margin-right: 8px;
     color: var(--primary-soft);
 }
