@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>番茄钟 - 专注时间管理</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=1762712616">
+    <link rel="stylesheet" href="css/style.css?v=1762713093">
 </head>
 <body>
     <!-- 登录/注册页面 -->
@@ -61,15 +61,13 @@
                     <button onclick="showProfileModal()" class="btn-profile">
                         <i class="fas fa-user-cog"></i> 个人资料
                     </button>
-                    <button onclick="showLeaderboard()" class="btn-leaderboard">
-                        <i class="fas fa-trophy"></i> 排行榜
-                    </button>
                     <button onclick="logout()" class="btn-logout">
                         <i class="fas fa-sign-out-alt"></i> 退出
                     </button>
                 </div>
             </div>
         </header>
+
         <!-- 主内容区 -->
         <main class="container">
             <!-- 番茄钟计时器 -->
@@ -124,13 +122,34 @@
                     <div class="stat-content">
                         <div class="stat-label">总专注时长</div>
                         <div class="stat-value" id="total-duration">0 小时</div>
-                <section class="history-column">
-                    <h2><i class="fas fa-history"></i> 最近记录</h2>
-                    <div id="history-list" class="history-list"></div>
-                </section>
-            </div>
+                        <div class="stat-detail" id="total-count">0 个番茄钟</div>
+                    </div>
+                </div>
+
+                <!-- 分类统计 -->
+                <h3><i class="fas fa-pie-chart"></i> 分类统计</h3>
+                <div id="category-stats" class="category-stats-grid"></div>
+            </section>
+
+            <!-- 历史记录 -->
+            <section class="history-section">
+                <h2><i class="fas fa-history"></i> 最近记录</h2>
+                <div id="history-list" class="history-list"></div>
+            </section>
         </main>
     </div>
+
+    <!-- 分类管理弹窗 -->
+    <div id="category-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-folder-open"></i> 分类管理</h2>
+                <button onclick="closeCategoryManager()" class="btn-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- 添加分类 -->
                 <div class="add-category">
                     <input type="text" id="new-category-name" placeholder="分类名称">
                     <input type="color" id="new-category-color" value="#FF6B6B">
@@ -206,32 +225,17 @@
         </div>
     </div>
 
-    <!-- 排行榜弹窗 -->
-    <div id="leaderboard-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2><i class="fas fa-trophy"></i> 排行榜</h2>
-                <button onclick="closeLeaderboard()" class="btn-close">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div id="leaderboard-list" class="leaderboard-list"></div>
-            </div>
-        </div>
-    </div>
 
     <!-- 提示消息 -->
     <div id="toast" class="toast"></div>
 
     <!-- JavaScript 文件 -->
-    <script src="js/config.js?v=1762712616"></script>
-    <script src="js/auth.js?v=1762712616"></script>
-    <script src="js/timer.js?v=1762712616"></script>
-    <script src="js/stats.js?v=1762712616"></script>
-    <script src="js/app.js?v=1762712616"></script>
-    <script src="js/profile.js?v=1762712616"></script>
-    <script src="js/leaderboard.js?v=1762712616"></script>
+    <script src="js/config.js?v=1762713093"></script>
+    <script src="js/auth.js?v=1762713093"></script>
+    <script src="js/timer.js?v=1762713093"></script>
+    <script src="js/stats.js?v=1762713093"></script>
+    <script src="js/app.js?v=1762713093"></script>
+    <script src="js/profile.js?v=1762713093"></script>
 
     <!-- 密码显示/隐藏功能 -->
     <script>
