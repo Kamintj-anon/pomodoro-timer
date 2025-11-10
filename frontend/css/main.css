@@ -1844,3 +1844,94 @@ header h1 i {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
 }
+
+/* ==================== 标签导航样式 ==================== */
+.tabs-nav {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tabs-list {
+    display: flex;
+    gap: 8px;
+    padding: 12px 0;
+}
+
+.tab-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.tab-item i {
+    font-size: 18px;
+}
+
+.tab-item:hover {
+    background: var(--card-elevated);
+    color: var(--text-primary);
+}
+
+.tab-item.active {
+    background: linear-gradient(135deg, var(--primary-soft), var(--primary-softer));
+    color: white;
+    box-shadow: 0 2px 8px rgba(127, 182, 133, 0.3);
+}
+
+.tab-item.active i {
+    transform: scale(1.1);
+}
+
+/* 标签页内容 */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .tabs-list {
+        justify-content: space-around;
+    }
+    
+    .tab-item span {
+        display: none;
+    }
+    
+    .tab-item {
+        padding: 12px 16px;
+    }
+    
+    .tab-item i {
+        font-size: 20px;
+    }
+}

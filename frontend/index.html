@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>番茄钟 - 专注时间管理</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/main.css?v=1762768898">
+    <link rel="stylesheet" href="css/main.css?v=1762769287">
 </head>
 <body>
     <!-- 登录/注册页面 -->
@@ -71,10 +71,31 @@
             </div>
         </header>
 
+        <!-- 标签导航 -->
+        <nav class="tabs-nav">
+            <div class="container">
+                <div class="tabs-list">
+                    <button class="tab-item active" onclick="switchTab('timer')">
+                        <i class="fas fa-clock"></i>
+                        <span>番茄钟</span>
+                    </button>
+                    <button class="tab-item" onclick="switchTab('stats')">
+                        <i class="fas fa-chart-line"></i>
+                        <span>统计数据</span>
+                    </button>
+                    <button class="tab-item" onclick="switchTab('history')">
+                        <i class="fas fa-history"></i>
+                        <span>历史记录</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
         <!-- 主内容区 -->
         <main class="container">
-            <!-- 番茄钟计时器 -->
-            <section class="timer-section">
+            <!-- 番茄钟标签页 -->
+            <div id="timer-tab" class="tab-content active">
+                <section class="timer-section">
                 <div class="timer-card">
                     <h2><i class="fas fa-tasks"></i> 当前任务</h2>
 
@@ -111,10 +132,12 @@
                         <input type="text" id="pomodoro-note" placeholder="备注（可选）">
                     </div>
                 </div>
-            </section>
+                </section>
+            </div>
 
-            <!-- 统计数据 -->
-            <section class="stats-section">
+            <!-- 统计数据标签页 -->
+            <div id="stats-tab" class="tab-content">
+                <section class="stats-section">
                 <h2><i class="fas fa-chart-line"></i> 统计数据</h2>
 
                 <!-- 总时长卡片 -->
@@ -132,13 +155,16 @@
                 <!-- 分类统计 -->
                 <h3><i class="fas fa-pie-chart"></i> 分类统计</h3>
                 <div id="category-stats" class="category-stats-grid"></div>
-            </section>
+                </section>
+            </div>
 
-            <!-- 历史记录 -->
-            <section class="history-section">
+            <!-- 历史记录标签页 -->
+            <div id="history-tab" class="tab-content">
+                <section class="history-section">
                 <h2><i class="fas fa-history"></i> 最近记录</h2>
                 <div id="history-list" class="history-list"></div>
-            </section>
+                </section>
+            </div>
         </main>
     </div>
 
@@ -268,7 +294,7 @@
     <script src="js/auth.js?v=1762766055"></script>
     <script src="js/timer.js?v=1762768594"></script>
     <script src="js/stats.js?v=1762766055"></script>
-    <script src="js/app.js?v=1762766055"></script>
+    <script src="js/app.js?v=1762769287"></script>
     <script src="js/profile.js?v=1762766055"></script>
     <script src="js/leaderboard.js?v=1762766055"></script>
 

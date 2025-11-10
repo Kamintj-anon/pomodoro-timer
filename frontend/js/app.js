@@ -354,3 +354,36 @@ window.addEventListener('DOMContentLoaded', () => {
     // 可以在这里添加欢迎提示或引导
     // 例如：首次使用提示、键盘快捷键说明等
 });
+
+// ==================== 标签页切换 ====================
+
+function switchTab(tabName) {
+    // 隐藏所有标签内容
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // 移除所有标签按钮的活动状态
+    document.querySelectorAll('.tab-item').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // 显示选中的标签内容
+    const targetTab = document.getElementById(`${tabName}-tab`);
+    if (targetTab) {
+        targetTab.classList.add('active');
+    }
+    
+    // 激活对应的标签按钮
+    const activeBtn = document.querySelector(`[onclick="switchTab('${tabName}')"]`);
+    if (activeBtn) {
+        activeBtn.classList.add('active');
+    }
+    
+    // 根据切换的标签加载对应数据
+    if (tabName === 'stats') {
+        loadStats();
+    } else if (tabName === 'history') {
+        loadHistory();
+    }
+}
