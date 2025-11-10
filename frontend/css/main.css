@@ -1827,20 +1827,20 @@ header h1 i {
 }
 
 .confirm-buttons .btn-outline:hover {
-    border-color: var(--primary);
+    border-color: #FF6B6B;
     color: var(--primary);
     background: rgba(255, 107, 107, 0.05);
 }
 
 .confirm-buttons .btn-primary {
-    background: var(--primary);
-    border: 2px solid var(--primary);
+    background: #FF6B6B;
+    border: 2px solid #FF6B6B;
     color: white;
 }
 
 .confirm-buttons .btn-primary:hover {
-    background: var(--primary-dark);
-    border-color: var(--primary-dark);
+    background: #E85555;
+    border-color: #E85555;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
 }
