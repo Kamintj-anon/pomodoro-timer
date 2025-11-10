@@ -2081,10 +2081,26 @@ header h1 i {
     gap: 6px;
     color: var(--text-secondary);
     font-size: 0.95em;
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.leaderboard-stats .stat-item:hover {
+    transform: none !important;
+    box-shadow: none !important;
 }
 
 .leaderboard-stats .stat-item i {
     color: var(--primary-soft);
+    font-size: 1.2em;
+}
+
+.leaderboard-stats .stat-item span {
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 /* 排行榜按钮 - 大师级设计 */
