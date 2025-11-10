@@ -3209,3 +3209,188 @@ header h1 i {
         transform: scale(1.1);
     }
 }
+
+/* ==================== 主题系统 ==================== */
+
+/* 深色/夜间模式 */
+[data-theme="dark"] {
+    /* 主色调 - 调整为暗色背景下更柔和的薄荷绿 */
+    --primary-soft: #6FA876;
+    --primary-softer: #5A8C66;
+    --primary-light: #4A7556;
+    --secondary-soft: #8AB399;
+    --accent-soft: #9BC4A8;
+
+    /* 背景色系 - 深色背景 */
+    --background: #1A1D1F;
+    --background-secondary: #24272A;
+    --background-card: rgba(30, 33, 36, 0.95);
+    --surface: #2D3135;
+
+    /* 文字色系 - 适合深色背景的浅色文字 */
+    --text-primary: #E8EAED;
+    --text-secondary: #9AA0A6;
+    --text-muted: #5F6368;
+    --text-on-primary: #1A1D1F;
+
+    /* 边框和分割线 */
+    --border-soft: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(111, 168, 118, 0.3);
+    --divider: rgba(255, 255, 255, 0.08);
+
+    /* 阴影 - 深色模式下的阴影 */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 30px rgba(111, 168, 118, 0.2);
+
+    /* 玻璃态效果 */
+    --glass-bg: rgba(30, 33, 36, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+    /* 渐变 */
+    --gradient-primary: linear-gradient(135deg, #6FA876 0%, #5A8C66 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(111, 168, 118, 0.1) 0%, rgba(90, 140, 102, 0.1) 100%);
+    --gradient-shine: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+
+    /* 状态色 */
+    --success: #57A773;
+    --warning: #E8A858;
+    --error: #D96C75;
+    --info: #5B9BD5;
+}
+
+/* 高对比度模式 */
+[data-theme="high-contrast"] {
+    /* 主色调 - 高对比度的纯色 */
+    --primary-soft: #00A651;
+    --primary-softer: #008C44;
+    --primary-light: #00CC5F;
+    --secondary-soft: #00D166;
+    --accent-soft: #00FF7F;
+
+    /* 背景色系 - 纯黑白对比 */
+    --background: #000000;
+    --background-secondary: #0A0A0A;
+    --background-card: #121212;
+    --surface: #1A1A1A;
+
+    /* 文字色系 - 最高对比度 */
+    --text-primary: #FFFFFF;
+    --text-secondary: #E0E0E0;
+    --text-muted: #B0B0B0;
+    --text-on-primary: #000000;
+
+    /* 边框和分割线 - 高对比度边框 */
+    --border-soft: rgba(255, 255, 255, 0.3);
+    --border-hover: #00A651;
+    --divider: rgba(255, 255, 255, 0.2);
+
+    /* 阴影 - 更明显的阴影 */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.8);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.9);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 1);
+    --shadow-glow: 0 0 40px rgba(0, 166, 81, 0.4);
+
+    /* 玻璃态效果 - 减弱模糊,增强边框 */
+    --glass-bg: rgba(18, 18, 18, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 1);
+
+    /* 渐变 - 高对比度渐变 */
+    --gradient-primary: linear-gradient(135deg, #00A651 0%, #008C44 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(0, 166, 81, 0.2) 0%, rgba(0, 140, 68, 0.2) 100%);
+    --gradient-shine: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+
+    /* 状态色 - 高对比度状态 */
+    --success: #00FF00;
+    --warning: #FFD700;
+    --error: #FF3333;
+    --info: #00BFFF;
+}
+
+/* 主题切换器样式 */
+.theme-switcher {
+    position: relative;
+    margin-left: 15px;
+}
+
+.btn-theme {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.3s var(--ease-smooth);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-theme:hover {
+    background: var(--primary-soft);
+    color: white;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+}
+
+.theme-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 8px;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s var(--ease-smooth);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+}
+
+.theme-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: all 0.3s var(--ease-smooth);
+    text-align: left;
+}
+
+.theme-option:hover {
+    background: rgba(127, 182, 133, 0.15);
+    color: var(--primary-soft);
+    transform: translateX(5px);
+}
+
+.theme-option.active {
+    background: var(--gradient-soft);
+    color: var(--primary-soft);
+    font-weight: 600;
+}
+
+.theme-option i {
+    font-size: 1.1em;
+    width: 20px;
+    text-align: center;
+}
