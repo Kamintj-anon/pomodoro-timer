@@ -3466,3 +3466,106 @@ header h1 i {
     color: #00FF7F !important;
     border: 2px solid #00FF7F !important;
 }
+/* ==================== 深色模式完整样式覆盖 ==================== */
+
+[data-theme="dark"] body {
+    background: var(--background) !important;
+}
+
+[data-theme="dark"] header {
+    background: rgba(30, 33, 36, 0.95) !important;
+    border-bottom-color: rgba(111, 168, 118, 0.2) !important;
+}
+
+[data-theme="dark"] .tabs-nav {
+    background: rgba(30, 33, 36, 0.95) !important;
+    border-bottom-color: rgba(111, 168, 118, 0.2) !important;
+}
+
+[data-theme="dark"] .timer-card,
+[data-theme="dark"] .word-submit-card {
+    background: var(--background-card) !important;
+}
+
+[data-theme="dark"] .btn-primary {
+    background: var(--gradient-primary) !important;
+    color: var(--text-on-primary) !important;
+}
+
+[data-theme="dark"] .btn-secondary,
+[data-theme="dark"] .btn-outline {
+    background: rgba(45, 49, 53, 0.8) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-soft) !important;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background: var(--surface) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-soft) !important;
+}
+
+[data-theme="dark"] .user-info span,
+[data-theme="dark"] .username-display {
+    color: var(--text-primary) !important;
+}
+
+/* ==================== 高对比度模式完整样式覆盖 ==================== */
+
+[data-theme="high-contrast"] body {
+    background: var(--background) !important;
+}
+
+[data-theme="high-contrast"] header {
+    background: #000000 !important;
+    border-bottom: 3px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .tabs-nav {
+    background: #000000 !important;
+    border-bottom: 3px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .timer-card,
+[data-theme="high-contrast"] .word-submit-card {
+    background: var(--background-card) !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .btn-primary {
+    background: #00A651 !important;
+    color: #000000 !important;
+    border: 2px solid #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .btn-secondary,
+[data-theme="high-contrast"] .btn-outline {
+    background: #1A1A1A !important;
+    color: #FFFFFF !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] input,
+[data-theme="high-contrast"] select,
+[data-theme="high-contrast"] textarea {
+    background: var(--surface) !important;
+    color: var(--text-primary) !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .timer-display #timer {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .user-info span,
+[data-theme="high-contrast"] .username-display {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="high-contrast"] .tab-item.active {
+    background: rgba(0, 166, 81, 0.3) !important;
+    color: #00FF7F !important;
+    border-color: #00A651 !important;
+}
