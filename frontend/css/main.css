@@ -4408,3 +4408,264 @@ header h1 i {
     background: rgba(255, 51, 51, 0.2) !important;
     box-shadow: 0 0 15px rgba(255, 51, 51, 0.4) !important;
 }
+/* ==================== 补充遗漏的细节元素 - 深色模式 ==================== */
+
+/* === 登录/注册页面 === */
+[data-theme="dark"] #auth-page {
+    background: var(--background) !important;
+}
+
+[data-theme="dark"] .auth-container {
+    background: rgba(30, 33, 36, 0.95) !important;
+    border: 1px solid rgba(111, 168, 118, 0.25) !important;
+}
+
+[data-theme="dark"] .auth-container h1 {
+    color: #9BC4A8 !important;
+}
+
+[data-theme="dark"] .subtitle {
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] .form-container h2 {
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .form-container input {
+    background: #2D3135 !important;
+    color: #E8EAED !important;
+    border: 1px solid rgba(111, 168, 118, 0.3) !important;
+}
+
+[data-theme="dark"] .form-container input::placeholder {
+    color: #5F6368 !important;
+}
+
+[data-theme="dark"] .form-container button:not(.toggle-password) {
+    background: linear-gradient(135deg, #6FA876 0%, #5A8C66 100%) !important;
+    color: #1A1D1F !important;
+    border: none !important;
+}
+
+[data-theme="dark"] .toggle-password {
+    background: transparent !important;
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] .toggle-password:hover {
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .toggle-form {
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] .toggle-form a {
+    color: #9BC4A8 !important;
+}
+
+[data-theme="dark"] .toggle-form a:hover {
+    color: #B8E6C4 !important;
+}
+
+/* === 顶部导航栏按钮 === */
+[data-theme="dark"] .btn-leaderboard,
+[data-theme="dark"] .btn-profile,
+[data-theme="dark"] .btn-logout {
+    background: rgba(45, 49, 53, 0.9) !important;
+    color: #E8EAED !important;
+    border: 1px solid rgba(111, 168, 118, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-leaderboard:hover,
+[data-theme="dark"] .btn-profile:hover {
+    background: rgba(111, 168, 118, 0.25) !important;
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .btn-logout:hover {
+    background: rgba(217, 108, 117, 0.25) !important;
+    color: #E8A0A7 !important;
+    border-color: rgba(217, 108, 117, 0.4) !important;
+}
+
+[data-theme="dark"] .user-info i {
+    color: #9BC4A8 !important;
+}
+
+[data-theme="dark"] #username-display {
+    color: #E8EAED !important;
+}
+
+/* === 模态框 === */
+[data-theme="dark"] .btn-close {
+    background: rgba(217, 108, 117, 0.2) !important;
+    color: #E8A0A7 !important;
+    border: 1px solid rgba(217, 108, 117, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-close:hover {
+    background: rgba(217, 108, 117, 0.35) !important;
+}
+
+[data-theme="dark"] .add-category input[type="text"] {
+    background: #2D3135 !important;
+    color: #E8EAED !important;
+    border: 1px solid rgba(111, 168, 118, 0.3) !important;
+}
+
+[data-theme="dark"] .add-category button {
+    background: linear-gradient(135deg, #6FA876 0%, #5A8C66 100%) !important;
+    color: #1A1D1F !important;
+}
+
+[data-theme="dark"] .btn-edit,
+[data-theme="dark"] .btn-delete {
+    background: rgba(45, 49, 53, 0.9) !important;
+    color: #9AA0A6 !important;
+    border: 1px solid rgba(111, 168, 118, 0.2) !important;
+}
+
+[data-theme="dark"] .btn-edit:hover {
+    background: rgba(111, 168, 118, 0.25) !important;
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .btn-delete:hover {
+    background: rgba(217, 108, 117, 0.25) !important;
+    color: #E8A0A7 !important;
+}
+
+[data-theme="dark"] .info-label {
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] .info-value {
+    color: #E8EAED !important;
+}
+
+[data-theme="dark"] .rank-badge.gold {
+    background: rgba(255, 193, 7, 0.2) !important;
+    color: #FFC107 !important;
+}
+
+[data-theme="dark"] .rank-badge.silver {
+    background: rgba(158, 158, 158, 0.2) !important;
+    color: #BDBDBD !important;
+}
+
+[data-theme="dark"] .rank-badge.bronze {
+    background: rgba(205, 127, 50, 0.2) !important;
+    color: #CD7F32 !important;
+}
+
+/* ==================== 补充遗漏的细节元素 - 高对比度模式 ==================== */
+
+/* === 登录/注册页面 === */
+[data-theme="high-contrast"] #auth-page {
+    background: var(--background) !important;
+}
+
+[data-theme="high-contrast"] .auth-container {
+    background: #121212 !important;
+    border: 3px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .auth-container h1 {
+    color: #00FF7F !important;
+    text-shadow: 0 0 20px rgba(0, 255, 127, 0.5) !important;
+}
+
+[data-theme="high-contrast"] .subtitle {
+    color: #E0E0E0 !important;
+}
+
+[data-theme="high-contrast"] .form-container h2 {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .form-container input {
+    background: #1A1A1A !important;
+    color: #FFFFFF !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .form-container button:not(.toggle-password) {
+    background: #00A651 !important;
+    color: #000000 !important;
+    border: 2px solid #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .toggle-password {
+    color: #E0E0E0 !important;
+}
+
+[data-theme="high-contrast"] .toggle-form a {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .btn-leaderboard,
+[data-theme="high-contrast"] .btn-profile,
+[data-theme="high-contrast"] .btn-logout {
+    background: #1A1A1A !important;
+    color: #FFFFFF !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .btn-logout:hover {
+    background: rgba(255, 51, 51, 0.3) !important;
+    color: #FF3333 !important;
+    border-color: #FF3333 !important;
+}
+
+[data-theme="high-contrast"] .user-info i {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .btn-close {
+    background: #1A1A1A !important;
+    color: #FF3333 !important;
+    border: 2px solid #FF3333 !important;
+}
+
+[data-theme="high-contrast"] .add-category input[type="text"] {
+    background: #1A1A1A !important;
+    color: #FFFFFF !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .add-category button {
+    background: #00A651 !important;
+    color: #000000 !important;
+}
+
+[data-theme="high-contrast"] .btn-edit:hover {
+    color: #00FF7F !important;
+    border-color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .btn-delete:hover {
+    color: #FF3333 !important;
+    border-color: #FF3333 !important;
+}
+
+[data-theme="high-contrast"] .info-value {
+    color: #FFFFFF !important;
+}
+
+[data-theme="high-contrast"] .rank-badge.gold {
+    background: #FFD700 !important;
+    color: #000000 !important;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6) !important;
+}
+
+[data-theme="high-contrast"] .rank-badge.silver {
+    background: #C0C0C0 !important;
+    color: #000000 !important;
+}
+
+[data-theme="high-contrast"] .rank-badge.bronze {
+    background: #CD7F32 !important;
+    color: #000000 !important;
+}
