@@ -4669,3 +4669,321 @@ header h1 i {
     background: #CD7F32 !important;
     color: #000000 !important;
 }
+
+/* ==================== 全局字体颜色修正 - 深色模式 ==================== */
+
+/* 强制覆盖所有白色文字 */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .btn-leaderboard i,
+[data-theme="dark"] .btn-profile i,
+[data-theme="dark"] .tab-item i,
+[data-theme="dark"] .modal-tab,
+[data-theme="dark"] .confirm-buttons button {
+    color: inherit !important;
+}
+
+/* 确保所有按钮文字可见 */
+[data-theme="dark"] button {
+    color: #E8EAED !important;
+}
+
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .btn-primary * {
+    color: #1A1D1F !important;
+}
+
+/* 所有标题 */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: #B8E6C4 !important;
+}
+
+/* 所有普通文字 */
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] div,
+[data-theme="dark"] label,
+[data-theme="dark"] li {
+    color: #E8EAED;
+}
+
+/* 所有链接 */
+[data-theme="dark"] a {
+    color: #9BC4A8 !important;
+}
+
+[data-theme="dark"] a:hover {
+    color: #B8E6C4 !important;
+}
+
+/* placeholder文字 */
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+    color: #5F6368 !important;
+}
+
+/* 图标颜色 */
+[data-theme="dark"] i.fas,
+[data-theme="dark"] i.far,
+[data-theme="dark"] i.fa {
+    color: inherit !important;
+}
+
+/* 特殊强调文字 */
+[data-theme="dark"] .text-primary,
+[data-theme="dark"] strong,
+[data-theme="dark"] b {
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .text-secondary,
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] small {
+    color: #9AA0A6 !important;
+}
+
+/* ==================== 全局字体颜色修正 - 高对比度模式 ==================== */
+
+/* 强制覆盖所有白色文字 */
+[data-theme="high-contrast"] .btn-primary,
+[data-theme="high-contrast"] .btn-leaderboard i,
+[data-theme="high-contrast"] .btn-profile i,
+[data-theme="high-contrast"] .tab-item i,
+[data-theme="high-contrast"] .modal-tab {
+    color: inherit !important;
+}
+
+/* 确保所有按钮文字可见 */
+[data-theme="high-contrast"] button {
+    color: #FFFFFF !important;
+}
+
+[data-theme="high-contrast"] .btn-primary,
+[data-theme="high-contrast"] .btn-primary * {
+    color: #000000 !important;
+}
+
+/* 所有标题 */
+[data-theme="high-contrast"] h1,
+[data-theme="high-contrast"] h2,
+[data-theme="high-contrast"] h3,
+[data-theme="high-contrast"] h4,
+[data-theme="high-contrast"] h5,
+[data-theme="high-contrast"] h6 {
+    color: #00FF7F !important;
+    text-shadow: 0 0 10px rgba(0, 255, 127, 0.3) !important;
+}
+
+/* 所有普通文字 */
+[data-theme="high-contrast"] p,
+[data-theme="high-contrast"] span,
+[data-theme="high-contrast"] div,
+[data-theme="high-contrast"] label,
+[data-theme="high-contrast"] li {
+    color: #FFFFFF;
+}
+
+/* 所有链接 */
+[data-theme="high-contrast"] a {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] a:hover {
+    color: #00FF7F !important;
+    text-decoration: underline !important;
+    text-shadow: 0 0 10px rgba(0, 255, 127, 0.5) !important;
+}
+
+/* placeholder文字 */
+[data-theme="high-contrast"] input::placeholder,
+[data-theme="high-contrast"] textarea::placeholder {
+    color: #B0B0B0 !important;
+}
+
+/* 图标颜色 */
+[data-theme="high-contrast"] i.fas,
+[data-theme="high-contrast"] i.far,
+[data-theme="high-contrast"] i.fa {
+    color: inherit !important;
+}
+
+/* 特殊强调文字 */
+[data-theme="high-contrast"] .text-primary,
+[data-theme="high-contrast"] strong,
+[data-theme="high-contrast"] b {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .text-secondary,
+[data-theme="high-contrast"] .text-muted,
+[data-theme="high-contrast"] small {
+    color: #E0E0E0 !important;
+}
+
+/* 数字和数据显示 */
+[data-theme="high-contrast"] .stat-number,
+[data-theme="high-contrast"] .stat-value,
+[data-theme="high-contrast"] #timer {
+    color: #00FF7F !important;
+    text-shadow: 0 0 15px rgba(0, 255, 127, 0.5) !important;
+}
+
+
+/* ==================== 具体元素字体颜色修正 - 深色模式 ==================== */
+
+/* 按钮文字颜色 */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .btn-logout:hover,
+[data-theme="dark"] .btn-secondary,
+[data-theme="dark"] .btn-edit,
+[data-theme="dark"] .btn-delete,
+[data-theme="dark"] .btn-leaderboard,
+[data-theme="dark"] .btn-word-leaderboard,
+[data-theme="dark"] .btn-theme:hover,
+[data-theme="dark"] .btn-share {
+    color: #1A1D1F !important;
+}
+
+/* 标签页激活状态 */
+[data-theme="dark"] .tab-item.active {
+    color: #B8E6C4 !important;
+}
+
+/* 统计数字 */
+[data-theme="dark"] .stat-number,
+[data-theme="dark"] .stat-value,
+[data-theme="dark"] #timer,
+[data-theme="dark"] .total-value,
+[data-theme="dark"] .streak-count {
+    color: #B8E6C4 !important;
+}
+
+/* 表单标签 */
+[data-theme="dark"] .form-group label,
+[data-theme="dark"] .input-label {
+    color: #E8EAED !important;
+}
+
+/* 列表项 */
+[data-theme="dark"] .history-item,
+[data-theme="dark"] .word-item,
+[data-theme="dark"] .leaderboard-item {
+    color: #E8EAED !important;
+}
+
+/* 卡片标题和内容 */
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .page-title {
+    color: #B8E6C4 !important;
+}
+
+/* 时间和日期显示 */
+[data-theme="dark"] .time-display,
+[data-theme="dark"] .date-display,
+[data-theme="dark"] .duration {
+    color: #9BC4A8 !important;
+}
+
+/* 单词卡片内容 */
+[data-theme="dark"] .word-text,
+[data-theme="dark"] .word-translation,
+[data-theme="dark"] .word-pronunciation {
+    color: #E8EAED !important;
+}
+
+/* Toast通知 */
+[data-theme="dark"] .toast {
+    color: #1A1D1F !important;
+}
+
+/* ==================== 具体元素字体颜色修正 - 高对比度模式 ==================== */
+
+/* 按钮文字颜色 */
+[data-theme="high-contrast"] .btn-primary,
+[data-theme="high-contrast"] .btn-logout:hover,
+[data-theme="high-contrast"] .btn-secondary,
+[data-theme="high-contrast"] .btn-edit,
+[data-theme="high-contrast"] .btn-delete,
+[data-theme="high-contrast"] .btn-leaderboard,
+[data-theme="high-contrast"] .btn-word-leaderboard,
+[data-theme="high-contrast"] .btn-theme:hover,
+[data-theme="high-contrast"] .btn-share {
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+/* 标签页激活状态 */
+[data-theme="high-contrast"] .tab-item.active {
+    color: #00FF7F !important;
+    text-shadow: 0 0 10px rgba(0, 255, 127, 0.5) !important;
+}
+
+/* 统计数字 - 高亮显示 */
+[data-theme="high-contrast"] .stat-number,
+[data-theme="high-contrast"] .stat-value,
+[data-theme="high-contrast"] #timer,
+[data-theme="high-contrast"] .total-value,
+[data-theme="high-contrast"] .streak-count {
+    color: #00FF7F !important;
+    text-shadow: 0 0 15px rgba(0, 255, 127, 0.6) !important;
+    font-weight: 700 !important;
+}
+
+/* 表单标签 */
+[data-theme="high-contrast"] .form-group label,
+[data-theme="high-contrast"] .input-label {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+}
+
+/* 列表项 */
+[data-theme="high-contrast"] .history-item,
+[data-theme="high-contrast"] .word-item,
+[data-theme="high-contrast"] .leaderboard-item {
+    color: #FFFFFF !important;
+}
+
+/* 卡片标题和内容 */
+[data-theme="high-contrast"] .card-title,
+[data-theme="high-contrast"] .section-title,
+[data-theme="high-contrast"] .page-title {
+    color: #00FF7F !important;
+    text-shadow: 0 0 10px rgba(0, 255, 127, 0.4) !important;
+}
+
+/* 时间和日期显示 */
+[data-theme="high-contrast"] .time-display,
+[data-theme="high-contrast"] .date-display,
+[data-theme="high-contrast"] .duration {
+    color: #00FF7F !important;
+}
+
+/* 单词卡片内容 */
+[data-theme="high-contrast"] .word-text {
+    color: #00FF7F !important;
+    text-shadow: 0 0 8px rgba(0, 255, 127, 0.3) !important;
+}
+
+[data-theme="high-contrast"] .word-translation,
+[data-theme="high-contrast"] .word-pronunciation {
+    color: #FFFFFF !important;
+}
+
+/* Toast通知 */
+[data-theme="high-contrast"] .toast {
+    color: #000000 !important;
+    border: 2px solid #00A651 !important;
+}
+
+/* 普通文本元素 */
+[data-theme="high-contrast"] .description,
+[data-theme="high-contrast"] .hint,
+[data-theme="high-contrast"] .note {
+    color: #E0E0E0 !important;
+}
+
