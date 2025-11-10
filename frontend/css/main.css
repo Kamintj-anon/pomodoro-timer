@@ -6273,3 +6273,67 @@ header h1 i {
 [data-theme="dark"] .filter-btn:hover {
     background: #444654 !important;
 }
+
+/* ==================== 强化单词打卡记录区域覆盖 ==================== */
+
+/* 确保打卡记录标题 */
+[data-theme="dark"] .words-section > h3 {
+    color: #FFFFFF !important;
+}
+
+/* 强制记录项所有元素 */
+[data-theme="dark"] .word-record-item * {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 记录项文字 */
+[data-theme="dark"] .word-record-item .record-content * {
+    color: #ECECEC !important;
+}
+
+/* 记录数量strong标签 */
+[data-theme="dark"] .record-count strong {
+    color: #FFFFFF !important;
+}
+
+/* 确保日期徽章内所有元素 */
+[data-theme="dark"] .record-date * {
+    color: #FFFFFF !important;
+}
+
+/* 记录项内所有图标 */
+[data-theme="dark"] .word-record-item i,
+[data-theme="dark"] .word-record-item .fas,
+[data-theme="dark"] .word-record-item .far {
+    color: #FFFFFF !important;
+}
+
+/* 打卡记录列表标题 */
+[data-theme="dark"] .word-records-section h3,
+[data-theme="dark"] .words-records-title {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .word-records-section h3 i {
+    color: #B3B3B3 !important;
+}
+
+/* 记录时间戳 */
+[data-theme="dark"] .record-timestamp,
+[data-theme="dark"] .record-time {
+    color: #B3B3B3 !important;
+}
+
+/* 单词数量文字 */
+[data-theme="dark"] .record-count span,
+[data-theme="dark"] .record-count div {
+    color: #ECECEC !important;
+}
+
+/* 确保没有绿色渐变背景 */
+[data-theme="dark"] .word-record-item,
+[data-theme="dark"] .word-record-item *,
+[data-theme="dark"] .record-date,
+[data-theme="dark"] .record-count i {
+    background-image: none !important;
+}
