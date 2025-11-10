@@ -109,36 +109,42 @@ async function login() {
 }
 
 // 退出登录
-function logout() {
-    if (confirm('确定要退出登录吗？')) {
-        // 如果正在运行番茄钟，先提示
-        if (window.currentPomodoro) {
-            if (!confirm('当前有正在运行的番茄钟，退出将会丢失进度，确定退出吗？')) {
-                return;
-            }
-        }
+async function logout() {
+    // 使用自定义确认对话框
+    const confirmed = await showConfirm('确定要退出登录吗？', '退出登录');
 
-        // 清除本地数据
-        localStorage.removeItem(API_CONFIG.TOKEN_KEY);
-        localStorage.removeItem(API_CONFIG.USER_KEY);
-
-        // 停止计时器
-        if (window.timerInterval) {
-            clearInterval(window.timerInterval);
-            window.timerInterval = null;
-        }
-        window.currentPomodoro = null;
-
-        // 切换回登录页面
-        document.getElementById('app-page').classList.remove('active');
-        document.getElementById('auth-page').classList.add('active');
-
-        // 清空表单
-        document.getElementById('login-email').value = '';
-        document.getElementById('login-password').value = '';
-
-        showToast('已退出登录', 'info');
+    if (!confirmed) {
+        return;
     }
+
+    // 如果正在运行番茄钟，先提示
+    if (window.currentPomodoro) {
+        const confirmExit = await showConfirm('当前有正在运行的番茄钟，退出将会丢失进度，确定退出吗？', '确认退出');
+        if (!confirmExit) {
+            return;
+        }
+    }
+
+    // 清除本地数据
+    localStorage.removeItem(API_CONFIG.TOKEN_KEY);
+    localStorage.removeItem(API_CONFIG.USER_KEY);
+
+    // 停止计时器
+    if (window.timerInterval) {
+        clearInterval(window.timerInterval);
+        window.timerInterval = null;
+    }
+    window.currentPomodoro = null;
+
+    // 切换回登录页面
+    document.getElementById('app-page').classList.remove('active');
+    document.getElementById('auth-page').classList.add('active');
+
+    // 清空表单
+    document.getElementById('login-email').value = '';
+    document.getElementById('login-password').value = '';
+
+    showToast('已退出登录', 'info');
 }
 
 // 检查登录状态
