@@ -651,6 +651,9 @@ n.stats-section {
 }
     border-radius: 20px;
     padding: 40px;
+.total-stats {
+    background: linear-gradient(135deg, var(--card-bg), var(--card-elevated));
+    border: 1px solid var(--border-light);
     display: flex;
     align-items: center;
     gap: 32px;
