@@ -3685,7 +3685,30 @@ header h1 i {
     background: rgba(45, 49, 53, 0.9) !important;
     border-color: rgba(128, 128, 128, 0.2) !important;
 }
-[data-theme="dark"] .category-item:hover {    background: #3A3A3A !important;    border-color: rgba(255, 255, 255, 0.15) !important;}[data-theme="dark"] .category-item-color {    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;}[data-theme="dark"] .btn-edit,[data-theme="dark"] .btn-delete {    background: #565869 !important;    color: #FFFFFF !important;    border: none !important;}[data-theme="dark"] .btn-edit:hover {    background: #6E6E80 !important;}[data-theme="dark"] .btn-delete:hover {    background: #8E4A4A !important;}
+
+[data-theme="dark"] .category-item:hover {
+    background: #3A3A3A !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .category-item-color {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-edit,
+[data-theme="dark"] .btn-delete {
+    background: #565869 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+}
+
+[data-theme="dark"] .btn-edit:hover {
+    background: #6E6E80 !important;
+}
+
+[data-theme="dark"] .btn-delete:hover {
+    background: #8E4A4A !important;
+}
 
 /* 模态框 */
 [data-theme="dark"] .modal {
@@ -3897,8 +3920,11 @@ header h1 i {
     color: #ECECEC !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
-[data-theme="dark"] #category-select:focus,[data-theme="dark"] .category-selector select:focus {    border-color: rgba(255, 255, 255, 0.3) !important;    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;}
-
+[data-theme="dark"] #category-select:focus,
+[data-theme="dark"] .category-selector select:focus {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;
+}
 [data-theme="dark"] .btn-icon {
     background: #3A3A3A !important;
     color: #B3B3B3 !important;
@@ -3909,8 +3935,14 @@ header h1 i {
     background: #444654 !important;
     color: #ECECEC !important;
 }
-[data-theme="dark"] .btn-icon i {    color: #B3B3B3 !important;}[data-theme="dark"] .btn-icon:hover i {    color: #ECECEC !important;}
 
+[data-theme="dark"] .btn-icon i {
+    color: #B3B3B3 !important;
+}
+
+[data-theme="dark"] .btn-icon:hover i {
+    color: #ECECEC !important;
+}
 [data-theme="dark"] .timer-display {
     background: transparent !important;
 }
@@ -4488,8 +4520,8 @@ header h1 i {
 }
 
 [data-theme="dark"] .btn-delete:hover {
-    background: rgba(217, 108, 117, 0.25) !important;
-    color: #E8A0A7 !important;
+    background: #8E4A4A !important;
+    color: #FFFFFF !important;
 }
 
 [data-theme="dark"] .info-label {
@@ -4800,12 +4832,12 @@ header h1 i {
 [data-theme="dark"] .btn-word-leaderboard,
 [data-theme="dark"] .btn-theme:hover,
 [data-theme="dark"] .btn-share {
-    color: #1A1D1F !important;
+    color: #ECECEC !important;
 }
 
 /* 标签页激活状态 */
 [data-theme="dark"] .tab-item.active {
-    color: #B8E6C4 !important;
+    color: #ECECEC !important;
 }
 
 /* 统计数字 */
