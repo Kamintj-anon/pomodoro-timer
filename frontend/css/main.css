@@ -2301,7 +2301,7 @@ header h1 i {
     border-bottom: 2px solid rgba(127, 182, 133, 0.1);
     position: sticky;
     top: 80px;
-    z-index: 100;
+    z-index: 300;
     box-shadow: 0 4px 16px rgba(127, 182, 133, 0.08),
                 0 2px 8px rgba(0, 0, 0, 0.04);
 }
@@ -3314,7 +3314,7 @@ header h1 i {
 .theme-switcher {
     position: relative;
     margin-left: 15px;
-    z-index: 10000;
+    z-index: 150;
 }
 
 .btn-theme {
@@ -3355,7 +3355,7 @@ header h1 i {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-    z-index: 10001;
+    z-index: 200;
 }
 
 .theme-menu.active {
