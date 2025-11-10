@@ -3850,3 +3850,72 @@ header h1 i {
     color: #00FF7F !important;
 }
 
+
+/* ==================== 最终彻底的深色模式全覆盖 ==================== */
+
+[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] html {
+    background: var(--background) !important;
+}
+
+[data-theme="dark"] section,
+[data-theme="dark"] main,
+[data-theme="dark"] .page,
+[data-theme="dark"] .container {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .word-stats-overview {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .section-header {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .word-input-group {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .input-row label {
+    color: var(--text-primary) !important;
+}
+
+/* ==================== 最终彻底的高对比度模式全覆盖 ==================== */
+
+[data-theme="high-contrast"] {
+    color-scheme: dark;
+}
+
+[data-theme="high-contrast"] body,
+[data-theme="high-contrast"] html {
+    background: var(--background) !important;
+}
+
+[data-theme="high-contrast"] section,
+[data-theme="high-contrast"] main,
+[data-theme="high-contrast"] .page,
+[data-theme="high-contrast"] .container {
+    background: transparent !important;
+}
+
+[data-theme="high-contrast"] .word-stats-overview {
+    background: transparent !important;
+}
+
+[data-theme="high-contrast"] .section-header {
+    background: transparent !important;
+}
+
+[data-theme="high-contrast"] .word-input-group {
+    background: transparent !important;
+}
+
+[data-theme="high-contrast"] .input-row label {
+    color: #FFFFFF !important;
+}
+
