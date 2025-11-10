@@ -5560,3 +5560,209 @@ header h1 i {
     border: 3px solid #CD7F32 !important;
     box-shadow: 0 0 15px rgba(205, 127, 50, 0.5) !important;
 }
+
+/* ==================== 强制覆盖所有使用CSS变量的元素 ==================== */
+
+/* 覆盖所有使用primary变量的背景 */
+[data-theme="dark"] .auth-container::before,
+[data-theme="dark"] .timer-card::before,
+[data-theme="dark"] .header::before,
+[data-theme="dark"] .modal-header::before {
+    background: #565869 !important;
+}
+
+/* 覆盖所有使用primary变量的边框 */
+[data-theme="dark"] *[style*="border-color: var(--primary"],
+[data-theme="dark"] .input-focus,
+[data-theme="dark"] .active-border {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 覆盖所有使用primary变量的文字颜色 */
+[data-theme="dark"] .highlight,
+[data-theme="dark"] .accent-text,
+[data-theme="dark"] .primary-text,
+[data-theme="dark"] .link-primary {
+    color: #ECECEC !important;
+}
+
+/* 覆盖进度条 */
+[data-theme="dark"] .progress-fill,
+[data-theme="dark"] .session-progress-fill {
+    background: #565869 !important;
+}
+
+/* 覆盖所有图标颜色 */
+[data-theme="dark"] i,
+[data-theme="dark"] .fas,
+[data-theme="dark"] .far,
+[data-theme="dark"] .icon {
+    color: inherit !important;
+}
+
+/* 覆盖所有使用primary的按钮状态 */
+[data-theme="dark"] button[style*="background"],
+[data-theme="dark"] .btn[style*="background"] {
+    background: #565869 !important;
+}
+
+/* ==================== 彻底覆盖所有具体类的绿色 ==================== */
+
+/* 标题渐变文字 */
+[data-theme="dark"] .auth-container h1,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+    background: none !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
+
+/* 表单输入框 */
+[data-theme="dark"] .form-container input:focus,
+[data-theme="dark"] .form-group input:focus {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .form-container input:hover,
+[data-theme="dark"] .form-group input:hover {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* 链接 */
+[data-theme="dark"] .toggle-form a,
+[data-theme="dark"] a {
+    color: #8AB4F8 !important;
+}
+
+[data-theme="dark"] .toggle-form a::after,
+[data-theme="dark"] a::after {
+    background: #8AB4F8 !important;
+}
+
+/* 按钮 */
+[data-theme="dark"] .form-container button {
+    background: #565869 !important;
+}
+
+/* Logo/品牌 */
+[data-theme="dark"] .logo,
+[data-theme="dark"] .brand {
+    color: #ECECEC !important;
+}
+
+/* 会话指示器 */
+[data-theme="dark"] .session-indicator,
+[data-theme="dark"] .active-session {
+    background: #565869 !important;
+    border-color: #565869 !important;
+}
+
+/* 所有可能使用primary的元素 */
+[data-theme="dark"] .badge,
+[data-theme="dark"] .chip,
+[data-theme="dark"] .tag {
+    background: #3A3A3A !important;
+    color: #ECECEC !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 进度相关 */
+[data-theme="dark"] .session-progress,
+[data-theme="dark"] .word-progress {
+    background: #3A3A3A !important;
+}
+
+[data-theme="dark"] .session-progress-fill,
+[data-theme="dark"] .word-progress-fill {
+    background: #565869 !important;
+}
+
+/* 统计相关 */
+[data-theme="dark"] .stat-icon,
+[data-theme="dark"] .achievement-icon {
+    color: #B3B3B3 !important;
+}
+
+/* 分隔线 */
+[data-theme="dark"] hr,
+[data-theme="dark"] .divider {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 下拉菜单 */
+[data-theme="dark"] select,
+[data-theme="dark"] .select-wrapper {
+    background: #3A3A3A !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ECECEC !important;
+}
+
+/* 单选/复选框 */
+[data-theme="dark"] input[type="radio"]:checked,
+[data-theme="dark"] input[type="checkbox"]:checked {
+    background: #565869 !important;
+    border-color: #565869 !important;
+}
+
+/* 切换开关 */
+[data-theme="dark"] .toggle-switch.active,
+[data-theme="dark"] .switch-on {
+    background: #565869 !important;
+}
+
+/* 工具提示 */
+[data-theme="dark"] .tooltip,
+[data-theme="dark"] .hint-box {
+    background: #3A3A3A !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ECECEC !important;
+}
+
+/* 卡片标题栏 */
+[data-theme="dark"] .card-header,
+[data-theme="dark"] .panel-header {
+    background: #2F2F2F !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 时间选择器 */
+[data-theme="dark"] .time-picker,
+[data-theme="dark"] .duration-selector {
+    background: #3A3A3A !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 单词卡片 */
+[data-theme="dark"] .word-card,
+[data-theme="dark"] .vocabulary-card {
+    background: #2F2F2F !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 排行榜条目 */
+[data-theme="dark"] .rank-item,
+[data-theme="dark"] .leaderboard-entry {
+    background: #2F2F2F !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 标签页指示器 */
+[data-theme="dark"] .tab-indicator {
+    background: #565869 !important;
+}
+
+/* 滚动条 */
+[data-theme="dark"] ::-webkit-scrollbar {
+    background: #2F2F2F !important;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: #565869 !important;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: #6E6E80 !important;
+}
