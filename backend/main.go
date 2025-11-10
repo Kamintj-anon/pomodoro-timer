@@ -31,6 +31,9 @@ func main() {
 		auth.POST("/login", middleware.RateLimit(5, 60), controllers.Login)
 	}
 
+	// 公开的数据接口（无需认证）
+	r.GET("/api/leaderboard", controllers.GetLeaderboard)
+
 	// 需要认证的路由
 	api := r.Group("/api")
 	api.Use(middleware.AuthMiddleware())
@@ -54,7 +57,6 @@ func main() {
 		api.GET("/stats/total", controllers.GetTotalDuration)
 		api.GET("/stats/categories", controllers.GetCategoryStats)
 		api.GET("/stats/daily", controllers.GetDailyStats)
-		api.GET("/leaderboard", controllers.GetLeaderboard)
 
 		// 用户设置
 		api.GET("/settings", controllers.GetSettings)
