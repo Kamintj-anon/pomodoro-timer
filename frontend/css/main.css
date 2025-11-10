@@ -6469,6 +6469,15 @@ header h1 i {
     filter: none !important;
 }
 
+[data-theme="dark"] .stat-icon i {
+    color: #B3B3B3 !important;
+}
+
+/* 统计数值 */
+[data-theme="dark"] .stat-value {
+    color: #FFFFFF !important;
+}
+
 /* 统计标签 */
 [data-theme="dark"] .stat-label {
     color: #8E8EA0 !important;
