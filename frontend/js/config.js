@@ -66,16 +66,19 @@ async function request(endpoint, options = {}) {
     }
 
     try {
+        console.log(`[API请求] ${config.method} ${API_CONFIG.BASE_URL}${endpoint}`);
         const response = await fetch(`${API_CONFIG.BASE_URL}${endpoint}`, config);
         const data = await response.json();
 
         if (!response.ok) {
+            console.error(`[API错误] ${response.status}:`, data.error || '请求失败');
             throw new Error(data.error || '请求失败');
         }
 
+        console.log(`[API成功] ${config.method} ${endpoint}:`, data);
         return data;
     } catch (error) {
-        console.error('请求错误:', error);
+        console.error(`[请求异常] ${endpoint}:`, error);
         throw error;
     }
 }
