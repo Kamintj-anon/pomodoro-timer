@@ -1,7 +1,7 @@
 /* ==================== 舒适优雅番茄钟 - 超精致 UI/UX ==================== */
 :root {
     /* 柔和的主色调 - 薄荷绿系 */
-    --primary-soft: #909090;
+    --primary-soft: #7FB685;
     --primary-softer: #96C59E;
     --primary-pale: #B4D7BA;
     --accent-warm: #E8B298;
@@ -20,7 +20,7 @@
     --text-primary: #2F3437;
     --text-secondary: #6B7280;
     --text-tertiary: #9CA3AF;
-    --text-accent: #909090;
+    --text-accent: #7FB685;
 
     /* 细腻的边框 */
     --border-light: rgba(0, 0, 0, 0.06);
@@ -29,7 +29,7 @@
     --divider: rgba(0, 0, 0, 0.08);
 
     /* 状态色 - 柔和版本 */
-    --success: #909090;
+    --success: #7FB685;
     --warning: #E8B298;
     --error: #E89B9B;
     --info: #A4C3D2;
