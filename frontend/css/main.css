@@ -6337,3 +6337,38 @@ header h1 i {
 [data-theme="dark"] .record-count i {
     background-image: none !important;
 }
+
+/* ==================== 强制覆盖今日打卡卡片hover ==================== */
+
+[data-theme="dark"] .word-submit-card:hover,
+[data-theme="dark"] .word-submit-card:hover * {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* 提交按钮hover */
+[data-theme="dark"] .word-input-group button:hover,
+[data-theme="dark"] .word-input-group .btn-primary:hover,
+[data-theme="dark"] .word-submit-card button:hover {
+    background: #6E6E80 !important;
+    border-color: #6E6E80 !important;
+    box-shadow: none !important;
+}
+
+/* 提交按钮 */
+[data-theme="dark"] .word-submit-card .btn-primary,
+[data-theme="dark"] .word-submit-card button {
+    background: #565869 !important;
+    color: #FFFFFF !important;
+}
+
+/* 输入框focus */
+[data-theme="dark"] .word-submit-card input:focus,
+[data-theme="dark"] .word-submit-card textarea:focus {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 确保卡片内所有元素没有绿色边框 */
+[data-theme="dark"] .word-submit-card *:hover {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
