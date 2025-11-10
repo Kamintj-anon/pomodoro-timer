@@ -3702,3 +3702,151 @@ header h1 i {
     color: #FFFFFF !important;
 }
 
+
+/* ==================== 完全彻底的深色模式覆盖 ==================== */
+
+/* 所有页面元素 */
+[data-theme="dark"] .auth-container,
+[data-theme="dark"] .timer-section,
+[data-theme="dark"] .stats-section,
+[data-theme="dark"] .history-section,
+[data-theme="dark"] .words-section,
+[data-theme="dark"] .modal-content,
+[data-theme="dark"] .profile-section,
+[data-theme="dark"] .category-list,
+[data-theme="dark"] .leaderboard-list,
+[data-theme="dark"] .leaderboard-item {
+    background: rgba(30, 33, 36, 0.95) !important;
+    color: var(--text-primary) !important;
+}
+
+/* 所有卡片类元素 */
+[data-theme="dark"] .timer-card,
+[data-theme="dark"] .category-selector,
+[data-theme="dark"] .timer-display,
+[data-theme="dark"] .note-input,
+[data-theme="dark"] .add-category,
+[data-theme="dark"] .category-item,
+[data-theme="dark"] .profile-info,
+[data-theme="dark"] .profile-stats,
+[data-theme="dark"] .settings-group {
+    background: rgba(45, 49, 53, 0.9) !important;
+    border-color: rgba(111, 168, 118, 0.2) !important;
+}
+
+/* 模态框 */
+[data-theme="dark"] .modal {
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="dark"] .modal-header {
+    background: transparent !important;
+    border-bottom-color: rgba(111, 168, 118, 0.2) !important;
+}
+
+[data-theme="dark"] .modal-body {
+    background: transparent !important;
+}
+
+/* 标签 */
+[data-theme="dark"] .tab-item {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .tab-item.active {
+    color: var(--primary-soft) !important;
+    background: rgba(111, 168, 118, 0.15) !important;
+}
+
+/* 所有白色文字改为浅色 */
+[data-theme="dark"] * {
+    border-color: rgba(111, 168, 118, 0.2);
+}
+
+[data-theme="dark"] .info-value,
+[data-theme="dark"] .stat-value,
+[data-theme="dark"] .stat-detail,
+[data-theme="dark"] .timer-label,
+[data-theme="dark"] .category-item-name,
+[data-theme="dark"] p,
+[data-theme="dark"] span:not(.fa):not(.fas):not(.far) {
+    color: var(--text-primary) !important;
+}
+
+/* ==================== 完全彻底的高对比度模式覆盖 ==================== */
+
+/* 所有页面元素 */
+[data-theme="high-contrast"] .auth-container,
+[data-theme="high-contrast"] .timer-section,
+[data-theme="high-contrast"] .stats-section,
+[data-theme="high-contrast"] .history-section,
+[data-theme="high-contrast"] .words-section,
+[data-theme="high-contrast"] .modal-content,
+[data-theme="high-contrast"] .profile-section,
+[data-theme="high-contrast"] .category-list,
+[data-theme="high-contrast"] .leaderboard-list,
+[data-theme="high-contrast"] .leaderboard-item {
+    background: #121212 !important;
+    color: #FFFFFF !important;
+    border: 2px solid #00A651 !important;
+}
+
+/* 所有卡片类元素 */
+[data-theme="high-contrast"] .timer-card,
+[data-theme="high-contrast"] .category-selector,
+[data-theme="high-contrast"] .timer-display,
+[data-theme="high-contrast"] .note-input,
+[data-theme="high-contrast"] .add-category,
+[data-theme="high-contrast"] .category-item,
+[data-theme="high-contrast"] .profile-info,
+[data-theme="high-contrast"] .profile-stats,
+[data-theme="high-contrast"] .settings-group {
+    background: #1A1A1A !important;
+    border: 2px solid #00A651 !important;
+}
+
+/* 模态框 */
+[data-theme="high-contrast"] .modal {
+    background: rgba(0, 0, 0, 0.95) !important;
+}
+
+[data-theme="high-contrast"] .modal-header {
+    background: transparent !important;
+    border-bottom: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .modal-body {
+    background: transparent !important;
+}
+
+/* 标签 */
+[data-theme="high-contrast"] .tab-item {
+    color: #E0E0E0 !important;
+    border: 2px solid transparent !important;
+}
+
+[data-theme="high-contrast"] .tab-item.active {
+    color: #00FF7F !important;
+    background: rgba(0, 166, 81, 0.3) !important;
+    border: 2px solid #00A651 !important;
+}
+
+/* 所有文字纯白 */
+[data-theme="high-contrast"] * {
+    border-color: #00A651;
+}
+
+[data-theme="high-contrast"] .info-value,
+[data-theme="high-contrast"] .stat-value,
+[data-theme="high-contrast"] .timer-label,
+[data-theme="high-contrast"] .category-item-name,
+[data-theme="high-contrast"] p,
+[data-theme="high-contrast"] span:not(.fa):not(.fas):not(.far) {
+    color: #FFFFFF !important;
+}
+
+[data-theme="high-contrast"] .stat-detail,
+[data-theme="high-contrast"] .stat-number {
+    color: #00FF7F !important;
+}
+
