@@ -1,7 +1,7 @@
 /* ==================== 舒适优雅番茄钟 - 超精致 UI/UX ==================== */
 :root {
     /* 柔和的主色调 - 薄荷绿系 */
-    --primary-soft: #9B8FC1;
+    --primary-soft: #909090;
     --primary-softer: #96C59E;
     --primary-pale: #B4D7BA;
     --accent-warm: #E8B298;
@@ -20,7 +20,7 @@
     --text-primary: #2F3437;
     --text-secondary: #6B7280;
     --text-tertiary: #9CA3AF;
-    --text-accent: #9B8FC1;
+    --text-accent: #909090;
 
     /* 细腻的边框 */
     --border-light: rgba(0, 0, 0, 0.06);
@@ -29,7 +29,7 @@
     --divider: rgba(0, 0, 0, 0.08);
 
     /* 状态色 - 柔和版本 */
-    --success: #9B8FC1;
+    --success: #909090;
     --warning: #E8B298;
     --error: #E89B9B;
     --info: #A4C3D2;
@@ -3215,11 +3215,11 @@ header h1 i {
 /* 深色/夜间模式 */
 [data-theme="dark"] {
     /* 主色调 - 调整为暗色背景下更柔和的薄荷绿 */
-    --primary-soft: #8B7FB6;
-    --primary-softer: #6B5B95;
-    --primary-light: #A694C8;
-    --secondary-soft: #9B8FC1;
-    --accent-soft: #B5A8D5;
+    --primary-soft: #808080;
+    --primary-softer: #606060;
+    --primary-light: #999999;
+    --secondary-soft: #909090;
+    --accent-soft: #A0A0A0;
 
     /* 背景色系 - 深色背景 */
     --background: #1A1D1F;
@@ -3235,14 +3235,14 @@ header h1 i {
 
     /* 边框和分割线 */
     --border-soft: rgba(255, 255, 255, 0.1);
-    --border-hover: rgba(139, 127, 182, 0.4);
+    --border-hover: rgba(128, 128, 128, 0.4);
     --divider: rgba(255, 255, 255, 0.08);
 
     /* 阴影 - 深色模式下的阴影 */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
     --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
-    --shadow-glow: 0 0 30px rgba(139, 127, 182, 0.3);
+    --shadow-glow: 0 0 30px rgba(128, 128, 128, 0.3);
 
     /* 玻璃态效果 */
     --glass-bg: rgba(30, 33, 36, 0.7);
@@ -3250,8 +3250,8 @@ header h1 i {
     --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 
     /* 渐变 */
-    --gradient-primary: linear-gradient(135deg, #8B7FB6 0%, #6B5B95 100%);
-    --gradient-soft: linear-gradient(135deg, rgba(139, 127, 182, 0.15) 0%, rgba(107, 91, 149, 0.15) 100%);
+    --gradient-primary: linear-gradient(135deg, #808080 0%, #606060 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(128, 128, 128, 0.15) 0%, rgba(96, 96, 96, 0.15) 100%);
     --gradient-shine: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
 
     /* 状态色 */
@@ -3388,10 +3388,10 @@ header h1 i {
 }
 
 .theme-option.active {
-    background: linear-gradient(135deg, rgba(127, 182, 133, 0.4), rgba(139, 127, 182, 0.4)) !important;
+    background: linear-gradient(135deg, rgba(127, 182, 133, 0.4), rgba(128, 128, 128, 0.4)) !important;
     color: #2D5A3D !important;
     font-weight: 700 !important;
-    border: 1px solid #9B8FC1;
+    border: 1px solid #909090;
 }
 
 .theme-option i {
@@ -3404,19 +3404,19 @@ header h1 i {
 /* 深色主题下的主题切换器样式 */
 [data-theme="dark"] .btn-theme {
     background: rgba(45, 50, 55, 0.95);
-    border-color: rgba(139, 127, 182, 0.4);
+    border-color: rgba(128, 128, 128, 0.4);
     color: #E8EAED;
 }
 
 [data-theme="dark"] .btn-theme:hover {
-    background: #8B7FB6;
+    background: #808080;
     color: #1A1D1F;
-    border-color: #8B7FB6;
+    border-color: #808080;
 }
 
 [data-theme="dark"] .theme-menu {
     background: rgba(30, 33, 36, 0.98);
-    border-color: rgba(139, 127, 182, 0.5);
+    border-color: rgba(128, 128, 128, 0.5);
 }
 
 [data-theme="dark"] .theme-option {
@@ -3424,12 +3424,12 @@ header h1 i {
 }
 
 [data-theme="dark"] .theme-option:hover {
-    background: rgba(139, 127, 182, 0.35) !important;
+    background: rgba(128, 128, 128, 0.35) !important;
     color: #B8E6C4 !important;
 }
 
 [data-theme="dark"] .theme-option.active {
-    background: linear-gradient(135deg, rgba(139, 127, 182, 0.45), rgba(107, 91, 149, 0.45)) !important;
+    background: linear-gradient(135deg, rgba(128, 128, 128, 0.45), rgba(96, 96, 96, 0.45)) !important;
     color: #B8E6C4 !important;
 }
 
@@ -3474,12 +3474,12 @@ header h1 i {
 
 [data-theme="dark"] header {
     background: rgba(30, 33, 36, 0.95) !important;
-    border-bottom-color: rgba(139, 127, 182, 0.2) !important;
+    border-bottom-color: rgba(128, 128, 128, 0.2) !important;
 }
 
 [data-theme="dark"] .tabs-nav {
     background: rgba(30, 33, 36, 0.95) !important;
-    border-bottom-color: rgba(139, 127, 182, 0.2) !important;
+    border-bottom-color: rgba(128, 128, 128, 0.2) !important;
 }
 
 [data-theme="dark"] .timer-card,
@@ -3575,18 +3575,18 @@ header h1 i {
 /* 统计卡片 */
 [data-theme="dark"] .total-stats {
     background: rgba(30, 33, 36, 0.95) !important;
-    border-color: rgba(139, 127, 182, 0.3) !important;
+    border-color: rgba(128, 128, 128, 0.3) !important;
 }
 
 [data-theme="dark"] .stat-card {
     background: rgba(45, 49, 53, 0.9) !important;
-    border-color: rgba(139, 127, 182, 0.2) !important;
+    border-color: rgba(128, 128, 128, 0.2) !important;
 }
 
 /* 单词统计卡片 */
 [data-theme="dark"] .word-stat-card {
     background: rgba(45, 49, 53, 0.9) !important;
-    border-color: rgba(139, 127, 182, 0.2) !important;
+    border-color: rgba(128, 128, 128, 0.2) !important;
 }
 
 [data-theme="dark"] .word-stat-card .stat-number,
@@ -3597,13 +3597,13 @@ header h1 i {
 /* 单词打卡卡片 */
 [data-theme="dark"] .word-submit-card {
     background: rgba(30, 33, 36, 0.95) !important;
-    border-color: rgba(139, 127, 182, 0.3) !important;
+    border-color: rgba(128, 128, 128, 0.3) !important;
 }
 
 /* 单词记录列表 */
 [data-theme="dark"] .word-record-item {
     background: rgba(45, 49, 53, 0.9) !important;
-    border-color: rgba(139, 127, 182, 0.2) !important;
+    border-color: rgba(128, 128, 128, 0.2) !important;
 }
 
 [data-theme="dark"] .word-record-item .record-date,
@@ -3615,13 +3615,13 @@ header h1 i {
 /* 历史记录 */
 [data-theme="dark"] .history-item {
     background: rgba(45, 49, 53, 0.9) !important;
-    border-color: rgba(139, 127, 182, 0.2) !important;
+    border-color: rgba(128, 128, 128, 0.2) !important;
 }
 
 /* 分类统计 */
 [data-theme="dark"] .category-stat-item {
     background: rgba(45, 49, 53, 0.9) !important;
-    border-color: rgba(139, 127, 182, 0.2) !important;
+    border-color: rgba(128, 128, 128, 0.2) !important;
 }
 
 /* 所有h2, h3标题 */
@@ -3731,7 +3731,7 @@ header h1 i {
 [data-theme="dark"] .profile-stats,
 [data-theme="dark"] .settings-group {
     background: rgba(45, 49, 53, 0.9) !important;
-    border-color: rgba(139, 127, 182, 0.2) !important;
+    border-color: rgba(128, 128, 128, 0.2) !important;
 }
 
 /* 模态框 */
@@ -3741,7 +3741,7 @@ header h1 i {
 
 [data-theme="dark"] .modal-header {
     background: transparent !important;
-    border-bottom-color: rgba(139, 127, 182, 0.2) !important;
+    border-bottom-color: rgba(128, 128, 128, 0.2) !important;
 }
 
 [data-theme="dark"] .modal-body {
@@ -3755,12 +3755,12 @@ header h1 i {
 
 [data-theme="dark"] .tab-item.active {
     color: var(--primary-soft) !important;
-    background: rgba(139, 127, 182, 0.15) !important;
+    background: rgba(128, 128, 128, 0.15) !important;
 }
 
 /* 所有白色文字改为浅色 */
 [data-theme="dark"] * {
-    border-color: rgba(139, 127, 182, 0.2);
+    border-color: rgba(128, 128, 128, 0.2);
 }
 
 [data-theme="dark"] .info-value,
@@ -3924,7 +3924,7 @@ header h1 i {
 /* === 番茄钟页面 === */
 [data-theme="dark"] .timer-card {
     background: rgba(30, 33, 36, 0.95) !important;
-    border: 1px solid rgba(139, 127, 182, 0.25) !important;
+    border: 1px solid rgba(128, 128, 128, 0.25) !important;
 }
 
 [data-theme="dark"] .timer-card h2 {
@@ -3942,17 +3942,17 @@ header h1 i {
 [data-theme="dark"] #category-select {
     background: #2D3135 !important;
     color: #E8EAED !important;
-    border: 1px solid rgba(139, 127, 182, 0.3) !important;
+    border: 1px solid rgba(128, 128, 128, 0.3) !important;
 }
 
 [data-theme="dark"] .btn-icon {
-    background: rgba(139, 127, 182, 0.2) !important;
+    background: rgba(128, 128, 128, 0.2) !important;
     color: #9BC4A8 !important;
-    border: 1px solid rgba(139, 127, 182, 0.3) !important;
+    border: 1px solid rgba(128, 128, 128, 0.3) !important;
 }
 
 [data-theme="dark"] .btn-icon:hover {
-    background: rgba(139, 127, 182, 0.35) !important;
+    background: rgba(128, 128, 128, 0.35) !important;
     color: #B8E6C4 !important;
 }
 
@@ -3969,7 +3969,7 @@ header h1 i {
 }
 
 [data-theme="dark"] .btn-primary {
-    background: linear-gradient(135deg, #8B7FB6 0%, #6B5B95 100%) !important;
+    background: linear-gradient(135deg, #808080 0%, #606060 100%) !important;
     color: #1A1D1F !important;
     border: none !important;
 }
@@ -3982,19 +3982,19 @@ header h1 i {
 [data-theme="dark"] .btn-outline {
     background: rgba(45, 49, 53, 0.9) !important;
     color: #E8EAED !important;
-    border: 1px solid rgba(139, 127, 182, 0.3) !important;
+    border: 1px solid rgba(128, 128, 128, 0.3) !important;
 }
 
 [data-theme="dark"] .btn-secondary:hover,
 [data-theme="dark"] .btn-outline:hover {
     background: rgba(55, 59, 63, 0.9) !important;
-    border-color: rgba(139, 127, 182, 0.5) !important;
+    border-color: rgba(128, 128, 128, 0.5) !important;
 }
 
 [data-theme="dark"] .note-input input {
     background: #2D3135 !important;
     color: #E8EAED !important;
-    border: 1px solid rgba(139, 127, 182, 0.3) !important;
+    border: 1px solid rgba(128, 128, 128, 0.3) !important;
 }
 
 [data-theme="dark"] .note-input input::placeholder {
@@ -4009,11 +4009,11 @@ header h1 i {
 
 [data-theme="dark"] .total-stats {
     background: rgba(30, 33, 36, 0.95) !important;
-    border: 1px solid rgba(139, 127, 182, 0.25) !important;
+    border: 1px solid rgba(128, 128, 128, 0.25) !important;
 }
 
 [data-theme="dark"] .stat-icon {
-    background: rgba(139, 127, 182, 0.2) !important;
+    background: rgba(128, 128, 128, 0.2) !important;
     color: #9BC4A8 !important;
 }
 
@@ -4035,7 +4035,7 @@ header h1 i {
 
 [data-theme="dark"] .category-stat-item {
     background: rgba(45, 49, 53, 0.9) !important;
-    border: 1px solid rgba(139, 127, 182, 0.2) !important;
+    border: 1px solid rgba(128, 128, 128, 0.2) !important;
 }
 
 /* === 历史记录页面 === */
@@ -4049,7 +4049,7 @@ header h1 i {
 
 [data-theme="dark"] .history-item {
     background: rgba(45, 49, 53, 0.9) !important;
-    border: 1px solid rgba(139, 127, 182, 0.2) !important;
+    border: 1px solid rgba(128, 128, 128, 0.2) !important;
 }
 
 [data-theme="dark"] .history-item .history-time,
@@ -4071,19 +4071,19 @@ header h1 i {
 }
 
 [data-theme="dark"] .btn-word-leaderboard {
-    background: rgba(139, 127, 182, 0.2) !important;
+    background: rgba(128, 128, 128, 0.2) !important;
     color: #9BC4A8 !important;
-    border: 1px solid rgba(139, 127, 182, 0.3) !important;
+    border: 1px solid rgba(128, 128, 128, 0.3) !important;
 }
 
 [data-theme="dark"] .btn-word-leaderboard:hover {
-    background: rgba(139, 127, 182, 0.35) !important;
+    background: rgba(128, 128, 128, 0.35) !important;
     color: #B8E6C4 !important;
 }
 
 [data-theme="dark"] .word-submit-card {
     background: rgba(30, 33, 36, 0.95) !important;
-    border: 1px solid rgba(139, 127, 182, 0.25) !important;
+    border: 1px solid rgba(128, 128, 128, 0.25) !important;
 }
 
 [data-theme="dark"] .word-submit-card h3 {
@@ -4102,7 +4102,7 @@ header h1 i {
 [data-theme="dark"] .input-row textarea {
     background: #2D3135 !important;
     color: #E8EAED !important;
-    border: 1px solid rgba(139, 127, 182, 0.3) !important;
+    border: 1px solid rgba(128, 128, 128, 0.3) !important;
 }
 
 [data-theme="dark"] .input-row input::placeholder,
@@ -4116,7 +4116,7 @@ header h1 i {
 
 [data-theme="dark"] .word-stat-card {
     background: rgba(45, 49, 53, 0.9) !important;
-    border: 1px solid rgba(139, 127, 182, 0.2) !important;
+    border: 1px solid rgba(128, 128, 128, 0.2) !important;
 }
 
 [data-theme="dark"] .word-stat-card .stat-icon {
@@ -4137,7 +4137,7 @@ header h1 i {
 
 [data-theme="dark"] .word-record-item {
     background: rgba(45, 49, 53, 0.9) !important;
-    border: 1px solid rgba(139, 127, 182, 0.2) !important;
+    border: 1px solid rgba(128, 128, 128, 0.2) !important;
 }
 
 [data-theme="dark"] .word-record-item .record-date {
@@ -4417,7 +4417,7 @@ header h1 i {
 
 [data-theme="dark"] .auth-container {
     background: rgba(30, 33, 36, 0.95) !important;
-    border: 1px solid rgba(139, 127, 182, 0.25) !important;
+    border: 1px solid rgba(128, 128, 128, 0.25) !important;
 }
 
 [data-theme="dark"] .auth-container h1 {
@@ -4435,7 +4435,7 @@ header h1 i {
 [data-theme="dark"] .form-container input {
     background: #2D3135 !important;
     color: #E8EAED !important;
-    border: 1px solid rgba(139, 127, 182, 0.3) !important;
+    border: 1px solid rgba(128, 128, 128, 0.3) !important;
 }
 
 [data-theme="dark"] .form-container input::placeholder {
@@ -4443,7 +4443,7 @@ header h1 i {
 }
 
 [data-theme="dark"] .form-container button:not(.toggle-password) {
-    background: linear-gradient(135deg, #8B7FB6 0%, #6B5B95 100%) !important;
+    background: linear-gradient(135deg, #808080 0%, #606060 100%) !important;
     color: #1A1D1F !important;
     border: none !important;
 }
@@ -4475,12 +4475,12 @@ header h1 i {
 [data-theme="dark"] .btn-logout {
     background: rgba(45, 49, 53, 0.9) !important;
     color: #E8EAED !important;
-    border: 1px solid rgba(139, 127, 182, 0.3) !important;
+    border: 1px solid rgba(128, 128, 128, 0.3) !important;
 }
 
 [data-theme="dark"] .btn-leaderboard:hover,
 [data-theme="dark"] .btn-profile:hover {
-    background: rgba(139, 127, 182, 0.25) !important;
+    background: rgba(128, 128, 128, 0.25) !important;
     color: #B8E6C4 !important;
 }
 
@@ -4512,11 +4512,11 @@ header h1 i {
 [data-theme="dark"] .add-category input[type="text"] {
     background: #2D3135 !important;
     color: #E8EAED !important;
-    border: 1px solid rgba(139, 127, 182, 0.3) !important;
+    border: 1px solid rgba(128, 128, 128, 0.3) !important;
 }
 
 [data-theme="dark"] .add-category button {
-    background: linear-gradient(135deg, #8B7FB6 0%, #6B5B95 100%) !important;
+    background: linear-gradient(135deg, #808080 0%, #606060 100%) !important;
     color: #1A1D1F !important;
 }
 
@@ -4524,11 +4524,11 @@ header h1 i {
 [data-theme="dark"] .btn-delete {
     background: rgba(45, 49, 53, 0.9) !important;
     color: #9AA0A6 !important;
-    border: 1px solid rgba(139, 127, 182, 0.2) !important;
+    border: 1px solid rgba(128, 128, 128, 0.2) !important;
 }
 
 [data-theme="dark"] .btn-edit:hover {
-    background: rgba(139, 127, 182, 0.25) !important;
+    background: rgba(128, 128, 128, 0.25) !important;
     color: #B8E6C4 !important;
 }
 
@@ -4996,28 +4996,28 @@ header h1 i {
 }
 
 [data-theme="dark"] #auth-page::before {
-    background: radial-gradient(circle, rgba(139, 127, 182, 0.08) 0%, transparent 70%) !important;
+    background: radial-gradient(circle, rgba(128, 128, 128, 0.08) 0%, transparent 70%) !important;
 }
 
 [data-theme="dark"] #auth-page::after {
-    background: radial-gradient(circle, rgba(107, 91, 149, 0.08) 0%, transparent 70%) !important;
+    background: radial-gradient(circle, rgba(96, 96, 96, 0.08) 0%, transparent 70%) !important;
 }
 
 [data-theme="dark"] .auth-container {
     background: rgba(30, 33, 36, 0.95) !important;
-    border: 2px solid rgba(139, 127, 182, 0.3) !important;
+    border: 2px solid rgba(128, 128, 128, 0.3) !important;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6),
                 0 8px 24px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(139, 127, 182, 0.1) !important;
+                inset 0 1px 0 rgba(128, 128, 128, 0.1) !important;
 }
 
 [data-theme="dark"] .auth-container::before {
-    background: linear-gradient(90deg, #8B7FB6, #6B5B95, #8B7FB6) !important;
-    box-shadow: 0 4px 12px rgba(139, 127, 182, 0.4) !important;
+    background: linear-gradient(90deg, #808080, #606060, #808080) !important;
+    box-shadow: 0 4px 12px rgba(128, 128, 128, 0.4) !important;
 }
 
 [data-theme="dark"] .auth-container::after {
-    background: radial-gradient(circle at center, rgba(139, 127, 182, 0.03) 0%, transparent 60%) !important;
+    background: radial-gradient(circle at center, rgba(128, 128, 128, 0.03) 0%, transparent 60%) !important;
 }
 
 /* 主应用容器 */
@@ -5031,7 +5031,7 @@ header h1 i {
 }
 
 [data-theme="dark"] .logo-glow {
-    box-shadow: 0 4px 12px rgba(139, 127, 182, 0.4) !important;
+    box-shadow: 0 4px 12px rgba(128, 128, 128, 0.4) !important;
 }
 
 /* 导航标签 */
@@ -5047,23 +5047,23 @@ header h1 i {
 }
 
 [data-theme="dark"] .tab-item:hover {
-    background: rgba(139, 127, 182, 0.15) !important;
+    background: rgba(128, 128, 128, 0.15) !important;
 }
 
 [data-theme="dark"] .tab-item.active {
-    box-shadow: 0 0 0 4px rgba(139, 127, 182, 0.2) !important;
+    box-shadow: 0 0 0 4px rgba(128, 128, 128, 0.2) !important;
 }
 
 /* 按钮渐变和阴影 */
 [data-theme="dark"] .btn-primary {
-    background: linear-gradient(135deg, #8B7FB6 0%, #6B5B95 100%) !important;
-    box-shadow: 0 6px 24px rgba(139, 127, 182, 0.4),
+    background: linear-gradient(135deg, #808080 0%, #606060 100%) !important;
+    box-shadow: 0 6px 24px rgba(128, 128, 128, 0.4),
                 0 2px 8px rgba(0, 0, 0, 0.3) !important;
 }
 
 [data-theme="dark"] .btn-primary:hover {
-    background: linear-gradient(135deg, #9B8FC1 0%, #8B7FB6 100%) !important;
-    box-shadow: 0 10px 36px rgba(139, 127, 182, 0.5),
+    background: linear-gradient(135deg, #909090 0%, #808080 100%) !important;
+    box-shadow: 0 10px 36px rgba(128, 128, 128, 0.5),
                 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -5072,7 +5072,7 @@ header h1 i {
 }
 
 [data-theme="dark"] .btn-primary:active {
-    box-shadow: 0 4px 16px rgba(139, 127, 182, 0.3) !important;
+    box-shadow: 0 4px 16px rgba(128, 128, 128, 0.3) !important;
 }
 
 [data-theme="dark"] .btn-secondary {
@@ -5098,7 +5098,7 @@ header h1 i {
 }
 
 [data-theme="dark"] .btn-theme:hover {
-    background: rgba(139, 127, 182, 0.15) !important;
+    background: rgba(128, 128, 128, 0.15) !important;
 }
 
 /* 计时器页面 */
@@ -5106,16 +5106,16 @@ header h1 i {
     background: rgba(30, 33, 36, 0.95) !important;
     box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4),
                 0 4px 16px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(139, 127, 182, 0.1) !important;
+                inset 0 1px 0 rgba(128, 128, 128, 0.1) !important;
 }
 
 [data-theme="dark"] .timer-card::before {
-    background: linear-gradient(90deg, #8B7FB6, #6B5B95, #8B7FB6) !important;
-    box-shadow: 0 4px 12px rgba(139, 127, 182, 0.4) !important;
+    background: linear-gradient(90deg, #808080, #606060, #808080) !important;
+    box-shadow: 0 4px 12px rgba(128, 128, 128, 0.4) !important;
 }
 
 [data-theme="dark"] .timer-card::after {
-    background: radial-gradient(circle at center, rgba(139, 127, 182, 0.03) 0%, transparent 60%) !important;
+    background: radial-gradient(circle at center, rgba(128, 128, 128, 0.03) 0%, transparent 60%) !important;
 }
 
 [data-theme="dark"] .timer-display::after {
@@ -5124,7 +5124,7 @@ header h1 i {
 }
 
 [data-theme="dark"] .pomodoro-label::after {
-    background: radial-gradient(circle, rgba(139, 127, 182, 0.03) 0%, transparent 60%) !important;
+    background: radial-gradient(circle, rgba(128, 128, 128, 0.03) 0%, transparent 60%) !important;
 }
 
 [data-theme="dark"] .controls-wrapper {
@@ -5146,7 +5146,7 @@ header h1 i {
     background: linear-gradient(135deg, rgba(45, 49, 53, 0.8) 0%, rgba(35, 39, 43, 0.8) 100%) !important;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3),
                 0 2px 8px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(139, 127, 182, 0.05) !important;
+                inset 0 1px 0 rgba(128, 128, 128, 0.05) !important;
 }
 
 [data-theme="dark"] .stat-card:hover {
@@ -5162,11 +5162,11 @@ header h1 i {
     background: rgba(30, 33, 36, 0.98) !important;
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6),
                 0 8px 32px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(139, 127, 182, 0.1) !important;
+                inset 0 1px 0 rgba(128, 128, 128, 0.1) !important;
 }
 
 [data-theme="dark"] .modal-close:hover {
-    box-shadow: 0 4px 12px rgba(139, 127, 182, 0.4) !important;
+    box-shadow: 0 4px 12px rgba(128, 128, 128, 0.4) !important;
 }
 
 /* 表单元素 */
@@ -5174,7 +5174,7 @@ header h1 i {
 [data-theme="dark"] .form-group textarea,
 [data-theme="dark"] .form-group select {
     background: rgba(45, 49, 53, 0.6) !important;
-    border: 2px solid rgba(139, 127, 182, 0.2) !important;
+    border: 2px solid rgba(128, 128, 128, 0.2) !important;
     color: #E8EAED !important;
 }
 
@@ -5182,13 +5182,13 @@ header h1 i {
 [data-theme="dark"] .form-group textarea:focus,
 [data-theme="dark"] .form-group select:focus {
     background: rgba(45, 49, 53, 0.8) !important;
-    border-color: #8B7FB6 !important;
-    box-shadow: 0 0 0 4px rgba(139, 127, 182, 0.2) !important;
+    border-color: #808080 !important;
+    box-shadow: 0 0 0 4px rgba(128, 128, 128, 0.2) !important;
 }
 
 /* Toast通知 */
 [data-theme="dark"] .toast.success {
-    background: rgba(139, 127, 182, 0.95) !important;
+    background: rgba(128, 128, 128, 0.95) !important;
 }
 
 [data-theme="dark"] .toast.error {
