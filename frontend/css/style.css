@@ -649,8 +649,6 @@ n.stats-section {
     margin-top: 40px;
     color: var(--text-secondary);
 }
-    border-radius: 20px;
-    padding: 48px;
 .total-stats {
     background: linear-gradient(135deg, var(--card-bg), var(--card-elevated));
     border: 1px solid var(--border-light);
