@@ -54,6 +54,13 @@ func main() {
 		// 用户设置
 		api.GET("/settings", controllers.GetSettings)
 		api.PUT("/settings", controllers.UpdateSettings)
+
+		// 单词记录
+		api.POST("/words", controllers.SubmitWordCount)
+		api.GET("/words", controllers.GetWordRecords)
+		api.GET("/words/today", controllers.GetTodayWordCount)
+		api.GET("/words/stats", controllers.GetWordStats)
+		api.DELETE("/words/:id", controllers.DeleteWordRecord)
 	}
 
 	// 静态文件托管

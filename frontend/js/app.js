@@ -385,5 +385,7 @@ function switchTab(tabName) {
         loadStats();
     } else if (tabName === 'history') {
         loadHistory();
+    } else if (tabName === 'words') {
+        initWords();
     }
 }

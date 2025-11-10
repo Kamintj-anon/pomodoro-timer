@@ -33,7 +33,13 @@ const API_ENDPOINTS = {
     STATS_DAILY: '/stats/daily',
 
     // 设置
-    SETTINGS: '/settings'
+    SETTINGS: '/settings',
+
+    // 单词记录
+    WORDS: '/words',
+    WORDS_TODAY: '/words/today',
+    WORDS_STATS: '/words/stats',
+    WORD: (id) => `/words/${id}`
 };
 
 // HTTP 请求封装
