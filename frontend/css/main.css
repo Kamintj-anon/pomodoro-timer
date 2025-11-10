@@ -5766,3 +5766,34 @@ header h1 i {
 [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
     background: #6E6E80 !important;
 }
+
+/* ==================== 修复header导航栏悬浮绿色 ==================== */
+
+/* header顶部装饰线 */
+[data-theme="dark"] header::before {
+    background: transparent !important;
+    display: none !important;
+}
+
+[data-theme="dark"] header:hover::before {
+    opacity: 0 !important;
+}
+
+/* header标题渐变文字 */
+[data-theme="dark"] header h1 {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #ECECEC !important;
+    background-clip: unset !important;
+    color: #ECECEC !important;
+}
+
+[data-theme="dark"] header h1:hover {
+    transform: none !important;
+}
+
+/* 确保logo区域没有绿色 */
+[data-theme="dark"] .logo-container,
+[data-theme="dark"] .brand-name {
+    color: #ECECEC !important;
+}
