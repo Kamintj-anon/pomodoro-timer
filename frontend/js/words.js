@@ -147,35 +147,39 @@ function formatDate(dateStr) {
         return '未知日期';
     }
 
-    // 尝试创建日期对象
-    const date = new Date(dateStr + 'T00:00:00');
+    // 提取日期部分（去除时间戳）
+    // 支持格式：2025-11-10 或 2025-11-10T00:00:00Z
+    const datePart = dateStr.split('T')[0];
+
+    // 创建日期对象（使用本地时间，避免时区问题）
+    const [year, month, day] = datePart.split('-').map(Number);
+    const date = new Date(year, month - 1, day);
 
     // 检查日期是否有效
     if (isNaN(date.getTime())) {
         console.error('无效的日期格式:', dateStr);
-        return dateStr; // 返回原始字符串
+        return datePart; // 返回日期部分
     }
 
     const today = new Date();
+    today.setHours(0, 0, 0, 0); // 归零时间部分
     const yesterday = new Date(today);
     yesterday.setDate(yesterday.getDate() - 1);
 
-    // 格式化为 YYYY-MM-DD 用于比较
-    const dateOnly = date.toISOString().split('T')[0];
-    const todayOnly = today.toISOString().split('T')[0];
-    const yesterdayOnly = yesterday.toISOString().split('T')[0];
+    // 将date也归零时间部分用于比较
+    const compareDate = new Date(date);
+    compareDate.setHours(0, 0, 0, 0);
 
-    if (dateOnly === todayOnly) {
+    if (compareDate.getTime() === today.getTime()) {
         return '今天';
-    } else if (dateOnly === yesterdayOnly) {
+    } else if (compareDate.getTime() === yesterday.getTime()) {
         return '昨天';
     } else {
-        const year = date.getFullYear();
-        const month = (date.getMonth() + 1).toString().padStart(2, '0');
-        const day = date.getDate().toString().padStart(2, '0');
+        const monthStr = (month).toString().padStart(2, '0');
+        const dayStr = (day).toString().padStart(2, '0');
         const weekDays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
         const weekDay = weekDays[date.getDay()];
-        return `${year}-${month}-${day} ${weekDay}`;
+        return `${year}-${monthStr}-${dayStr} ${weekDay}`;
     }
 }
 
