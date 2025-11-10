@@ -144,3 +144,46 @@ func DeleteWordRecord(c *gin.Context) {
 	database.DB.Delete(&record)
 	c.JSON(http.StatusOK, gin.H{"message": "删除成功"})
 }
+
+// GetWordDailyLeaderboard 获取每日单词排行榜
+func GetWordDailyLeaderboard(c *gin.Context) {
+	today := time.Now().Format("2006-01-02")
+
+	type LeaderboardItem struct {
+		UserID    uint   `json:"user_id"`
+		Username  string `json:"username"`
+		WordCount int    `json:"word_count"`
+	}
+
+	var leaderboard []LeaderboardItem
+	database.DB.Table("word_records").
+		Select("word_records.user_id, users.username, word_records.word_count").
+		Joins("LEFT JOIN users ON users.id = word_records.user_id").
+		Where("word_records.date = ?", today).
+		Order("word_records.word_count DESC").
+		Limit(50).
+		Scan(&leaderboard)
+
+	c.JSON(http.StatusOK, leaderboard)
+}
+
+// GetWordTotalLeaderboard 获取累计单词排行榜
+func GetWordTotalLeaderboard(c *gin.Context) {
+	type LeaderboardItem struct {
+		UserID     uint   `json:"user_id"`
+		Username   string `json:"username"`
+		TotalWords int    `json:"total_words"`
+		TotalDays  int    `json:"total_days"`
+	}
+
+	var leaderboard []LeaderboardItem
+	database.DB.Table("word_records").
+		Select("word_records.user_id, users.username, SUM(word_records.word_count) as total_words, COUNT(DISTINCT word_records.date) as total_days").
+		Joins("LEFT JOIN users ON users.id = word_records.user_id").
+		Group("word_records.user_id, users.username").
+		Order("total_words DESC").
+		Limit(50).
+		Scan(&leaderboard)
+
+	c.JSON(http.StatusOK, leaderboard)
+}

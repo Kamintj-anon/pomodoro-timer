@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>番茄钟 - 专注时间管理</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/main.css?v=1762780575">
+    <link rel="stylesheet" href="css/main.css?v=1762781155">
 </head>
 <body>
     <!-- 登录/注册页面 -->
@@ -173,7 +173,12 @@
             <!-- 单词打卡标签页 -->
             <div id="words-tab" class="tab-content">
                 <section class="words-section">
-                    <h2><i class="fas fa-book"></i> 单词打卡</h2>
+                    <div class="section-header">
+                        <h2><i class="fas fa-book"></i> 单词打卡</h2>
+                        <button onclick="showWordLeaderboard()" class="btn-word-leaderboard">
+                            <i class="fas fa-trophy"></i> 排行榜
+                        </button>
+                    </div>
 
                     <!-- 今日打卡 -->
                     <div class="word-submit-card">
@@ -331,6 +336,29 @@
         </div>
     </div>
 
+    <!-- 单词排行榜弹窗 -->
+    <div id="word-leaderboard-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-trophy"></i> 单词排行榜</h2>
+                <button onclick="closeWordLeaderboard()" class="btn-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-tabs">
+                <button class="modal-tab active" onclick="switchWordLeaderboard('daily')">
+                    <i class="fas fa-calendar-day"></i> 今日排行
+                </button>
+                <button class="modal-tab" onclick="switchWordLeaderboard('total')">
+                    <i class="fas fa-chart-bar"></i> 累计排行
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="word-leaderboard-list" class="leaderboard-list"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- 确认对话框 -->
     <div id="confirm-modal" class="modal">
         <div class="modal-content confirm-dialog">
@@ -352,14 +380,14 @@
     <div id="toast" class="toast"></div>
 
     <!-- JavaScript 文件 -->
-    <script src="js/config.js?v=1762780575"></script>
-    <script src="js/auth.js?v=1762780575"></script>
-    <script src="js/timer.js?v=1762780575"></script>
-    <script src="js/stats.js?v=1762780575"></script>
-    <script src="js/app.js?v=1762780575"></script>
-    <script src="js/profile.js?v=1762780575"></script>
-    <script src="js/leaderboard.js?v=1762780575"></script>
-    <script src="js/words.js?v=1762780575"></script>
+    <script src="js/config.js?v=1762781155"></script>
+    <script src="js/auth.js?v=1762781155"></script>
+    <script src="js/timer.js?v=1762781155"></script>
+    <script src="js/stats.js?v=1762781155"></script>
+    <script src="js/app.js?v=1762781155"></script>
+    <script src="js/profile.js?v=1762781155"></script>
+    <script src="js/leaderboard.js?v=1762781155"></script>
+    <script src="js/words.js?v=1762781155"></script>
 
     <!-- 密码显示/隐藏功能 -->
     <script>

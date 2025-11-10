@@ -33,6 +33,8 @@ func main() {
 
 	// 公开的数据接口（无需认证）
 	r.GET("/api/leaderboard", controllers.GetLeaderboard)
+	r.GET("/api/words/leaderboard/daily", controllers.GetWordDailyLeaderboard)
+	r.GET("/api/words/leaderboard/total", controllers.GetWordTotalLeaderboard)
 
 	// 需要认证的路由
 	api := r.Group("/api")

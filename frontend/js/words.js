@@ -204,3 +204,129 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ==================== 单词排行榜功能 ====================
+
+let currentWordLeaderboardType = 'daily';
+
+// 显示单词排行榜
+async function showWordLeaderboard() {
+    document.getElementById('word-leaderboard-modal').classList.add('active');
+    await loadWordLeaderboardData('daily');
+}
+
+// 关闭单词排行榜
+function closeWordLeaderboard() {
+    document.getElementById('word-leaderboard-modal').classList.remove('active');
+}
+
+// 切换排行榜类型
+async function switchWordLeaderboard(type) {
+    currentWordLeaderboardType = type;
+
+    // 更新标签页激活状态
+    const tabs = document.querySelectorAll('#word-leaderboard-modal .modal-tab');
+    tabs.forEach(tab => {
+        tab.classList.remove('active');
+        if ((type === 'daily' && tab.textContent.includes('今日')) ||
+            (type === 'total' && tab.textContent.includes('累计'))) {
+            tab.classList.add('active');
+        }
+    });
+
+    // 加载对应数据
+    await loadWordLeaderboardData(type);
+}
+
+// 加载排行榜数据
+async function loadWordLeaderboardData(type) {
+    try {
+        const endpoint = type === 'daily'
+            ? '/words/leaderboard/daily'
+            : '/words/leaderboard/total';
+
+        const response = await fetch(`${API_CONFIG.BASE_URL}${endpoint}`);
+        const leaderboard = await response.json();
+
+        updateWordLeaderboardList(leaderboard, type);
+    } catch (error) {
+        console.error('加载单词排行榜失败:', error);
+        showToast('加载排行榜失败', 'error');
+    }
+}
+
+// 更新排行榜列表
+function updateWordLeaderboardList(leaderboard, type) {
+    const container = document.getElementById('word-leaderboard-list');
+
+    if (!leaderboard || leaderboard.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-secondary); text-align: center; padding: 40px 0;">暂无排行数据</p>';
+        return;
+    }
+
+    const currentUser = getCurrentUser();
+
+    container.innerHTML = leaderboard.map((user, index) => {
+        const rank = index + 1;
+        const isCurrentUser = currentUser && user.user_id === currentUser.ID;
+
+        // 排名徽章
+        let rankBadge = '';
+        if (rank === 1) {
+            rankBadge = '<div class="rank-badge gold"><i class="fas fa-crown"></i> 1</div>';
+        } else if (rank === 2) {
+            rankBadge = '<div class="rank-badge silver"><i class="fas fa-medal"></i> 2</div>';
+        } else if (rank === 3) {
+            rankBadge = '<div class="rank-badge bronze"><i class="fas fa-award"></i> 3</div>';
+        } else {
+            rankBadge = `<div class="rank-badge normal">${rank}</div>`;
+        }
+
+        // 统计信息
+        let statsHTML = '';
+        if (type === 'daily') {
+            statsHTML = `
+                <div class="stat-item">
+                    <i class="fas fa-book"></i>
+                    <span>${user.word_count} 个单词</span>
+                </div>
+            `;
+        } else {
+            statsHTML = `
+                <div class="stat-item">
+                    <i class="fas fa-book"></i>
+                    <span>${user.total_words} 个单词</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>${user.total_days} 天</span>
+                </div>
+            `;
+        }
+
+        return `
+            <div class="leaderboard-item ${isCurrentUser ? 'current-user' : ''}">
+                ${rankBadge}
+                <div class="leaderboard-user">
+                    <div class="user-icon"><i class="fas fa-user-circle"></i></div>
+                    <div class="user-name">${user.username}</div>
+                </div>
+                <div class="leaderboard-stats">
+                    ${statsHTML}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// 点击弹窗外部关闭
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('word-leaderboard-modal');
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeWordLeaderboard();
+            }
+        });
+    }
+});

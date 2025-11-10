@@ -3045,3 +3045,151 @@ header h1 i {
         width: 100%;
     }
 }
+
+/* ==================== 单词排行榜样式 ==================== */
+
+/* 区块标题行 */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+    margin: 0;
+}
+
+/* 单词排行榜按钮 */
+.btn-word-leaderboard {
+    background: linear-gradient(135deg, var(--primary-soft) 0%, var(--primary-softer) 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.4s var(--ease-elastic);
+    font-size: 0.9em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 16px rgba(127, 182, 133, 0.3),
+                0 2px 6px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-word-leaderboard::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-word-leaderboard:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(127, 182, 133, 0.4),
+                0 3px 10px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-word-leaderboard:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-word-leaderboard:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.btn-word-leaderboard i {
+    font-size: 1.1em;
+    transition: transform 0.3s var(--ease-elastic);
+}
+
+.btn-word-leaderboard:hover i {
+    transform: scale(1.15) rotate(8deg);
+}
+
+/* 弹窗标签切换 */
+.modal-tabs {
+    display: flex;
+    gap: 12px;
+    padding: 0 32px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.modal-tab {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 14px 20px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all 0.3s var(--ease-smooth);
+    border-bottom: 3px solid transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.modal-tab::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-soft), var(--primary-softer));
+    transform: scaleX(0);
+    transition: transform 0.3s var(--ease-elastic);
+    border-radius: 3px 3px 0 0;
+}
+
+.modal-tab:hover {
+    color: var(--primary-soft);
+    background: rgba(127, 182, 133, 0.05);
+}
+
+.modal-tab.active {
+    color: var(--primary-soft);
+}
+
+.modal-tab.active::before {
+    transform: scaleX(1);
+}
+
+.modal-tab i {
+    font-size: 1.1em;
+    transition: transform 0.3s var(--ease-elastic);
+}
+
+.modal-tab:hover i {
+    transform: scale(1.1);
+}
+
+.modal-tab.active i {
+    animation: tabIconPulse 2s ease-in-out infinite;
+}
+
+@keyframes tabIconPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
