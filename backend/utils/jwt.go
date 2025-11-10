@@ -2,12 +2,28 @@ package utils
 
 import (
 	"errors"
+	"log"
+	"os"
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
 )
 
-var jwtSecret = []byte("your-secret-key-change-this-in-production")
+// 从环境变量获取JWT密钥
+var jwtSecret = []byte(getJWTSecret())
+
+// getJWTSecret 获取JWT密钥，优先使用环境变量
+func getJWTSecret() string {
+	secret := os.Getenv("JWT_SECRET")
+	if secret == "" {
+		// 开发环境使用默认密钥（生产环境必须设置环境变量）
+		defaultSecret := "pomodoro-dev-secret-key-please-change-in-production-2024"
+		log.Println("警告: 未设置JWT_SECRET环境变量，使用默认密钥（仅用于开发）")
+		return defaultSecret
+	}
+	log.Println("已加载JWT_SECRET环境变量")
+	return secret
+}
 
 type Claims struct {
 	UserID uint `json:"user_id"`

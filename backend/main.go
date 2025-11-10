@@ -19,11 +19,16 @@ func main() {
 	// 跨域中间件
 	r.Use(middleware.CORS())
 
+	// 启动访问记录清理任务
+	go middleware.CleanupVisitors()
+
 	// 公开路由（无需认证）
 	auth := r.Group("/api/auth")
 	{
-		auth.POST("/register", controllers.Register)
-		auth.POST("/login", controllers.Login)
+		// 注册接口：每小时最多3次
+		auth.POST("/register", middleware.RateLimit(3, 3600), controllers.Register)
+		// 登录接口：每分钟最多5次
+		auth.POST("/login", middleware.RateLimit(5, 60), controllers.Login)
 	}
 
 	// 需要认证的路由

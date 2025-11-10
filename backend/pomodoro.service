@@ -1,0 +1,27 @@
+[Unit]
+Description=Pomodoro Timer API Service
+Documentation=https://github.com/Kamintj-anon/pomodoro-timer
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/www/wwwroot/pomodoro-api
+Environment="JWT_SECRET=dKvQbSoaux371gPXjtesW1V0lglR1Y7EFw1X5D2HQuX12bhh3aq6m5Z3g21jqY1EwSnTcpz9DjC+SgAW3kxq9w=="
+Environment="ALLOWED_ORIGIN=http://124.220.224.91"
+Environment="GIN_MODE=release"
+Environment="DB_PATH=/www/wwwroot/pomodoro-api/pomodoro.db"
+ExecStart=/www/wwwroot/pomodoro-api/pomodoro-api
+Restart=always
+RestartSec=5s
+
+# 安全加固
+NoNewPrivileges=true
+PrivateTmp=true
+
+# 日志配置
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
