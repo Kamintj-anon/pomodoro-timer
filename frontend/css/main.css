@@ -4987,3 +4987,438 @@ header h1 i {
     color: #E0E0E0 !important;
 }
 
+
+/* ==================== 完整独立主题系统 - 深色模式 ==================== */
+
+/* 登录页面完全重写 */
+[data-theme="dark"] #auth-page {
+    background: linear-gradient(135deg, #1A1D1F 0%, #24272A 100%) !important;
+}
+
+[data-theme="dark"] #auth-page::before {
+    background: radial-gradient(circle, rgba(111, 168, 118, 0.08) 0%, transparent 70%) !important;
+}
+
+[data-theme="dark"] #auth-page::after {
+    background: radial-gradient(circle, rgba(90, 140, 102, 0.08) 0%, transparent 70%) !important;
+}
+
+[data-theme="dark"] .auth-container {
+    background: rgba(30, 33, 36, 0.95) !important;
+    border: 2px solid rgba(111, 168, 118, 0.3) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6),
+                0 8px 24px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(111, 168, 118, 0.1) !important;
+}
+
+[data-theme="dark"] .auth-container::before {
+    background: linear-gradient(90deg, #6FA876, #5A8C66, #6FA876) !important;
+    box-shadow: 0 4px 12px rgba(111, 168, 118, 0.4) !important;
+}
+
+[data-theme="dark"] .auth-container::after {
+    background: radial-gradient(circle at center, rgba(111, 168, 118, 0.03) 0%, transparent 60%) !important;
+}
+
+/* 主应用容器 */
+[data-theme="dark"] .app-container {
+    background: linear-gradient(135deg, #1A1D1F 0%, #24272A 100%) !important;
+}
+
+[data-theme="dark"] .header {
+    background: rgba(30, 33, 36, 0.95) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .logo-glow {
+    box-shadow: 0 4px 12px rgba(111, 168, 118, 0.4) !important;
+}
+
+/* 导航标签 */
+[data-theme="dark"] .tabs-nav {
+    background: rgba(45, 49, 53, 0.8) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3),
+                0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .tabs-content {
+    background: rgba(30, 33, 36, 0.6) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .tab-item:hover {
+    background: rgba(111, 168, 118, 0.15) !important;
+}
+
+[data-theme="dark"] .tab-item.active {
+    box-shadow: 0 0 0 4px rgba(111, 168, 118, 0.2) !important;
+}
+
+/* 按钮渐变和阴影 */
+[data-theme="dark"] .btn-primary {
+    background: linear-gradient(135deg, #6FA876 0%, #5A8C66 100%) !important;
+    box-shadow: 0 6px 24px rgba(111, 168, 118, 0.4),
+                0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    background: linear-gradient(135deg, #7FB685 0%, #6FA876 100%) !important;
+    box-shadow: 0 10px 36px rgba(111, 168, 118, 0.5),
+                0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-primary::after {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent) !important;
+}
+
+[data-theme="dark"] .btn-primary:active {
+    box-shadow: 0 4px 16px rgba(111, 168, 118, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-secondary {
+    background: linear-gradient(135deg, #D9885C 0%, #C77A52 100%) !important;
+    box-shadow: 0 6px 24px rgba(217, 136, 92, 0.3),
+                0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: linear-gradient(135deg, #E29668 0%, #D9885C 100%) !important;
+    box-shadow: 0 10px 32px rgba(217, 136, 92, 0.4),
+                0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-secondary::after {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent) !important;
+}
+
+[data-theme="dark"] .btn-logout:hover {
+    background: linear-gradient(135deg, #D96C75 0%, #C85D66 100%) !important;
+    box-shadow: 0 6px 24px rgba(217, 108, 117, 0.4),
+                0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-theme:hover {
+    background: rgba(111, 168, 118, 0.15) !important;
+}
+
+/* 计时器页面 */
+[data-theme="dark"] .timer-card {
+    background: rgba(30, 33, 36, 0.95) !important;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4),
+                0 4px 16px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(111, 168, 118, 0.1) !important;
+}
+
+[data-theme="dark"] .timer-card::before {
+    background: linear-gradient(90deg, #6FA876, #5A8C66, #6FA876) !important;
+    box-shadow: 0 4px 12px rgba(111, 168, 118, 0.4) !important;
+}
+
+[data-theme="dark"] .timer-card::after {
+    background: radial-gradient(circle at center, rgba(111, 168, 118, 0.03) 0%, transparent 60%) !important;
+}
+
+[data-theme="dark"] .timer-display::after {
+    background: linear-gradient(90deg, currentColor, transparent) !important;
+    box-shadow: 0 4px 12px currentColor !important;
+}
+
+[data-theme="dark"] .pomodoro-label::after {
+    background: radial-gradient(circle, rgba(111, 168, 118, 0.03) 0%, transparent 60%) !important;
+}
+
+[data-theme="dark"] .controls-wrapper {
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3),
+                0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .control-btn.active {
+    box-shadow: 0 0 12px currentColor, 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 统计页面 */
+[data-theme="dark"] .stats-content {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                0 2px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .stat-card {
+    background: linear-gradient(135deg, rgba(45, 49, 53, 0.8) 0%, rgba(35, 39, 43, 0.8) 100%) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3),
+                0 2px 8px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(111, 168, 118, 0.05) !important;
+}
+
+[data-theme="dark"] .stat-card:hover {
+    box-shadow: 0 0 8px currentColor !important;
+}
+
+/* 模态框 */
+[data-theme="dark"] .modal-overlay {
+    background: rgba(0, 0, 0, 0.75) !important;
+}
+
+[data-theme="dark"] .modal-content {
+    background: rgba(30, 33, 36, 0.98) !important;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6),
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(111, 168, 118, 0.1) !important;
+}
+
+[data-theme="dark"] .modal-close:hover {
+    box-shadow: 0 4px 12px rgba(111, 168, 118, 0.4) !important;
+}
+
+/* 表单元素 */
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea,
+[data-theme="dark"] .form-group select {
+    background: rgba(45, 49, 53, 0.6) !important;
+    border: 2px solid rgba(111, 168, 118, 0.2) !important;
+    color: #E8EAED !important;
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus,
+[data-theme="dark"] .form-group select:focus {
+    background: rgba(45, 49, 53, 0.8) !important;
+    border-color: #6FA876 !important;
+    box-shadow: 0 0 0 4px rgba(111, 168, 118, 0.2) !important;
+}
+
+/* Toast通知 */
+[data-theme="dark"] .toast.success {
+    background: rgba(111, 168, 118, 0.95) !important;
+}
+
+[data-theme="dark"] .toast.error {
+    background: rgba(217, 108, 117, 0.95) !important;
+}
+
+[data-theme="dark"] .toast.info {
+    background: rgba(164, 195, 210, 0.95) !important;
+}
+
+/* 排行榜徽章 */
+[data-theme="dark"] .rank-badge.gold {
+    background: rgba(255, 193, 7, 0.2) !important;
+    border: 2px solid rgba(255, 193, 7, 0.5) !important;
+}
+
+[data-theme="dark"] .rank-badge.silver {
+    background: rgba(192, 192, 192, 0.2) !important;
+    border: 2px solid rgba(192, 192, 192, 0.5) !important;
+}
+
+[data-theme="dark"] .rank-badge.bronze {
+    background: rgba(205, 127, 50, 0.2) !important;
+    border: 2px solid rgba(205, 127, 50, 0.5) !important;
+}
+
+/* ==================== 完整独立主题系统 - 高对比度模式 ==================== */
+
+/* 登录页面完全重写 */
+[data-theme="high-contrast"] #auth-page {
+    background: linear-gradient(135deg, #000000 0%, #0A0A0A 100%) !important;
+}
+
+[data-theme="high-contrast"] #auth-page::before {
+    background: radial-gradient(circle, rgba(0, 255, 127, 0.12) 0%, transparent 70%) !important;
+}
+
+[data-theme="high-contrast"] #auth-page::after {
+    background: radial-gradient(circle, rgba(0, 166, 81, 0.12) 0%, transparent 70%) !important;
+}
+
+[data-theme="high-contrast"] .auth-container {
+    background: rgba(18, 18, 18, 0.98) !important;
+    border: 3px solid #00A651 !important;
+    box-shadow: 0 0 40px rgba(0, 255, 127, 0.3),
+                0 20px 60px rgba(0, 0, 0, 0.8),
+                inset 0 0 20px rgba(0, 255, 127, 0.05) !important;
+}
+
+[data-theme="high-contrast"] .auth-container::before {
+    background: linear-gradient(90deg, #00FF7F, #00A651, #00FF7F) !important;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.6) !important;
+    height: 8px !important;
+}
+
+[data-theme="high-contrast"] .auth-container::after {
+    background: radial-gradient(circle at center, rgba(0, 255, 127, 0.05) 0%, transparent 60%) !important;
+}
+
+/* 主应用容器 */
+[data-theme="high-contrast"] .app-container {
+    background: linear-gradient(135deg, #000000 0%, #0A0A0A 100%) !important;
+}
+
+[data-theme="high-contrast"] .header {
+    background: rgba(18, 18, 18, 0.98) !important;
+    border-bottom: 3px solid #00A651 !important;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.3) !important;
+}
+
+[data-theme="high-contrast"] .logo-glow {
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.6) !important;
+}
+
+/* 导航标签 */
+[data-theme="high-contrast"] .tabs-nav {
+    background: rgba(26, 26, 26, 0.95) !important;
+    border: 2px solid #00A651 !important;
+    box-shadow: 0 0 15px rgba(0, 255, 127, 0.3) !important;
+}
+
+[data-theme="high-contrast"] .tab-item:hover {
+    background: rgba(0, 166, 81, 0.2) !important;
+    border: 2px solid #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .tab-item.active {
+    background: rgba(0, 166, 81, 0.3) !important;
+    border: 2px solid #00FF7F !important;
+    box-shadow: 0 0 15px rgba(0, 255, 127, 0.5),
+                inset 0 0 10px rgba(0, 255, 127, 0.2) !important;
+}
+
+/* 按钮渐变和阴影 */
+[data-theme="high-contrast"] .btn-primary {
+    background: linear-gradient(135deg, #00FF7F 0%, #00A651 100%) !important;
+    border: 2px solid #00FF7F !important;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.5),
+                0 6px 24px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="high-contrast"] .btn-primary:hover {
+    background: linear-gradient(135deg, #00FF7F 0%, #00CC66 100%) !important;
+    box-shadow: 0 0 30px rgba(0, 255, 127, 0.7),
+                0 10px 36px rgba(0, 0, 0, 0.6) !important;
+    transform: translateY(-2px) !important;
+}
+
+[data-theme="high-contrast"] .btn-primary::after {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+}
+
+[data-theme="high-contrast"] .btn-secondary {
+    background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%) !important;
+    border: 2px solid #FF8C00 !important;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.5),
+                0 6px 24px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="high-contrast"] .btn-secondary:hover {
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.7),
+                0 10px 32px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="high-contrast"] .btn-logout:hover {
+    background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%) !important;
+    border: 2px solid #FF4444 !important;
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.5) !important;
+}
+
+/* 计时器页面 */
+[data-theme="high-contrast"] .timer-card {
+    background: rgba(18, 18, 18, 0.98) !important;
+    border: 3px solid #00A651 !important;
+    box-shadow: 0 0 40px rgba(0, 255, 127, 0.3),
+                0 12px 48px rgba(0, 0, 0, 0.8),
+                inset 0 0 20px rgba(0, 255, 127, 0.05) !important;
+}
+
+[data-theme="high-contrast"] .timer-card::before {
+    background: linear-gradient(90deg, #00FF7F, #00A651, #00FF7F) !important;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.6) !important;
+    height: 8px !important;
+}
+
+[data-theme="high-contrast"] .timer-display {
+    text-shadow: 0 0 30px rgba(0, 255, 127, 0.8),
+                 0 0 15px rgba(0, 255, 127, 0.5) !important;
+}
+
+[data-theme="high-contrast"] .controls-wrapper {
+    border: 2px solid #00A651 !important;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.3) !important;
+}
+
+[data-theme="high-contrast"] .control-btn.active {
+    border: 2px solid #00FF7F !important;
+    box-shadow: 0 0 25px rgba(0, 255, 127, 0.7) !important;
+}
+
+/* 统计页面 */
+[data-theme="high-contrast"] .stat-card {
+    background: rgba(18, 18, 18, 0.95) !important;
+    border: 3px solid #00A651 !important;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.3),
+                0 6px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="high-contrast"] .stat-card:hover {
+    border-color: #00FF7F !important;
+    box-shadow: 0 0 30px rgba(0, 255, 127, 0.5) !important;
+}
+
+/* 模态框 */
+[data-theme="high-contrast"] .modal-overlay {
+    background: rgba(0, 0, 0, 0.95) !important;
+}
+
+[data-theme="high-contrast"] .modal-content {
+    background: rgba(18, 18, 18, 0.98) !important;
+    border: 3px solid #00A651 !important;
+    box-shadow: 0 0 40px rgba(0, 255, 127, 0.4),
+                0 24px 80px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* 表单元素 */
+[data-theme="high-contrast"] .form-group input,
+[data-theme="high-contrast"] .form-group textarea,
+[data-theme="high-contrast"] .form-group select {
+    background: rgba(26, 26, 26, 0.9) !important;
+    border: 2px solid #00A651 !important;
+    color: #FFFFFF !important;
+}
+
+[data-theme="high-contrast"] .form-group input:focus,
+[data-theme="high-contrast"] .form-group textarea:focus,
+[data-theme="high-contrast"] .form-group select:focus {
+    background: rgba(26, 26, 26, 1) !important;
+    border: 3px solid #00FF7F !important;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.5) !important;
+}
+
+/* Toast通知 */
+[data-theme="high-contrast"] .toast.success {
+    background: #00A651 !important;
+    border: 2px solid #00FF7F !important;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.5) !important;
+}
+
+[data-theme="high-contrast"] .toast.error {
+    background: #CC0000 !important;
+    border: 2px solid #FF4444 !important;
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.5) !important;
+}
+
+/* 排行榜徽章 */
+[data-theme="high-contrast"] .rank-badge.gold {
+    background: rgba(255, 215, 0, 0.3) !important;
+    border: 3px solid #FFD700 !important;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5) !important;
+}
+
+[data-theme="high-contrast"] .rank-badge.silver {
+    background: rgba(192, 192, 192, 0.3) !important;
+    border: 3px solid #C0C0C0 !important;
+    box-shadow: 0 0 15px rgba(192, 192, 192, 0.5) !important;
+}
+
+[data-theme="high-contrast"] .rank-badge.bronze {
+    background: rgba(205, 127, 50, 0.3) !important;
+    border: 3px solid #CD7F32 !important;
+    box-shadow: 0 0 15px rgba(205, 127, 50, 0.5) !important;
+}
