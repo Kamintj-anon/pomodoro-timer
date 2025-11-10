@@ -3730,7 +3730,7 @@ header h1 i {
 }
 
 [data-theme="dark"] .tab-item.active {
-    color: var(--primary-soft) !important;
+    color: #ECECEC !important;
     background: rgba(128, 128, 128, 0.15) !important;
 }
 
