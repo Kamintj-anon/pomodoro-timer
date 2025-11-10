@@ -3919,3 +3919,492 @@ header h1 i {
     color: #FFFFFF !important;
 }
 
+/* ==================== 深色模式 - 完整逐个元素覆盖 ==================== */
+
+/* === 番茄钟页面 === */
+[data-theme="dark"] .timer-card {
+    background: rgba(30, 33, 36, 0.95) !important;
+    border: 1px solid rgba(111, 168, 118, 0.25) !important;
+}
+
+[data-theme="dark"] .timer-card h2 {
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .category-selector {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .category-selector label {
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] #category-select {
+    background: #2D3135 !important;
+    color: #E8EAED !important;
+    border: 1px solid rgba(111, 168, 118, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-icon {
+    background: rgba(111, 168, 118, 0.2) !important;
+    color: #9BC4A8 !important;
+    border: 1px solid rgba(111, 168, 118, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-icon:hover {
+    background: rgba(111, 168, 118, 0.35) !important;
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .timer-display {
+    background: transparent !important;
+}
+
+[data-theme="dark"] #timer {
+    color: #9BC4A8 !important;
+}
+
+[data-theme="dark"] .timer-label {
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] .btn-primary {
+    background: linear-gradient(135deg, #6FA876 0%, #5A8C66 100%) !important;
+    color: #1A1D1F !important;
+    border: none !important;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    background: linear-gradient(135deg, #7FB885 0%, #6A9C76 100%) !important;
+}
+
+[data-theme="dark"] .btn-secondary,
+[data-theme="dark"] .btn-outline {
+    background: rgba(45, 49, 53, 0.9) !important;
+    color: #E8EAED !important;
+    border: 1px solid rgba(111, 168, 118, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-secondary:hover,
+[data-theme="dark"] .btn-outline:hover {
+    background: rgba(55, 59, 63, 0.9) !important;
+    border-color: rgba(111, 168, 118, 0.5) !important;
+}
+
+[data-theme="dark"] .note-input input {
+    background: #2D3135 !important;
+    color: #E8EAED !important;
+    border: 1px solid rgba(111, 168, 118, 0.3) !important;
+}
+
+[data-theme="dark"] .note-input input::placeholder {
+    color: #5F6368 !important;
+}
+
+/* === 统计页面 === */
+[data-theme="dark"] .stats-section h2,
+[data-theme="dark"] .stats-section h3 {
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .total-stats {
+    background: rgba(30, 33, 36, 0.95) !important;
+    border: 1px solid rgba(111, 168, 118, 0.25) !important;
+}
+
+[data-theme="dark"] .stat-icon {
+    background: rgba(111, 168, 118, 0.2) !important;
+    color: #9BC4A8 !important;
+}
+
+[data-theme="dark"] .stat-label {
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] .stat-value {
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .stat-detail {
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] .category-stats-grid {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .category-stat-item {
+    background: rgba(45, 49, 53, 0.9) !important;
+    border: 1px solid rgba(111, 168, 118, 0.2) !important;
+}
+
+/* === 历史记录页面 === */
+[data-theme="dark"] .history-section h2 {
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .history-list {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .history-item {
+    background: rgba(45, 49, 53, 0.9) !important;
+    border: 1px solid rgba(111, 168, 118, 0.2) !important;
+}
+
+[data-theme="dark"] .history-item .history-time,
+[data-theme="dark"] .history-item .history-category {
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] .history-item .history-duration {
+    color: #B8E6C4 !important;
+}
+
+/* === 单词打卡页面 === */
+[data-theme="dark"] .words-section {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .section-header h2 {
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .btn-word-leaderboard {
+    background: rgba(111, 168, 118, 0.2) !important;
+    color: #9BC4A8 !important;
+    border: 1px solid rgba(111, 168, 118, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-word-leaderboard:hover {
+    background: rgba(111, 168, 118, 0.35) !important;
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .word-submit-card {
+    background: rgba(30, 33, 36, 0.95) !important;
+    border: 1px solid rgba(111, 168, 118, 0.25) !important;
+}
+
+[data-theme="dark"] .word-submit-card h3 {
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .word-input-group {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .input-row label {
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] .input-row input,
+[data-theme="dark"] .input-row textarea {
+    background: #2D3135 !important;
+    color: #E8EAED !important;
+    border: 1px solid rgba(111, 168, 118, 0.3) !important;
+}
+
+[data-theme="dark"] .input-row input::placeholder,
+[data-theme="dark"] .input-row textarea::placeholder {
+    color: #5F6368 !important;
+}
+
+[data-theme="dark"] .word-stats-overview {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .word-stat-card {
+    background: rgba(45, 49, 53, 0.9) !important;
+    border: 1px solid rgba(111, 168, 118, 0.2) !important;
+}
+
+[data-theme="dark"] .word-stat-card .stat-icon {
+    color: #9BC4A8 !important;
+}
+
+[data-theme="dark"] .word-stat-card .stat-number {
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .word-stat-card .stat-label {
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] .word-records-list {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .word-record-item {
+    background: rgba(45, 49, 53, 0.9) !important;
+    border: 1px solid rgba(111, 168, 118, 0.2) !important;
+}
+
+[data-theme="dark"] .word-record-item .record-date {
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] .word-record-item .record-count {
+    color: #B8E6C4 !important;
+}
+
+[data-theme="dark"] .word-record-item .record-note {
+    color: #9AA0A6 !important;
+}
+
+[data-theme="dark"] .btn-delete-record {
+    background: rgba(217, 108, 117, 0.2) !important;
+    color: #E8A0A7 !important;
+    border: 1px solid rgba(217, 108, 117, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-delete-record:hover {
+    background: rgba(217, 108, 117, 0.35) !important;
+}
+
+/* ==================== 高对比度模式 - 完整逐个元素覆盖 ==================== */
+
+/* === 番茄钟页面 === */
+[data-theme="high-contrast"] .timer-card {
+    background: #121212 !important;
+    border: 3px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .timer-card h2 {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .category-selector {
+    background: transparent !important;
+}
+
+[data-theme="high-contrast"] .category-selector label {
+    color: #E0E0E0 !important;
+}
+
+[data-theme="high-contrast"] #category-select {
+    background: #1A1A1A !important;
+    color: #FFFFFF !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .btn-icon {
+    background: #1A1A1A !important;
+    color: #00FF7F !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .btn-icon:hover {
+    background: rgba(0, 166, 81, 0.3) !important;
+    border-color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .timer-display {
+    background: transparent !important;
+}
+
+[data-theme="high-contrast"] #timer {
+    color: #00FF7F !important;
+    text-shadow: 0 0 20px rgba(0, 255, 127, 0.5) !important;
+}
+
+[data-theme="high-contrast"] .timer-label {
+    color: #E0E0E0 !important;
+}
+
+[data-theme="high-contrast"] .btn-primary {
+    background: #00A651 !important;
+    color: #000000 !important;
+    border: 2px solid #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .btn-primary:hover {
+    background: #00CC5F !important;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.5) !important;
+}
+
+[data-theme="high-contrast"] .btn-secondary,
+[data-theme="high-contrast"] .btn-outline {
+    background: #1A1A1A !important;
+    color: #FFFFFF !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .btn-secondary:hover,
+[data-theme="high-contrast"] .btn-outline:hover {
+    background: rgba(0, 166, 81, 0.2) !important;
+    border-color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .note-input input {
+    background: #1A1A1A !important;
+    color: #FFFFFF !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .note-input input::placeholder {
+    color: #B0B0B0 !important;
+}
+
+/* === 统计页面 === */
+[data-theme="high-contrast"] .stats-section h2,
+[data-theme="high-contrast"] .stats-section h3 {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .total-stats {
+    background: #121212 !important;
+    border: 3px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .stat-icon {
+    background: rgba(0, 166, 81, 0.3) !important;
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .stat-label {
+    color: #E0E0E0 !important;
+}
+
+[data-theme="high-contrast"] .stat-value {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .stat-detail {
+    color: #E0E0E0 !important;
+}
+
+[data-theme="high-contrast"] .category-stats-grid {
+    background: transparent !important;
+}
+
+[data-theme="high-contrast"] .category-stat-item {
+    background: #1A1A1A !important;
+    border: 2px solid #00A651 !important;
+}
+
+/* === 历史记录页面 === */
+[data-theme="high-contrast"] .history-section h2 {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .history-list {
+    background: transparent !important;
+}
+
+[data-theme="high-contrast"] .history-item {
+    background: #1A1A1A !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .history-item .history-time,
+[data-theme="high-contrast"] .history-item .history-category {
+    color: #E0E0E0 !important;
+}
+
+[data-theme="high-contrast"] .history-item .history-duration {
+    color: #00FF7F !important;
+}
+
+/* === 单词打卡页面 === */
+[data-theme="high-contrast"] .words-section {
+    background: transparent !important;
+}
+
+[data-theme="high-contrast"] .section-header h2 {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .btn-word-leaderboard {
+    background: #1A1A1A !important;
+    color: #00FF7F !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .btn-word-leaderboard:hover {
+    background: rgba(0, 166, 81, 0.3) !important;
+    border-color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .word-submit-card {
+    background: #121212 !important;
+    border: 3px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .word-submit-card h3 {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .word-input-group {
+    background: transparent !important;
+}
+
+[data-theme="high-contrast"] .input-row label {
+    color: #E0E0E0 !important;
+}
+
+[data-theme="high-contrast"] .input-row input,
+[data-theme="high-contrast"] .input-row textarea {
+    background: #1A1A1A !important;
+    color: #FFFFFF !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .input-row input::placeholder,
+[data-theme="high-contrast"] .input-row textarea::placeholder {
+    color: #B0B0B0 !important;
+}
+
+[data-theme="high-contrast"] .word-stats-overview {
+    background: transparent !important;
+}
+
+[data-theme="high-contrast"] .word-stat-card {
+    background: #1A1A1A !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .word-stat-card .stat-icon {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .word-stat-card .stat-number {
+    color: #00FF7F !important;
+    text-shadow: 0 0 15px rgba(0, 255, 127, 0.4) !important;
+}
+
+[data-theme="high-contrast"] .word-stat-card .stat-label {
+    color: #E0E0E0 !important;
+}
+
+[data-theme="high-contrast"] .word-records-list {
+    background: transparent !important;
+}
+
+[data-theme="high-contrast"] .word-record-item {
+    background: #1A1A1A !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .word-record-item .record-date {
+    color: #E0E0E0 !important;
+}
+
+[data-theme="high-contrast"] .word-record-item .record-count {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .word-record-item .record-note {
+    color: #E0E0E0 !important;
+}
+
+[data-theme="high-contrast"] .btn-delete-record {
+    background: #1A1A1A !important;
+    color: #FF3333 !important;
+    border: 2px solid #FF3333 !important;
+}
+
+[data-theme="high-contrast"] .btn-delete-record:hover {
+    background: rgba(255, 51, 51, 0.2) !important;
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.4) !important;
+}
