@@ -5929,3 +5929,31 @@ header h1 i {
 [data-theme="dark"] button.btn-leaderboard i {
     color: #FFFFFF !important;
 }
+
+/* ==================== 强制覆盖排行榜按钮文字颜色 ==================== */
+
+[data-theme="dark"] .btn-leaderboard *,
+[data-theme="dark"] .btn-leaderboard span,
+[data-theme="dark"] .btn-leaderboard i {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .btn-leaderboard:hover,
+[data-theme="dark"] .btn-leaderboard:hover *,
+[data-theme="dark"] .btn-leaderboard:hover span,
+[data-theme="dark"] .btn-leaderboard:hover i {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .btn-word-leaderboard *,
+[data-theme="dark"] .btn-word-leaderboard span,
+[data-theme="dark"] .btn-word-leaderboard i {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .btn-word-leaderboard:hover,
+[data-theme="dark"] .btn-word-leaderboard:hover *,
+[data-theme="dark"] .btn-word-leaderboard:hover span,
+[data-theme="dark"] .btn-word-leaderboard:hover i {
+    color: #FFFFFF !important;
+}
