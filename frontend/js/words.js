@@ -142,7 +142,20 @@ async function deleteWordRecord(recordId) {
 
 // 格式化日期显示
 function formatDate(dateStr) {
+    // 验证日期字符串
+    if (!dateStr) {
+        return '未知日期';
+    }
+
+    // 尝试创建日期对象
     const date = new Date(dateStr + 'T00:00:00');
+
+    // 检查日期是否有效
+    if (isNaN(date.getTime())) {
+        console.error('无效的日期格式:', dateStr);
+        return dateStr; // 返回原始字符串
+    }
+
     const today = new Date();
     const yesterday = new Date(today);
     yesterday.setDate(yesterday.getDate() - 1);
