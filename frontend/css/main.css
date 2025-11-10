@@ -3569,3 +3569,136 @@ header h1 i {
     color: #00FF7F !important;
     border-color: #00A651 !important;
 }
+
+/* ==================== 深色模式所有元素完整覆盖 ==================== */
+
+/* 统计卡片 */
+[data-theme="dark"] .total-stats {
+    background: rgba(30, 33, 36, 0.95) !important;
+    border-color: rgba(111, 168, 118, 0.3) !important;
+}
+
+[data-theme="dark"] .stat-card {
+    background: rgba(45, 49, 53, 0.9) !important;
+    border-color: rgba(111, 168, 118, 0.2) !important;
+}
+
+/* 单词统计卡片 */
+[data-theme="dark"] .word-stat-card {
+    background: rgba(45, 49, 53, 0.9) !important;
+    border-color: rgba(111, 168, 118, 0.2) !important;
+}
+
+[data-theme="dark"] .word-stat-card .stat-number,
+[data-theme="dark"] .word-stat-card .stat-label {
+    color: var(--text-primary) !important;
+}
+
+/* 单词打卡卡片 */
+[data-theme="dark"] .word-submit-card {
+    background: rgba(30, 33, 36, 0.95) !important;
+    border-color: rgba(111, 168, 118, 0.3) !important;
+}
+
+/* 单词记录列表 */
+[data-theme="dark"] .word-record-item {
+    background: rgba(45, 49, 53, 0.9) !important;
+    border-color: rgba(111, 168, 118, 0.2) !important;
+}
+
+[data-theme="dark"] .word-record-item .record-date,
+[data-theme="dark"] .word-record-item .record-count,
+[data-theme="dark"] .word-record-item .record-note {
+    color: var(--text-primary) !important;
+}
+
+/* 历史记录 */
+[data-theme="dark"] .history-item {
+    background: rgba(45, 49, 53, 0.9) !important;
+    border-color: rgba(111, 168, 118, 0.2) !important;
+}
+
+/* 分类统计 */
+[data-theme="dark"] .category-stat-item {
+    background: rgba(45, 49, 53, 0.9) !important;
+    border-color: rgba(111, 168, 118, 0.2) !important;
+}
+
+/* 所有h2, h3标题 */
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+    color: var(--text-primary) !important;
+}
+
+/* ==================== 高对比度模式所有元素完整覆盖 ==================== */
+
+/* 统计卡片 */
+[data-theme="high-contrast"] .total-stats {
+    background: #121212 !important;
+    border: 3px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .stat-card {
+    background: #1A1A1A !important;
+    border: 2px solid #00A651 !important;
+}
+
+/* 单词统计卡片 */
+[data-theme="high-contrast"] .word-stat-card {
+    background: #1A1A1A !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .word-stat-card .stat-number {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .word-stat-card .stat-label {
+    color: #FFFFFF !important;
+}
+
+/* 单词打卡卡片 */
+[data-theme="high-contrast"] .word-submit-card {
+    background: #121212 !important;
+    border: 3px solid #00A651 !important;
+}
+
+/* 单词记录列表 */
+[data-theme="high-contrast"] .word-record-item {
+    background: #1A1A1A !important;
+    border: 2px solid #00A651 !important;
+}
+
+[data-theme="high-contrast"] .word-record-item .record-date,
+[data-theme="high-contrast"] .word-record-item .record-count {
+    color: #00FF7F !important;
+}
+
+[data-theme="high-contrast"] .word-record-item .record-note {
+    color: #E0E0E0 !important;
+}
+
+/* 历史记录 */
+[data-theme="high-contrast"] .history-item {
+    background: #1A1A1A !important;
+    border: 2px solid #00A651 !important;
+}
+
+/* 分类统计 */
+[data-theme="high-contrast"] .category-stat-item {
+    background: #1A1A1A !important;
+    border: 2px solid #00A651 !important;
+}
+
+/* 所有h2, h3标题 */
+[data-theme="high-contrast"] h2,
+[data-theme="high-contrast"] h3 {
+    color: #FFFFFF !important;
+}
+
+/* 所有标签和说明文字 */
+[data-theme="high-contrast"] label,
+[data-theme="high-contrast"] .section-header h2 {
+    color: #FFFFFF !important;
+}
+
