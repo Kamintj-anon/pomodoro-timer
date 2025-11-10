@@ -150,3 +150,58 @@ function formatDateTime(dateString) {
     // 其他
     return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
 }
+
+// 显示确认对话框
+function showConfirm(message, title = '确认操作') {
+    return new Promise((resolve) => {
+        const modal = document.getElementById('confirm-modal');
+        const titleEl = document.getElementById('confirm-title');
+        const messageEl = document.getElementById('confirm-message');
+        const okBtn = document.getElementById('confirm-ok-btn');
+        const cancelBtn = document.getElementById('confirm-cancel-btn');
+
+        titleEl.textContent = title;
+        messageEl.textContent = message;
+        modal.classList.add('active');
+
+        // 确定按钮点击
+        const handleOk = () => {
+            cleanup();
+            resolve(true);
+        };
+
+        // 取消按钮点击
+        const handleCancel = () => {
+            cleanup();
+            resolve(false);
+        };
+
+        // 点击背景关闭
+        const handleBackdrop = (e) => {
+            if (e.target === modal) {
+                handleCancel();
+            }
+        };
+
+        // ESC键关闭
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') {
+                handleCancel();
+            }
+        };
+
+        // 清理事件监听器
+        const cleanup = () => {
+            modal.classList.remove('active');
+            okBtn.removeEventListener('click', handleOk);
+            cancelBtn.removeEventListener('click', handleCancel);
+            modal.removeEventListener('click', handleBackdrop);
+            document.removeEventListener('keydown', handleEscape);
+        };
+
+        okBtn.addEventListener('click', handleOk);
+        cancelBtn.addEventListener('click', handleCancel);
+        modal.addEventListener('click', handleBackdrop);
+        document.addEventListener('keydown', handleEscape);
+    });
+}

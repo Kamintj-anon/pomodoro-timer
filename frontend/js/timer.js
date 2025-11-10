@@ -183,9 +183,10 @@ async function completeTimer(completed = true) {
 }
 
 // 重置计时器
-function resetTimer() {
+async function resetTimer() {
     if (window.currentPomodoro) {
-        if (!confirm('确定要取消当前番茄钟吗？')) {
+        const confirmed = await showConfirm('确定要取消当前番茄钟吗？', '取消番茄钟');
+        if (!confirmed) {
             return;
         }
 
