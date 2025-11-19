@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo-Brutal 风格演示 - 番茄钟</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/neo-brutal.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🍅</span>
+                <span>POMODORO</span>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link active">Timer</a>
+                <a href="#" class="nav-link">Stats</a>
+                <a href="#" class="nav-link">History</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容 -->
+    <main>
+        <div class="container">
+            <h1 class="text-center mt-xl mb-xl">NEO-BRUTAL DESIGN SYSTEM</h1>
+
+            <!-- 按钮演示 -->
+            <section class="mb-xl">
+                <h2 class="mb-lg">按钮组件</h2>
+                <div class="flex flex-wrap gap-md mb-md">
+                    <button class="btn btn-primary" onclick="animationController.triggerBounce(this)">
+                        <i class="fas fa-play"></i> Primary
+                    </button>
+                    <button class="btn btn-danger" onclick="animationController.triggerGlitch(this)">
+                        <i class="fas fa-times"></i> Danger
+                    </button>
+                    <button class="btn btn-success">
+                        <i class="fas fa-check"></i> Success
+                    </button>
+                    <button class="btn btn-warning">
+                        <i class="fas fa-exclamation"></i> Warning
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-star"></i> Secondary
+                    </button>
+                </div>
+                <div class="flex flex-wrap gap-md">
+                    <button class="btn btn-outline">Outline</button>
+                    <button class="btn btn-ghost">Ghost</button>
+                    <button class="btn btn-sm btn-primary">Small</button>
+                    <button class="btn btn-lg btn-primary">Large</button>
+                    <button class="btn btn-icon btn-primary">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 输入框演示 -->
+            <section class="mb-xl">
+                <h2 class="mb-lg">输入框组件</h2>
+                <div class="grid grid-cols-2 gap-lg">
+                    <div class="form-field">
+                        <label class="form-label">邮箱地址</label>
+                        <input type="email" class="input" placeholder="example@email.com">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">密码</label>
+                        <input type="password" class="input" placeholder="••••••••">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">选择选项</label>
+                        <select class="select">
+                            <option>选项 1</option>
+                            <option>选项 2</option>
+                            <option>选项 3</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">备注</label>
+                        <textarea class="textarea" placeholder="输入备注..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 复选框和单选框 -->
+            <section class="mb-xl">
+                <h2 class="mb-lg">复选框 & 单选框</h2>
+                <div class="flex gap-lg mb-md">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox-custom"></span>
+                        <span>选项 1</span>
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox-custom"></span>
+                        <span>选项 2</span>
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox-custom"></span>
+                        <span>选项 3</span>
+                    </label>
+                </div>
+                <div class="flex gap-lg">
+                    <label class="radio">
+                        <input type="radio" name="demo-radio">
+                        <span class="radio-custom"></span>
+                        <span>单选 A</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="demo-radio" checked>
+                        <span class="radio-custom"></span>
+                        <span>单选 B</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="demo-radio">
+                        <span class="radio-custom"></span>
+                        <span>单选 C</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- 卡片演示 -->
+            <section class="mb-xl">
+                <h2 class="mb-lg">卡片组件</h2>
+                <div class="grid grid-cols-3 gap-lg">
+                    <div class="card card-primary animate-skew">
+                        <div class="card-header">
+                            <h3 class="card-title">Primary Card</h3>
+                        </div>
+                        <div class="card-body">
+                            这是一个主要卡片，带有青色强调边框。
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-sm btn-primary">Action</button>
+                        </div>
+                    </div>
+                    <div class="card card-danger animate-skew">
+                        <div class="card-header">
+                            <h3 class="card-title">Danger Card</h3>
+                        </div>
+                        <div class="card-body">
+                            这是一个危险卡片，带有洋红色强调边框。
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </div>
+                    </div>
+                    <div class="card card-success animate-skew">
+                        <div class="card-header">
+                            <h3 class="card-title">Success Card</h3>
+                        </div>
+                        <div class="card-body">
+                            这是一个成功卡片，带有黄绿色强调边框。
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-sm btn-success">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 标签演示 -->
+            <section class="mb-xl">
+                <h2 class="mb-lg">标签组件</h2>
+                <div class="flex flex-wrap gap-sm">
+                    <span class="tag tag-cyan">Cyan</span>
+                    <span class="tag tag-magenta">Magenta</span>
+                    <span class="tag tag-yellow">Yellow</span>
+                    <span class="tag tag-lime">Lime</span>
+                    <span class="tag tag-purple">Purple</span>
+                    <span class="tag tag-orange">Orange</span>
+                    <span class="tag tag-removable tag-cyan">
+                        Removable
+                        <button class="tag-remove">×</button>
+                    </span>
+                </div>
+            </section>
+
+            <!-- 进度条演示 -->
+            <section class="mb-xl">
+                <h2 class="mb-lg">进度条</h2>
+                <div class="progress mb-md">
+                    <div class="progress-bar animated" style="width: 75%;"></div>
+                    <span class="progress-text">75%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 50%;"></div>
+                    <span class="progress-text">50%</span>
+                </div>
+            </section>
+
+            <!-- 警告框演示 -->
+            <section class="mb-xl">
+                <h2 class="mb-lg">警告框</h2>
+                <div class="alert alert-info">
+                    <div class="alert-icon">ℹ️</div>
+                    <div class="alert-content">
+                        <div class="alert-title">信息提示</div>
+                        <div>这是一条信息提示消息。</div>
+                    </div>
+                </div>
+                <div class="alert alert-success">
+                    <div class="alert-icon">✓</div>
+                    <div class="alert-content">
+                        <div class="alert-title">操作成功</div>
+                        <div>您的操作已成功完成！</div>
+                    </div>
+                </div>
+                <div class="alert alert-warning">
+                    <div class="alert-icon">⚠</div>
+                    <div class="alert-content">
+                        <div class="alert-title">警告</div>
+                        <div>请注意这个警告信息。</div>
+                    </div>
+                </div>
+                <div class="alert alert-danger">
+                    <div class="alert-icon">✖</div>
+                    <div class="alert-content">
+                        <div class="alert-title">错误</div>
+                        <div>发生了一个错误，请重试。</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 计时器演示 -->
+            <section class="mb-xl">
+                <h2 class="mb-lg text-center">番茄钟计时器</h2>
+                <div class="timer-container">
+                    <div class="timer-display running" id="demo-timer">
+                        25:00
+                    </div>
+                    <div class="timer-controls">
+                        <button class="timer-btn timer-btn-start" onclick="startTimer()">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button class="timer-btn timer-btn-pause" onclick="pauseTimer()">
+                            <i class="fas fa-pause"></i>
+                        </button>
+                        <button class="timer-btn timer-btn-reset" onclick="resetTimer()">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 统计卡片演示 -->
+            <section class="mb-xl">
+                <h2 class="mb-lg">统计卡片</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" style="color: var(--neon-cyan);">42</div>
+                        <div class="stat-label">今日完成</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" style="color: var(--neon-magenta);">8</div>
+                        <div class="stat-label">连续天数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" style="color: var(--neon-yellow);">1,234</div>
+                        <div class="stat-label">总计时长</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 动画演示 -->
+            <section class="mb-xxxl">
+                <h2 class="mb-lg text-center">动画效果演示</h2>
+                <div class="flex justify-center gap-md flex-wrap">
+                    <button class="btn btn-primary" onclick="testBounce()">
+                        <i class="fas fa-basketball-ball"></i> 弹跳动画
+                    </button>
+                    <button class="btn btn-danger" onclick="testGlitch()">
+                        <i class="fas fa-bug"></i> 故障动画
+                    </button>
+                    <button class="btn btn-warning" onclick="testPulse()">
+                        <i class="fas fa-bolt"></i> 脉冲动画
+                    </button>
+                    <button class="btn btn-success" onclick="testConfetti()">
+                        <i class="fas fa-star"></i> 彩屑爆炸
+                    </button>
+                    <button class="btn btn-secondary" onclick="toggleAnimationMode()">
+                        <i class="fas fa-sliders-h"></i> 切换动画模式
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 主题和动画切换器 -->
+    <div class="theme-switcher">
+        <button class="theme-toggle" onclick="toggleTheme()" title="切换主题">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div class="animation-toggle">
+        <button class="btn btn-icon btn-purple" onclick="toggleAnimationMode()" title="动画设置">
+            <i class="fas fa-magic"></i>
+        </button>
+    </div>
+
+    <!-- 加载动画控制器 -->
+    <script src="js/animation-controller.js"></script>
+
+    <!-- 演示脚本 -->
+    <script>
+        // 测试弹跳动画
+        function testBounce() {
+            const timer = document.getElementById('demo-timer');
+            animationController.triggerBounce(timer);
+        }
+
+        // 测试故障动画
+        function testGlitch() {
+            const timer = document.getElementById('demo-timer');
+            animationController.triggerGlitch(timer);
+        }
+
+        // 测试脉冲动画
+        let pulseActive = false;
+        function testPulse() {
+            const timer = document.getElementById('demo-timer');
+            if (pulseActive) {
+                animationController.stopPulse(timer);
+                pulseActive = false;
+            } else {
+                animationController.triggerPulse(timer);
+                pulseActive = true;
+            }
+        }
+
+        // 测试彩屑爆炸
+        function testConfetti() {
+            animationController.triggerConfetti();
+        }
+
+        // 切换动画模式
+        function toggleAnimationMode() {
+            const mode = animationController.toggleMode();
+            const modeNames = {
+                'on': '完整动画',
+                'reduced': '降低动画',
+                'off': '关闭动画'
+            };
+            animationController.showToast(`动画模式: ${modeNames[mode]}`);
+        }
+
+        // 切换主题
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+
+            if (currentTheme === 'dark') {
+                html.removeAttribute('data-theme');
+                document.querySelector('.theme-toggle i').className = 'fas fa-moon';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                document.querySelector('.theme-toggle i').className = 'fas fa-sun';
+            }
+        }
+
+        // 计时器功能
+        let timerRunning = false;
+        let timerInterval;
+
+        function startTimer() {
+            if (timerRunning) return;
+            timerRunning = true;
+            const timer = document.getElementById('demo-timer');
+            timer.classList.add('running');
+            animationController.triggerBounce(timer);
+        }
+
+        function pauseTimer() {
+            timerRunning = false;
+            const timer = document.getElementById('demo-timer');
+            timer.classList.remove('running');
+            animationController.triggerGlitch(timer);
+        }
+
+        function resetTimer() {
+            timerRunning = false;
+            const timer = document.getElementById('demo-timer');
+            timer.textContent = '25:00';
+            timer.classList.remove('running');
+            animationController.triggerBounce(timer);
+        }
+
+        // 页面加载完成后的欢迎动画
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                animationController.triggerConfetti();
+            }, 500);
+        });
+    </script>
+</body>
+</html>
