@@ -1,0 +1,403 @@
+/* ========================================
+   NEO-BRUTAL ANIMATIONS
+   炫酷动画效果系统
+   ======================================== */
+
+/*
+ * 5种核心动画效果：
+ * 1. Bounce Pop - 弹跳弹出
+ * 2. Glitch Shake - 故障抖动
+ * 3. Neon Pulse - 霓虹脉冲
+ * 4. Slide Bounce - 滑入弹跳
+ * 5. Skew Morph - 倾斜变形
+ */
+
+
+/* ============================================
+   1. BOUNCE POP - 弹跳弹出动画
+   用途：按钮点击、任务完成
+   ============================================ */
+
+@keyframes bouncePop {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  50% {
+    transform: scale(0.9) rotate(-5deg);
+  }
+  75% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-bounce-pop {
+  animation: bouncePop var(--duration-slow) var(--ease-bounce);
+}
+
+/* 触发类 - 通过JS添加此类 */
+.is-animating.bounce-pop {
+  animation: bouncePop var(--duration-slow) var(--ease-bounce);
+}
+
+
+/* ============================================
+   2. GLITCH SHAKE - 故障抖动动画
+   用途：错误提示、删除操作
+   ============================================ */
+
+@keyframes glitchShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-10px);
+  }
+  20% {
+    transform: translateX(10px);
+  }
+  30% {
+    transform: translateX(-8px);
+  }
+  40% {
+    transform: translateX(8px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  60% {
+    transform: translateX(5px);
+  }
+  70% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+  90% {
+    transform: translateX(-1px);
+  }
+}
+
+@keyframes glitchColor {
+  0%, 100% {
+    text-shadow: 0 0 0 transparent;
+  }
+  20% {
+    text-shadow:
+      -2px 0 0 var(--neon-cyan),
+      2px 0 0 var(--neon-magenta);
+  }
+  40% {
+    text-shadow:
+      2px 0 0 var(--neon-cyan),
+      -2px 0 0 var(--neon-magenta);
+  }
+  60% {
+    text-shadow:
+      -1px 0 0 var(--neon-cyan),
+      1px 0 0 var(--neon-magenta);
+  }
+  80% {
+    text-shadow:
+      1px 0 0 var(--neon-cyan),
+      -1px 0 0 var(--neon-magenta);
+  }
+}
+
+.animate-glitch {
+  animation:
+    glitchShake 0.3s ease-in-out,
+    glitchColor 0.3s ease-in-out;
+}
+
+.is-animating.glitch {
+  animation:
+    glitchShake 0.3s ease-in-out,
+    glitchColor 0.3s ease-in-out;
+}
+
+
+/* ============================================
+   3. NEON PULSE - 霓虹脉冲动画
+   用途：计时器运行、加载状态
+   ============================================ */
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow:
+      var(--shadow-md),
+      0 0 10px currentColor;
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow:
+      var(--shadow-md-hover),
+      0 0 30px currentColor,
+      0 0 50px currentColor;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes neonPulseBorder {
+  0%, 100% {
+    border-color: var(--neon-cyan);
+  }
+  25% {
+    border-color: var(--neon-magenta);
+  }
+  50% {
+    border-color: var(--neon-yellow);
+  }
+  75% {
+    border-color: var(--neon-lime);
+  }
+}
+
+.animate-pulse {
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+.animate-pulse-border {
+  animation:
+    neonPulse 2s ease-in-out infinite,
+    neonPulseBorder 2s linear infinite;
+}
+
+.is-animating.pulse {
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+
+/* ============================================
+   4. SLIDE BOUNCE - 滑入弹跳动画
+   用途：新任务添加、弹窗出现
+   ============================================ */
+
+@keyframes slideBounceIn {
+  0% {
+    transform: translateY(-100%) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(10%) scale(1.05);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-5%) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideBounceOut {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(10%) scale(1.05);
+  }
+  100% {
+    transform: translateY(-100%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.animate-slide-in {
+  animation: slideBounceIn 0.6s var(--ease-spring);
+}
+
+.animate-slide-out {
+  animation: slideBounceOut 0.4s var(--ease-in-out);
+}
+
+.is-animating.slide-in {
+  animation: slideBounceIn 0.6s var(--ease-spring);
+}
+
+
+/* ============================================
+   5. SKEW MORPH - 倾斜变形动画
+   用途：卡片悬浮、拖拽
+   ============================================ */
+
+@keyframes skewMorph {
+  0% {
+    transform: skew(0deg) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: skew(-3deg) rotate(-2deg) scale(1.02);
+  }
+}
+
+.animate-skew:hover {
+  animation: skewMorph var(--duration-normal) var(--ease-out) forwards;
+  box-shadow: var(--shadow-lg-hover);
+}
+
+.is-animating.skew {
+  transform: skew(-3deg) rotate(-2deg) scale(1.02);
+  box-shadow: var(--shadow-lg-hover);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+
+/* ============================================
+   6. COLOR WAVE - 色彩波浪动画
+   用途：进度条增长、统计更新
+   ============================================ */
+
+@keyframes colorWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-color-wave {
+  background: linear-gradient(
+    90deg,
+    var(--neon-cyan),
+    var(--neon-magenta),
+    var(--neon-yellow),
+    var(--neon-lime),
+    var(--neon-purple),
+    var(--neon-cyan)
+  );
+  background-size: 300% 100%;
+  animation: colorWave 3s linear infinite;
+}
+
+
+/* ============================================
+   7. EXPLODE CONFETTI - 爆炸彩屑
+   用途：所有任务完成（由JS控制）
+   ============================================ */
+
+@keyframes confettiExplode {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform:
+      translate(var(--confetti-x), var(--confetti-y))
+      rotate(var(--confetti-rotate))
+      scale(0);
+    opacity: 0;
+  }
+}
+
+.confetti-piece {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+  z-index: var(--z-tooltip);
+  animation: confettiExplode 1.2s var(--ease-out) forwards;
+}
+
+
+/* ============================================
+   通用工具类
+   ============================================ */
+
+/* 缩放动画 */
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--duration-normal) var(--ease-spring);
+}
+
+.animate-scale-out {
+  animation: scaleOut var(--duration-fast) var(--ease-in-out);
+}
+
+/* 淡入淡出 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-normal) ease-in-out;
+}
+
+.animate-fade-out {
+  animation: fadeOut var(--duration-normal) ease-in-out;
+}
+
+/* 旋转动画 */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+
+/* ============================================
+   降低动画模式
+   ============================================ */
+
+[data-animation="reduced"] * {
+  animation-duration: 0.1s !important;
+  animation-iteration-count: 1 !important;
+}
+
+[data-animation="off"] * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* 系统级降低动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
