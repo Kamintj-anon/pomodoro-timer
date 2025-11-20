@@ -31,17 +31,9 @@ async function loadProfileData() {
         if (stats) {
             document.getElementById('profile-total-count').textContent = stats.total_count || 0;
 
+            // 只显示小时数（整数）
             const hours = Math.floor((stats.total_duration || 0) / 3600);
-            const minutes = Math.floor(((stats.total_duration || 0) % 3600) / 60);
-            let durationText = '';
-            if (hours > 0) {
-                durationText = `${hours} 小时 ${minutes} 分钟`;
-            } else if (minutes > 0) {
-                durationText = `${minutes} 分钟`;
-            } else {
-                durationText = `${stats.total_duration || 0} 秒`;
-            }
-            document.getElementById('profile-total-duration').textContent = durationText;
+            document.getElementById('profile-total-duration').textContent = hours;
         }
 
         // 获取设置
