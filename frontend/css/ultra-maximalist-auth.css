@@ -1,0 +1,482 @@
+/*
+ * ULTRA-MAXIMALIST NEO-POP BRUTALISM AUTH PAGE
+ * Visual Chaos and High Density Design
+ */
+
+/* =========================================
+   1. BUSY BACKGROUND PATTERNS
+   ========================================= */
+
+#auth-page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    /* 移除简单背景，使用复杂图案叠加 */
+    background:
+        /* 棋盘格图案 */
+        repeating-conic-gradient(#000 0% 25%, transparent 0% 50%) 50% / 40px 40px,
+        /* 对角线条纹 */
+        repeating-linear-gradient(45deg, #FF90E8 0px, #FF90E8 10px, #D4FF00 10px, #D4FF00 20px) 0 0 / 80px 80px,
+        /* 点阵图案 */
+        radial-gradient(circle, #00FFFF 2px, transparent 2px) 0 0 / 30px 30px,
+        /* 基础渐变 */
+        linear-gradient(135deg, #ffe6f7 0%, #fff9e6 50%, #e6fffa 100%);
+}
+
+/* 巨大半透明轮廓文字背景 */
+#auth-page::before {
+    content: 'FOCUS';
+    position: absolute;
+    top: -10%;
+    left: -5%;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 35vw;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 4px rgba(0, 0, 0, 0.15);
+    text-stroke: 4px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    pointer-events: none;
+    transform: rotate(-8deg);
+    line-height: 0.8;
+}
+
+#auth-page::after {
+    content: 'v2.0';
+    position: absolute;
+    bottom: -15%;
+    right: -10%;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 28vw;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 4px rgba(255, 144, 232, 0.2);
+    text-stroke: 4px rgba(255, 144, 232, 0.2);
+    z-index: 1;
+    pointer-events: none;
+    transform: rotate(12deg);
+}
+
+/* 滚动跑马灯边框 - 顶部 */
+.marquee-top {
+    position: absolute;
+    top: 10%;
+    left: -10%;
+    width: 120%;
+    background: linear-gradient(90deg, #FF006E 0%, #FF90E8 50%, #FF006E 100%);
+    border: 5px solid black;
+    padding: 16px 0;
+    transform: rotate(-3deg);
+    z-index: 10;
+    overflow: hidden;
+    box-shadow: 8px 8px 0px 0px black;
+}
+
+.marquee-bottom {
+    position: absolute;
+    bottom: 12%;
+    left: -10%;
+    width: 120%;
+    background: linear-gradient(90deg, #00FFFF 0%, #B8FF9F 50%, #D4FF00 100%);
+    border: 5px solid black;
+    padding: 16px 0;
+    transform: rotate(2.5deg);
+    z-index: 10;
+    overflow: hidden;
+    box-shadow: 8px 8px 0px 0px black;
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    font-family: 'Space Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: marquee-scroll 25s linear infinite;
+}
+
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-content span {
+    margin: 0 60px;
+    display: inline-block;
+}
+
+/* =========================================
+   2. RETRO-OS WINDOW MAIN CARD (THE "CONSOLE")
+   ========================================= */
+
+.form-container {
+    position: relative;
+    z-index: 20;
+    max-width: 520px;
+    margin: 0 auto;
+    background: white;
+    /* Windows 95 风格重边框 */
+    border: 5px solid black;
+    box-shadow:
+        inset -3px -3px 0 rgba(0, 0, 0, 0.5),
+        inset 3px 3px 0 rgba(255, 255, 255, 0.8),
+        12px 12px 0px 0px black;
+}
+
+/* 复古OS标题栏 */
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: -45px;
+    left: -5px;
+    right: -5px;
+    height: 40px;
+    background: linear-gradient(180deg, #FF90E8 0%, #FF006E 100%);
+    border: 5px solid black;
+    border-bottom: none;
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* 窗口标题文字 */
+.form-container h2 {
+    position: relative;
+    margin: -10px -30px 30px -30px;
+    padding: 50px 30px 25px 30px;
+    background: transparent;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 42px;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    z-index: 2;
+}
+
+.form-container h2::before {
+    content: '█ ';
+    color: #D4FF00;
+}
+
+/* 窗口控制按钮（X, -, []） */
+.form-container h2::after {
+    content: '□ ▭ ✕';
+    position: absolute;
+    top: -35px;
+    right: 15px;
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 15px;
+    color: black;
+}
+
+/* 内部锯齿分隔线 */
+.form-container > div:not(:last-child) {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-container > div:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: repeating-linear-gradient(
+        90deg,
+        black 0px,
+        black 8px,
+        transparent 8px,
+        transparent 16px
+    );
+}
+
+/* =========================================
+   3. BRUTALIST INPUT BLOCKS
+   ========================================= */
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 18px 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #FFF;
+    border: 5px solid black;
+    box-shadow:
+        inset 4px 4px 0px rgba(0, 0, 0, 0.2),
+        6px 6px 0px 0px black;
+    transition: all 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-container input:focus {
+    outline: none;
+    background: #FFFACD;
+    transform: translate(-3px, -3px);
+    box-shadow:
+        inset 4px 4px 0px rgba(255, 201, 0, 0.3),
+        9px 9px 0px 0px black;
+}
+
+.form-container input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    text-transform: none;
+}
+
+/* Label样式 */
+.form-container label {
+    display: block;
+    margin-bottom: 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+    background: #D4FF00;
+    padding: 6px 12px;
+    border: 3px solid black;
+    display: inline-block;
+    box-shadow: 4px 4px 0px black;
+}
+
+/* =========================================
+   4. MAXIMALIST BUTTONS
+   ========================================= */
+
+.form-container button[type="button"],
+.form-container button[onclick] {
+    width: 100%;
+    padding: 20px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #FF90E8 0%, #FF006E 100%);
+    color: white;
+    border: 5px solid black;
+    box-shadow:
+        inset -2px -2px 0 rgba(0, 0, 0, 0.3),
+        inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+        8px 8px 0px 0px black;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-container button:hover {
+    transform: translate(-4px, -4px);
+    box-shadow:
+        inset -2px -2px 0 rgba(0, 0, 0, 0.3),
+        inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+        12px 12px 0px 0px black;
+}
+
+.form-container button:active {
+    transform: translate(2px, 2px);
+    box-shadow:
+        inset 3px 3px 0 rgba(0, 0, 0, 0.4),
+        4px 4px 0px 0px black;
+}
+
+/* 按钮图标 */
+.form-container button i {
+    margin-right: 12px;
+    font-size: 26px;
+    vertical-align: middle;
+    animation: button-icon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes button-icon-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+/* =========================================
+   5. TOGGLE FORM LINK
+   ========================================= */
+
+.toggle-form {
+    position: relative;
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    font-weight: 700;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(0, 0, 0, 0.03) 10px,
+            rgba(0, 0, 0, 0.03) 20px
+        );
+    border: 3px dashed black;
+}
+
+.toggle-form a {
+    color: #FF006E;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    background: #D4FF00;
+    border: 3px solid black;
+    box-shadow: 4px 4px 0px black;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.toggle-form a:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px black;
+    background: #00FFFF;
+}
+
+.toggle-form a:active {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 0px black;
+}
+
+/* =========================================
+   6. DECORATIVE STICKERS (Enhanced)
+   ========================================= */
+
+/* 添加更多装饰元素 */
+.form-container::after {
+    content: '⚠ BETA';
+    position: absolute;
+    top: -55px;
+    left: 15px;
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+    background: #D4FF00;
+    padding: 6px 12px;
+    border: 3px solid black;
+    transform: rotate(-5deg);
+    box-shadow: 3px 3px 0 black;
+}
+
+/* 输入框装饰点 */
+.form-container > div {
+    position: relative;
+}
+
+.form-container > div::before {
+    content: '●';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    font-size: 12px;
+    color: #FF90E8;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+/* =========================================
+   7. ACTIVE/INACTIVE FORM STATES
+   ========================================= */
+
+.form-container {
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+}
+
+/* =========================================
+   8. RESPONSIVE ADJUSTMENTS
+   ========================================= */
+
+@media (max-width: 768px) {
+    #auth-page::before {
+        font-size: 45vw;
+    }
+
+    .form-container {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    .form-container h2 {
+        font-size: 32px;
+    }
+
+    .marquee-top,
+    .marquee-bottom {
+        width: 140%;
+        left: -20%;
+    }
+
+    .form-container button {
+        font-size: 20px;
+    }
+}
+
+/* =========================================
+   9. CHAOS OVERLAYS
+   ========================================= */
+
+/* 添加随机浮动几何图形 */
+.chaos-shape {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.chaos-shape-1 {
+    top: 25%;
+    left: 5%;
+    width: 80px;
+    height: 80px;
+    background: #FF90E8;
+    border: 4px solid black;
+    transform: rotate(25deg);
+    box-shadow: 6px 6px 0 black;
+    animation: float-chaos 8s ease-in-out infinite;
+}
+
+.chaos-shape-2 {
+    top: 60%;
+    right: 8%;
+    width: 100px;
+    height: 100px;
+    background: #00FFFF;
+    border: 4px solid black;
+    border-radius: 50%;
+    box-shadow: 6px 6px 0 black;
+    animation: float-chaos 10s ease-in-out infinite reverse;
+}
+
+.chaos-shape-3 {
+    bottom: 20%;
+    left: 10%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 87px solid #D4FF00;
+    filter: drop-shadow(6px 6px 0 black);
+    animation: float-chaos 12s ease-in-out infinite;
+}
+
+@keyframes float-chaos {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+}

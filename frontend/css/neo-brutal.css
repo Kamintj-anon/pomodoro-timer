@@ -26,6 +26,8 @@
 
 /* 导入动画效果 */
 @import url('neo-brutal-animations.css');
+/* 导入高级效果（可选 - 包含20+高级视觉效果） */
+@import url('neo-brutal-advanced.css');
 
 
 /* ============================================

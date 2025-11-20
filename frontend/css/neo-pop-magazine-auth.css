@@ -1,0 +1,421 @@
+/*
+ * NEO-POP MAGAZINE LAYOUT - LOGIN SCREEN
+ * Structured Asymmetrical Split Layout
+ */
+
+/* =========================================
+   RESET AUTH PAGE
+   ========================================= */
+
+#auth-page {
+    /* Remove all previous background decorations */
+    background: none !important;
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+}
+
+/* Hide all old decorative elements */
+#auth-page > div[style*="position: absolute"],
+#auth-page .marquee-top,
+#auth-page .marquee-bottom,
+#auth-page .chaos-shape,
+#auth-page > div:not(.auth-container) {
+    display: none !important;
+}
+
+/* =========================================
+   GRID LAYOUT CONTAINER
+   ========================================= */
+
+.auth-container {
+    display: grid !important;
+    grid-template-columns: 60% 40% !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 9999 !important;
+}
+
+/* Remove all extra decorations from auth-container */
+.auth-container > div[style*="position: absolute"],
+.auth-container > h1,
+.auth-container > p,
+.auth-container > div:not(.form-container):not(.decorative-column) {
+    display: none !important;
+}
+
+/* =========================================
+   LEFT COLUMN - DECORATIVE AREA (60%)
+   ========================================= */
+
+.decorative-column {
+    background: #D4FF00 !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-right: 8px solid black;
+}
+
+/* Halftone Pattern Overlay */
+.decorative-column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle, black 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+/* Giant Typography Headline */
+.decorative-headline {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 18vw;
+    font-weight: 900;
+    line-height: 0.85;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    z-index: 2;
+    -webkit-text-stroke: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Retro Icon Container */
+.decorative-icon {
+    position: absolute;
+    bottom: 10%;
+    width: 200px;
+    height: 200px;
+    background: black;
+    border: 6px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+}
+
+.decorative-icon i {
+    font-size: 120px;
+    color: white;
+}
+
+/* =========================================
+   RIGHT COLUMN - LOGIN INTERFACE (40%)
+   ========================================= */
+
+.form-container {
+    background: #FF90E8 !important;
+    padding: 60px 50px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    position: relative !important;
+    margin: 0 !important;
+    max-width: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 100vh !important;
+}
+
+/* Remove all form decorations */
+.form-container::before,
+.form-container::after,
+.form-container > div[style*="position: absolute"] {
+    display: none !important;
+}
+
+/* Form Title */
+.form-container h2 {
+    font-family: 'Archivo Black', sans-serif !important;
+    font-size: 64px !important;
+    color: black !important;
+    text-transform: uppercase !important;
+    margin: 0 0 40px 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    -webkit-text-stroke: 0px !important;
+    text-align: left !important;
+}
+
+.form-container h2::before,
+.form-container h2::after {
+    display: none !important;
+}
+
+/* =========================================
+   MASSIVE BLOCKY INPUTS
+   ========================================= */
+
+.form-container > div {
+    margin-bottom: 32px !important;
+    position: relative !important;
+}
+
+.form-container > div::before,
+.form-container > div::after {
+    display: none !important;
+}
+
+.form-container label {
+    display: block !important;
+    font-family: 'Space Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: black !important;
+    margin-bottom: 12px !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100% !important;
+    padding: 24px 20px !important;
+    font-family: 'Space Mono', monospace !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    background: white !important;
+    border: 4px solid black !important;
+    box-shadow: 8px 8px 0px 0px black !important;
+    margin: 0 !important;
+    transition: all 0.2s !important;
+}
+
+.form-container input:focus {
+    outline: none !important;
+    transform: translate(-3px, -3px) !important;
+    box-shadow: 11px 11px 0px 0px black !important;
+}
+
+.form-container input::placeholder {
+    color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* =========================================
+   MASSIVE BRUTALIST BUTTON
+   ========================================= */
+
+.form-container button[onclick] {
+    width: 100% !important;
+    padding: 28px 20px !important;
+    font-family: 'Archivo Black', sans-serif !important;
+    font-size: 28px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    background: black !important;
+    color: white !important;
+    border: 4px solid black !important;
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.4) !important;
+    cursor: pointer !important;
+    transition: all 0.2s !important;
+    margin-top: 8px !important;
+}
+
+.form-container button[onclick]:hover {
+    transform: translate(-3px, -3px) !important;
+    box-shadow: 11px 11px 0px 0px rgba(0, 0, 0, 0.4) !important;
+}
+
+.form-container button[onclick]:active {
+    transform: translate(2px, 2px) !important;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Button icon */
+.form-container button i {
+    margin-right: 12px !important;
+    animation: none !important;
+}
+
+/* =========================================
+   TOGGLE LINK
+   ========================================= */
+
+.toggle-form {
+    margin-top: 40px !important;
+    padding: 0 !important;
+    text-align: center !important;
+    font-family: 'Space Mono', monospace !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: black !important;
+    background: none !important;
+    border: none !important;
+}
+
+.toggle-form span {
+    display: none !important;
+}
+
+.toggle-form a {
+    color: black !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 3px !important;
+    text-decoration-color: black !important;
+    text-underline-offset: 4px !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    transition: all 0.2s !important;
+}
+
+.toggle-form a:hover {
+    text-decoration-thickness: 5px !important;
+    transform: none !important;
+}
+
+/* =========================================
+   PASSWORD TOGGLE BUTTON
+   ========================================= */
+
+.toggle-password {
+    position: absolute !important;
+    right: 20px !important;
+    bottom: 24px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-size: 20px !important;
+    color: black !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    box-shadow: none !important;
+    transition: none !important;
+}
+
+.toggle-password:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* =========================================
+   FORM SWITCHING
+   ========================================= */
+
+.form-container {
+    display: none !important;
+}
+
+.form-container.active {
+    display: flex !important;
+}
+
+/* =========================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================= */
+
+@media (max-width: 1024px) {
+    .auth-container {
+        grid-template-columns: 50% 50% !important;
+    }
+
+    .decorative-headline {
+        font-size: 14vw !important;
+    }
+
+    .form-container {
+        padding: 40px 30px !important;
+    }
+
+    .form-container h2 {
+        font-size: 48px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 30% 70% !important;
+    }
+
+    .decorative-column {
+        border-right: none !important;
+        border-bottom: 8px solid black !important;
+    }
+
+    .decorative-headline {
+        font-size: 20vw !important;
+    }
+
+    .decorative-icon {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    .decorative-icon i {
+        font-size: 60px !important;
+    }
+
+    .form-container {
+        padding: 30px 20px !important;
+    }
+
+    .form-container h2 {
+        font-size: 36px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .form-container input {
+        padding: 18px 16px !important;
+        font-size: 16px !important;
+    }
+
+    .form-container button[onclick] {
+        padding: 20px 16px !important;
+        font-size: 22px !important;
+    }
+}
+
+/* =========================================
+   ALTERNATIVE COLOR SCHEME (CYAN)
+   ========================================= */
+
+.form-container.cyan-theme {
+    background: #00FFFF !important;
+}
+
+/* =========================================
+   HIDE ALL PREVIOUS DECORATIONS
+   ========================================= */
+
+/* Hide all floating stickers, badges, marquees from old design */
+#auth-page > div:not(.auth-container) {
+    display: none !important;
+}
+
+/* Ensure clean slate */
+.animate-scroll,
+[class*="marquee"],
+[class*="chaos"],
+[class*="float"],
+[style*="float"],
+[style*="animation"] {
+    display: none !important;
+}

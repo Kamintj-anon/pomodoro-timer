@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo-Brutal Advanced - 终极设计系统</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/neo-brutal.css">
+    <link rel="stylesheet" href="css/neo-brutal-advanced.css">
+    <style>
+        /* 额外的演示样式 */
+        .demo-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: var(--spacing-xl);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .demo-section {
+            padding: var(--spacing-xxxl) 0;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .showcase-card {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-md);
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon holographic">⚡</span>
+                <span class="holographic">NEO-BRUTAL</span>
+            </div>
+            <nav class="nav">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#advanced" class="nav-link">Advanced</a>
+                <a href="#3d" class="nav-link">3D Effects</a>
+                <a href="#interactions" class="nav-link">Interactions</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero 区域 -->
+    <section id="hero" class="demo-hero">
+        <h1 class="demo-title holographic text-center">
+            ULTIMATE<br>NEO-BRUTAL<br>DESIGN
+        </h1>
+        <p class="text-center text-glow" style="color: var(--neon-cyan); font-size: var(--font-size-xl); margin-bottom: var(--spacing-xl);">
+            20+ 高级效果 · 无限可能 · 极致酷炫
+        </p>
+        <div class="flex gap-lg flex-wrap justify-center">
+            <button class="btn btn-primary btn-lg magnetic-btn ripple-effect" onclick="scrollToSection('#advanced')">
+                <i class="fas fa-rocket"></i> 开始探索
+            </button>
+            <button class="btn btn-outline btn-lg magnetic-btn btn-liquid ripple-effect" onclick="testAllEffects()">
+                <i class="fas fa-magic"></i> 全部特效
+            </button>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <!-- 玻璃态射效果 -->
+            <section id="advanced" class="demo-section">
+                <h2 class="text-center mb-xxxl holographic" style="font-size: var(--font-size-xxxl);">
+                    <i class="fas fa-gem"></i> 玻璃态射 & 3D 效果
+                </h2>
+
+                <div class="demo-grid mb-xxxl">
+                    <!-- 玻璃卡片 -->
+                    <div class="glass-card showcase-card noise-texture">
+                        <i class="fas fa-star" style="font-size: 48px; color: var(--neon-yellow);"></i>
+                        <h3>玻璃态射</h3>
+                        <p>Glassmorphism<br>毛玻璃背景模糊</p>
+                    </div>
+
+                    <!-- 3D 卡片翻转 -->
+                    <div class="card-3d showcase-card">
+                        <div class="card-3d-inner">
+                            <div class="card-3d-front card card-primary">
+                                <div class="card-body" style="height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                    <i class="fas fa-cube" style="font-size: 48px; margin-bottom: 16px;"></i>
+                                    <h3>3D 翻转卡片</h3>
+                                    <p>悬停翻转</p>
+                                </div>
+                            </div>
+                            <div class="card-3d-back card">
+                                <div class="card-body" style="height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white;">
+                                    <i class="fas fa-check-circle" style="font-size: 48px; margin-bottom: 16px;"></i>
+                                    <h3>背面内容</h3>
+                                    <p>180° 旋转效果</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3D 倾斜卡片 -->
+                    <div class="card card-success card-tilt showcase-card">
+                        <div class="card-body" style="height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <i class="fas fa-hand-pointer" style="font-size: 48px; margin-bottom: 16px;"></i>
+                            <h3>3D 倾斜跟随</h3>
+                            <p>鼠标移动倾斜</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 液态效果 -->
+                <h3 class="text-center mb-lg" style="font-size: var(--font-size-xxl);">
+                    <i class="fas fa-droplet"></i> 液态动画
+                </h3>
+                <div class="flex justify-center gap-lg mb-xxxl flex-wrap">
+                    <div class="liquid-blob" style="width: 150px; height: 150px; background: var(--neon-cyan);"></div>
+                    <div class="liquid-blob" style="width: 150px; height: 150px; background: var(--neon-magenta); animation-delay: 2s;"></div>
+                    <div class="liquid-blob" style="width: 150px; height: 150px; background: var(--neon-yellow); animation-delay: 4s;"></div>
+                </div>
+
+                <div class="flex justify-center gap-md mb-xxxl flex-wrap">
+                    <button class="btn btn-primary btn-lg btn-liquid ripple-effect">
+                        <i class="fas fa-water"></i> 液态按钮
+                    </button>
+                    <button class="btn btn-danger btn-lg btn-liquid ripple-effect">
+                        <i class="fas fa-fire"></i> 涟漪扩散
+                    </button>
+                    <button class="btn btn-success btn-lg btn-liquid ripple-effect">
+                        <i class="fas fa-bolt"></i> 点击我
+                    </button>
+                </div>
+            </section>
+
+            <!-- 磁性交互 -->
+            <section id="interactions" class="demo-section">
+                <h2 class="text-center mb-xxxl holographic" style="font-size: var(--font-size-xxxl);">
+                    <i class="fas fa-magnet"></i> 磁力吸附 & 微交互
+                </h2>
+
+                <div class="text-center mb-xl">
+                    <p style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-xl);">
+                        将鼠标靠近按钮，感受磁力吸引！
+                    </p>
+                </div>
+
+                <div class="flex justify-center gap-xl mb-xxxl flex-wrap">
+                    <button class="btn btn-primary btn-lg magnetic-btn glow-intense ripple-effect" style="color: var(--neon-cyan);">
+                        <i class="fas fa-heart"></i> 磁力按钮
+                    </button>
+                    <button class="btn btn-danger btn-lg magnetic-btn glow-intense ripple-effect" style="color: var(--neon-magenta);">
+                        <i class="fas fa-rocket"></i> 光晕脉冲
+                    </button>
+                    <button class="btn btn-warning btn-lg magnetic-btn glow-intense ripple-effect" style="color: var(--neon-yellow);">
+                        <i class="fas fa-star"></i> 霓虹闪耀
+                    </button>
+                </div>
+            </section>
+
+            <!-- 全息效果 -->
+            <section class="demo-section scanlines">
+                <h2 class="text-center mb-xxxl holographic" style="font-size: var(--font-size-xxxl);">
+                    <i class="fas fa-eye"></i> 全息投影 & 扫描线
+                </h2>
+
+                <div class="text-center mb-xxxl">
+                    <h3 class="holographic" style="font-size: clamp(2rem, 5vw, 4rem); line-height: 1.2;">
+                        HOLOGRAPHIC<br>
+                        EFFECT<br>
+                        SYSTEM
+                    </h3>
+                </div>
+
+                <div class="demo-grid mb-xxxl">
+                    <div class="card holographic-border showcase-card">
+                        <div class="card-body" style="height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <i class="fas fa-rainbow" style="font-size: 48px; margin-bottom: 16px;"></i>
+                            <h3>全息边框</h3>
+                            <p>彩虹渐变动画</p>
+                        </div>
+                    </div>
+
+                    <div class="card showcase-card corner-decoration" style="border-color: var(--neon-cyan);">
+                        <div class="card-body" style="height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <i class="fas fa-th-large" style="font-size: 48px; margin-bottom: 16px;"></i>
+                            <h3>装饰角落</h3>
+                            <p>科技感边框</p>
+                        </div>
+                    </div>
+
+                    <div class="card showcase-card" style="background: var(--neon-purple); color: white;">
+                        <div class="card-body rgb-split" style="height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <i class="fas fa-tv" style="font-size: 48px; margin-bottom: 16px;"></i>
+                            <h3>RGB 分离</h3>
+                            <p>故障艺术效果</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 圆形进度条 -->
+            <section class="demo-section">
+                <h2 class="text-center mb-xxxl holographic" style="font-size: var(--font-size-xxxl);">
+                    <i class="fas fa-chart-pie"></i> 圆形仪表盘
+                </h2>
+
+                <div class="flex justify-center gap-xxxl mb-xxxl flex-wrap">
+                    <div class="circular-progress" style="--progress: 75%;">
+                        <div class="circular-progress-text">75%</div>
+                    </div>
+                    <div class="circular-progress" style="--progress: 60%; background: conic-gradient(var(--neon-magenta) 60%, var(--bg-secondary) 60%);">
+                        <div class="circular-progress-text">60%</div>
+                    </div>
+                    <div class="circular-progress" style="--progress: 90%; background: conic-gradient(var(--neon-lime) 90%, var(--bg-secondary) 90%);">
+                        <div class="circular-progress-text">90%</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3D 轮播 -->
+            <section id="3d" class="demo-section">
+                <h2 class="text-center mb-xxxl holographic" style="font-size: var(--font-size-xxxl);">
+                    <i class="fas fa-cubes"></i> 3D 旋转轮播
+                </h2>
+
+                <div class="carousel-3d">
+                    <div class="carousel-3d-container">
+                        <div class="carousel-3d-item" style="background: var(--neon-cyan); color: var(--text-primary);">
+                            <div style="padding: var(--spacing-lg); height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <i class="fas fa-bolt" style="font-size: 48px; margin-bottom: 16px;"></i>
+                                <h3>Slide 1</h3>
+                            </div>
+                        </div>
+                        <div class="carousel-3d-item" style="background: var(--neon-magenta); color: white;">
+                            <div style="padding: var(--spacing-lg); height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <i class="fas fa-star" style="font-size: 48px; margin-bottom: 16px;"></i>
+                                <h3>Slide 2</h3>
+                            </div>
+                        </div>
+                        <div class="carousel-3d-item" style="background: var(--neon-yellow); color: var(--text-primary);">
+                            <div style="padding: var(--spacing-lg); height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <i class="fas fa-heart" style="font-size: 48px; margin-bottom: 16px;"></i>
+                                <h3>Slide 3</h3>
+                            </div>
+                        </div>
+                        <div class="carousel-3d-item" style="background: var(--neon-lime); color: var(--text-primary);">
+                            <div style="padding: var(--spacing-lg); height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <i class="fas fa-fire" style="font-size: 48px; margin-bottom: 16px;"></i>
+                                <h3>Slide 4</h3>
+                            </div>
+                        </div>
+                        <div class="carousel-3d-item" style="background: var(--neon-purple); color: white;">
+                            <div style="padding: var(--spacing-lg); height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <i class="fas fa-gem" style="font-size: 48px; margin-bottom: 16px;"></i>
+                                <h3>Slide 5</h3>
+                            </div>
+                        </div>
+                        <div class="carousel-3d-item" style="background: var(--neon-orange); color: white;">
+                            <div style="padding: var(--spacing-lg); height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <i class="fas fa-crown" style="font-size: 48px; margin-bottom: 16px;"></i>
+                                <h3>Slide 6</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 时间线 -->
+            <section class="demo-section">
+                <h2 class="text-center mb-xxxl holographic" style="font-size: var(--font-size-xxxl);">
+                    <i class="fas fa-history"></i> 时间线组件
+                </h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 style="margin-bottom: var(--spacing-sm); color: var(--neon-cyan);">
+                                <i class="fas fa-rocket"></i> 2025 - 第一步
+                            </h3>
+                            <p>Neo-Brutal 设计系统正式发布，革新 UI 设计语言。</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="background: var(--neon-magenta);"></div>
+                        <div class="timeline-content">
+                            <h3 style="margin-bottom: var(--spacing-sm); color: var(--neon-magenta);">
+                                <i class="fas fa-star"></i> 2025 - 里程碑
+                            </h3>
+                            <p>添加 20+ 高级动画效果和 3D 交互系统。</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="background: var(--neon-yellow);"></div>
+                        <div class="timeline-content">
+                            <h3 style="margin-bottom: var(--spacing-sm); color: var(--neon-yellow);">
+                                <i class="fas fa-trophy"></i> 2025 - 成就达成
+                            </h3>
+                            <p>完整的组件库、动画系统和交互系统全部完成。</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="background: var(--neon-lime);"></div>
+                        <div class="timeline-content">
+                            <h3 style="margin-bottom: var(--spacing-sm); color: var(--neon-lime);">
+                                <i class="fas fa-infinity"></i> 未来 - 无限可能
+                            </h3>
+                            <p>持续进化，探索前端设计的无限可能性。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 特效测试中心 -->
+            <section class="demo-section">
+                <h2 class="text-center mb-xxxl holographic" style="font-size: var(--font-size-xxxl);">
+                    <i class="fas fa-flask"></i> 特效测试中心
+                </h2>
+
+                <div class="flex justify-center gap-md mb-xxxl flex-wrap">
+                    <button class="btn btn-primary magnetic-btn ripple-effect" onclick="testNotification('success')">
+                        <i class="fas fa-bell"></i> 成功通知
+                    </button>
+                    <button class="btn btn-warning magnetic-btn ripple-effect" onclick="testNotification('warning')">
+                        <i class="fas fa-exclamation-triangle"></i> 警告通知
+                    </button>
+                    <button class="btn btn-danger magnetic-btn ripple-effect" onclick="testNotification('error')">
+                        <i class="fas fa-times-circle"></i> 错误通知
+                    </button>
+                    <button class="btn btn-secondary magnetic-btn ripple-effect" onclick="testNotification('info')">
+                        <i class="fas fa-info-circle"></i> 信息通知
+                    </button>
+                </div>
+
+                <div class="flex justify-center gap-md mb-xxxl flex-wrap">
+                    <button class="btn btn-primary btn-lg magnetic-btn ripple-effect" onclick="animationController.triggerConfetti()">
+                        <i class="fas fa-sparkles"></i> 彩屑爆炸
+                    </button>
+                    <button class="btn btn-danger btn-lg magnetic-btn ripple-effect" onclick="testRGBSplit()">
+                        <i class="fas fa-tv"></i> RGB 分离
+                    </button>
+                    <button class="btn btn-success btn-lg magnetic-btn ripple-effect" onclick="testSkeleton()">
+                        <i class="fas fa-spinner"></i> 骨架加载
+                    </button>
+                </div>
+
+                <!-- 骨架屏演示容器 -->
+                <div id="skeleton-demo" class="card" style="display: none; max-width: 600px; margin: 0 auto;">
+                    <div class="card-body"></div>
+                </div>
+            </section>
+
+            <!-- 致谢 -->
+            <section class="demo-section text-center">
+                <h2 class="holographic mb-lg" style="font-size: clamp(2rem, 5vw, 4rem);">
+                    极致设计 · 无限可能
+                </h2>
+                <p style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-xl); color: var(--text-secondary);">
+                    20+ 高级效果 · 完整动画系统 · 极致性能优化
+                </p>
+                <div class="flex justify-center gap-lg flex-wrap">
+                    <button class="btn btn-primary btn-lg magnetic-btn glow-intense ripple-effect" onclick="window.location.href='index.html'">
+                        <i class="fas fa-home"></i> 返回首页
+                    </button>
+                    <button class="btn btn-outline btn-lg magnetic-btn btn-liquid ripple-effect" onclick="toggleTheme()">
+                        <i class="fas fa-moon"></i> 切换主题
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 主题切换器 -->
+    <div class="theme-switcher">
+        <button class="theme-toggle" onclick="toggleTheme()" title="切换主题">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- 动画切换器 -->
+    <div class="animation-toggle">
+        <button class="btn btn-icon btn-purple magnetic-btn" onclick="toggleAnimationMode()" title="动画设置">
+            <i class="fas fa-magic"></i>
+        </button>
+    </div>
+
+    <!-- 加载脚本 -->
+    <script src="js/animation-controller.js"></script>
+    <script src="js/advanced-interactions.js"></script>
+
+    <!-- 演示脚本 -->
+    <script>
+        // 切换主题
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+
+            if (currentTheme === 'dark') {
+                html.removeAttribute('data-theme');
+                document.querySelector('.theme-toggle i').className = 'fas fa-moon';
+                advancedInteractions.showNotification('已切换到亮色主题', 'info');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                document.querySelector('.theme-toggle i').className = 'fas fa-sun';
+                advancedInteractions.showNotification('已切换到暗色主题', 'info');
+            }
+        }
+
+        // 切换动画模式
+        function toggleAnimationMode() {
+            const mode = animationController.toggleMode();
+            const modeNames = {
+                'on': '完整动画',
+                'reduced': '降低动画',
+                'off': '关闭动画'
+            };
+            advancedInteractions.showNotification(`动画模式: ${modeNames[mode]}`, 'info');
+        }
+
+        // 测试通知
+        function testNotification(type) {
+            const messages = {
+                success: '操作成功完成！所有数据已保存。',
+                warning: '请注意：这是一条警告信息。',
+                error: '发生错误：无法连接到服务器。',
+                info: '这是一条信息提示消息。'
+            };
+
+            advancedInteractions.showNotification(messages[type], type);
+        }
+
+        // 测试所有特效
+        function testAllEffects() {
+            // 彩屑爆炸
+            animationController.triggerConfetti();
+
+            // 延迟通知
+            setTimeout(() => {
+                advancedInteractions.showNotification('所有特效已激活！', 'success');
+            }, 500);
+
+            // RGB 分离效果
+            setTimeout(() => {
+                const hero = document.querySelector('.demo-title');
+                if (hero) {
+                    advancedInteractions.triggerRGBSplit(hero);
+                }
+            }, 1000);
+        }
+
+        // 测试 RGB 分离
+        function testRGBSplit() {
+            const title = document.querySelector('h2.holographic');
+            if (title) {
+                advancedInteractions.triggerRGBSplit(title, 2000);
+            }
+        }
+
+        // 测试骨架屏
+        function testSkeleton() {
+            const container = document.getElementById('skeleton-demo');
+            const cardBody = container.querySelector('.card-body');
+
+            container.style.display = 'block';
+            advancedInteractions.createSkeleton(cardBody, {
+                avatar: true,
+                title: true,
+                lines: 4
+            });
+
+            advancedInteractions.showNotification('加载中...', 'info');
+
+            // 3秒后显示实际内容
+            setTimeout(() => {
+                cardBody.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--neon-cyan);"></div>
+                        <div>
+                            <h3>加载完成！</h3>
+                            <p>这是实际内容。</p>
+                        </div>
+                    </div>
+                    <p>骨架屏提供了良好的加载体验。</p>
+                `;
+                advancedInteractions.showNotification('内容加载完成！', 'success');
+
+                setTimeout(() => {
+                    container.style.display = 'none';
+                }, 3000);
+            }, 3000);
+        }
+
+        // 平滑滚动到指定区域
+        function scrollToSection(selector) {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 初始化圆形进度条动画
+        window.addEventListener('load', () => {
+            // 为圆形进度条添加动画
+            const progressElements = document.querySelectorAll('.circular-progress');
+            progressElements.forEach(el => {
+                const progress = parseInt(el.style.getPropertyValue('--progress')) || 0;
+                el.style.setProperty('--progress', '0%');
+
+                // 延迟开始动画
+                setTimeout(() => {
+                    advancedInteractions.createCircularProgress(el, progress, 2000);
+                }, 500);
+            });
+
+            // 欢迎彩屑
+            setTimeout(() => {
+                animationController.triggerConfetti();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+/* ========================================
+   超鲜艳色彩 + 炫酷动画升级包
+   HYPER-VIBRANT NEO-POP BRUTALISM
+   ======================================== */
+
+/*
+ * 这个文件包含：
+ * 1. 超鲜艳霓虹色彩变量
+ * 2. 10+ 种炫酷动画效果
+ * 3. 霓虹发光效果
+ * 4. 彩虹渐变背景
+ */
+
+/* ============================================
+   超鲜艳色彩覆盖 - HYPER-VIBRANT COLORS
+   ============================================ */
+
+:root {
+  /* 主色系 - 超鲜艳版本 */
+  --neon-cyan: #00FFFF !important;          /* 纯电青色 */
+  --neon-magenta: #FF1493 !important;       /* 深粉色 - Deep Pink */
+  --neon-yellow: #FFD700 !important;        /* 金色 - Gold */
+  --neon-lime: #39FF14 !important;          /* 霓虹绿 - Neon Green */
+  --neon-purple: #9D00FF !important;        /* 电紫色 */
+  --neon-orange: #FF4500 !important;        /* 橙红色 - Orange Red */
+
+  /* 新增超鲜艳色彩 */
+  --laser-red: #FF0040;          /* 激光红 */
+  --toxic-green: #00FF00;        /* 毒绿色 */
+  --plasma-pink: #FF10F0;        /* 等离子粉 */
+  --cyber-blue: #0080FF;         /* 赛博蓝 */
+
+  /* 增强霓虹发光效果 */
+  --glow-cyan: 0 0 20px #00FFFF, 0 0 40px #00FFFF, 0 0 60px #00FFFF !important;
+  --glow-magenta: 0 0 20px #FF1493, 0 0 40px #FF1493, 0 0 60px #FF1493 !important;
+  --glow-yellow: 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 60px #FFD700 !important;
+  --glow-lime: 0 0 20px #39FF14, 0 0 40px #39FF14, 0 0 60px #39FF14 !important;
+  --glow-purple: 0 0 20px #9D00FF, 0 0 40px #9D00FF, 0 0 60px #9D00FF !important;
+  --glow-orange: 0 0 20px #FF4500, 0 0 40px #FF4500, 0 0 60px #FF4500 !important;
+}
+
+
+/* ============================================
+   10+ 炫酷动画效果 - FLASHY ANIMATIONS
+   ============================================ */
+
+/* 1. 霓虹脉冲 - PULSE NEON */
+@keyframes pulse-neon {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px currentColor);
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 30px currentColor);
+  }
+}
+
+.animate-pulse-neon {
+  animation: pulse-neon 2s ease-in-out infinite;
+}
+
+/* 2. 3D 旋转 - 3D ROTATE */
+@keyframes rotate3d {
+  0% { transform: perspective(1000px) rotateY(0deg); }
+  100% { transform: perspective(1000px) rotateY(360deg); }
+}
+
+.animate-rotate3d {
+  animation: rotate3d 10s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* 3. 狂野弹跳 - BOUNCE WILD */
+@keyframes bounce-wild {
+  0%, 100% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-30px) scale(1.1); }
+  50% { transform: translateY(0) scale(0.95); }
+  75% { transform: translateY(-15px) scale(1.05); }
+}
+
+.animate-bounce-wild {
+  animation: bounce-wild 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+/* 4. 霓虹闪烁 - NEON FLICKER */
+@keyframes neon-flicker {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px currentColor) drop-shadow(0 0 15px currentColor);
+    opacity: 1;
+  }
+  10%, 30%, 50%, 70%, 90% {
+    filter: drop-shadow(0 0 2px currentColor);
+    opacity: 0.8;
+  }
+  20%, 40%, 60%, 80% {
+    filter: drop-shadow(0 0 20px currentColor) drop-shadow(0 0 40px currentColor);
+    opacity: 1;
+  }
+}
+
+.animate-neon-flicker {
+  animation: neon-flicker 3s ease-in-out infinite;
+}
+
+/* 5. 浮动效果 - FLOAT */
+@keyframes float-smooth {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(-25px) translateX(5px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: float-smooth 6s ease-in-out infinite;
+}
+
+/* 6. 彩虹颜色变化 - RAINBOW */
+@keyframes rainbow-shift {
+  0% { color: #FF1493; }
+  16% { color: #FFD700; }
+  33% { color: #39FF14; }
+  50% { color: #00FFFF; }
+  66% { color: #9D00FF; }
+  83% { color: #FF4500; }
+  100% { color: #FF1493; }
+}
+
+.animate-rainbow {
+  animation: rainbow-shift 4s linear infinite;
+}
+
+/* 7. 故障效果 - GLITCH */
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+    filter: hue-rotate(90deg);
+  }
+  40% {
+    transform: translate(-5px, -5px);
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    transform: translate(5px, 5px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(5px, -5px);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.animate-glitch {
+  animation: glitch 0.5s infinite;
+}
+
+/* 8. 缩放脉冲 - SCALE PULSE */
+@keyframes scale-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.animate-scale-pulse {
+  animation: scale-pulse 1.5s ease-in-out infinite;
+}
+
+/* 9. 旋转弹跳 - SPIN BOUNCE */
+@keyframes spin-bounce {
+  0% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(90deg) translateY(-10px); }
+  50% { transform: rotate(180deg) translateY(0); }
+  75% { transform: rotate(270deg) translateY(-10px); }
+  100% { transform: rotate(360deg) translateY(0); }
+}
+
+.animate-spin-bounce {
+  animation: spin-bounce 3s linear infinite;
+}
+
+/* 10. 疯狂抖动 - SHAKE CRAZY */
+@keyframes shake-crazy {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-10px, -10px) rotate(-5deg); }
+  20% { transform: translate(10px, 10px) rotate(5deg); }
+  30% { transform: translate(-10px, 10px) rotate(-5deg); }
+  40% { transform: translate(10px, -10px) rotate(5deg); }
+  50% { transform: translate(-10px, -10px) rotate(-5deg); }
+  60% { transform: translate(10px, 10px) rotate(5deg); }
+  70% { transform: translate(-10px, 10px) rotate(-5deg); }
+  80% { transform: translate(10px, -10px) rotate(5deg); }
+  90% { transform: translate(-5px, -5px) rotate(-2deg); }
+}
+
+.animate-shake-crazy {
+  animation: shake-crazy 0.8s ease-in-out infinite;
+}
+
+/* 11. 呼吸发光 - GLOW BREATH */
+@keyframes glow-breath {
+  0%, 100% {
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor;
+  }
+}
+
+.animate-glow-breath {
+  animation: glow-breath 3s ease-in-out infinite;
+}
+
+/* 12. 波浪效果 - WAVE */
+@keyframes wave {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+
+/* ============================================
+   彩虹渐变背景 - RAINBOW GRADIENTS
+   ============================================ */
+
+.bg-gradient-rainbow {
+  background: linear-gradient(90deg, #FF1493, #FFD700, #39FF14, #00FFFF, #9D00FF) !important;
+}
+
+.bg-gradient-sunset {
+  background: linear-gradient(135deg, #FF4500, #FF006E, #9D00FF) !important;
+}
+
+.bg-gradient-cyber {
+  background: linear-gradient(to right, #00FFFF, #0080FF, #9D00FF) !important;
+}
+
+.bg-gradient-neon {
+  background: linear-gradient(45deg, #FF10F0, #00FF00, #FFD700) !important;
+}
+
+.bg-gradient-acid {
+  background: linear-gradient(to bottom, #39FF14, #00FFFF) !important;
+}
+
+
+/* ============================================
+   霓虹发光工具类 - NEON GLOW UTILITIES
+   ============================================ */
+
+.glow-pink {
+  text-shadow: 0 0 20px #FF1493, 0 0 40px #FF1493, 0 0 60px #FF1493 !important;
+}
+
+.glow-cyan {
+  text-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF, 0 0 60px #00FFFF !important;
+}
+
+.glow-purple {
+  text-shadow: 0 0 20px #9D00FF, 0 0 40px #9D00FF, 0 0 60px #9D00FF !important;
+}
+
+.glow-green {
+  text-shadow: 0 0 20px #39FF14, 0 0 40px #39FF14, 0 0 60px #39FF14 !important;
+}
+
+.glow-yellow {
+  text-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 60px #FFD700 !important;
+}
+
+.shadow-neon-pink {
+  box-shadow: 0 0 20px #FF1493, 0 0 40px #FF1493, 0 0 60px #FF1493 !important;
+}
+
+.shadow-neon-cyan {
+  box-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF, 0 0 60px #00FFFF !important;
+}
+
+.shadow-neon-purple {
+  box-shadow: 0 0 20px #9D00FF, 0 0 40px #9D00FF, 0 0 60px #9D00FF !important;
+}
+
+.shadow-neon-green {
+  box-shadow: 0 0 20px #39FF14, 0 0 40px #39FF14, 0 0 60px #39FF14 !important;
+}
+
+.shadow-neon-yellow {
+  box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 60px #FFD700 !important;
+}
+
+
+/* ============================================
+   超鲜艳色彩文字类 - VIBRANT TEXT COLORS
+   ============================================ */
+
+.text-hot-pink {
+  color: #FF1493 !important;
+}
+
+.text-bright-yellow {
+  color: #FFD700 !important;
+}
+
+.text-lime-green {
+  color: #39FF14 !important;
+}
+
+.text-electric-cyan {
+  color: #00FFFF !important;
+}
+
+.text-acid-purple {
+  color: #9D00FF !important;
+}
+
+.text-neon-orange {
+  color: #FF4500 !important;
+}
+
+
+/* ============================================
+   响应式优化 - 移动端降低动画强度
+   ============================================ */
+
+@media (max-width: 768px) {
+  .animate-pulse-neon,
+  .animate-bounce-wild,
+  .animate-float {
+    animation-duration: 3s !important; /* 放慢动画 */
+  }
+
+  .animate-glitch,
+  .animate-shake-crazy {
+    display: none !important; /* 移动端禁用强烈动画 */
+  }
+}
+
+
+/* ============================================
+   辅助功能 - 尊重用户偏好设置
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-neon,
+  .animate-rotate3d,
+  .animate-bounce-wild,
+  .animate-neon-flicker,
+  .animate-float,
+  .animate-rainbow,
+  .animate-glitch,
+  .animate-scale-pulse,
+  .animate-spin-bounce,
+  .animate-shake-crazy,
+  .animate-glow-breath,
+  .animate-wave {
+    animation: none !important;
+  }
+}
