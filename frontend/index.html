@@ -238,52 +238,40 @@
         <!-- 主内容区 -->
         <main class="container">
 
-            <!-- 番茄钟标签页 - Neo-Brutalism Pop Art Style -->
+            <!-- 番茄钟标签页 - Professional Neo-Brutalism -->
             <div id="timer-tab" class="tab-content active">
 
                 <!-- Split Background Container -->
                 <div style="position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
 
-                    <!-- Left Half: Acid Lime Green with Polka Dots -->
-                    <div style="position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: #B8FF9F; z-index: 1;">
-                        <!-- Polka Dot Pattern -->
-                        <div style="position: absolute; inset: 0; opacity: 0.25; background-image: radial-gradient(circle, black 8px, transparent 8px); background-size: 50px 50px;"></div>
+                    <!-- Left Half: Electric Lime Green with Subtle Halftone -->
+                    <div style="position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: #CCFF00; z-index: 1;">
+                        <!-- Subtle Halftone Dots Pattern -->
+                        <div style="position: absolute; inset: 0; opacity: 0.08; background-image: radial-gradient(circle, black 3px, transparent 3px); background-size: 30px 30px;"></div>
                     </div>
 
-                    <!-- Right Half: Hot Pink with Vertical Stripes -->
-                    <div style="position: absolute; right: 0; top: 0; width: 50%; height: 100%; background: #FF90E8; z-index: 1;">
-                        <!-- Vertical Stripe Pattern -->
-                        <div style="position: absolute; inset: 0; opacity: 0.2; background-image: repeating-linear-gradient(90deg, transparent, transparent 25px, rgba(0,0,0,0.5) 25px, rgba(0,0,0,0.5) 30px);"></div>
+                    <!-- Right Half: Hot Pink with Subtle Halftone -->
+                    <div style="position: absolute; right: 0; top: 0; width: 50%; height: 100%; background: #FF69B4; z-index: 1;">
+                        <!-- Subtle Halftone Dots Pattern -->
+                        <div style="position: absolute; inset: 0; opacity: 0.08; background-image: radial-gradient(circle, black 3px, transparent 3px); background-size: 30px 30px;"></div>
                     </div>
 
-                    <!-- Floating Stickers - Top Left Star -->
-                    <div style="position: absolute; top: 10%; left: 8%; z-index: 15; transform: rotate(-15deg); animation: float-smooth 5s ease-in-out infinite;">
-                        <div style="width: 80px; height: 80px; background: #00FFFF; border: 4px solid black; display: flex; align-items: center; justify-content: center; box-shadow: 6px 6px 0px black;">
-                            <i class="fas fa-star" style="font-size: 40px; color: black;"></i>
+                    <!-- Small Decorative Stickers - Top Left Star -->
+                    <div style="position: absolute; top: 12%; left: 10%; z-index: 15; transform: rotate(-15deg);">
+                        <div style="width: 40px; height: 40px; background: #00FFFF; border: 3px solid black; display: flex; align-items: center; justify-content: center; box-shadow: 6px 6px 0px black;">
+                            <i class="fas fa-star" style="font-size: 18px; color: black;"></i>
                         </div>
                     </div>
 
-                    <!-- Floating Stickers - Top Right Burst -->
-                    <div style="position: absolute; top: 15%; right: 10%; z-index: 15; transform: rotate(12deg);">
-                        <div style="background: #D4FF00; border: 4px solid black; padding: 20px; font-family: 'Archivo Black', sans-serif; font-size: 32px; box-shadow: 6px 6px 0px black;">
-                            POW!
+                    <!-- Small Decorative Stickers - Bottom Right Arrow -->
+                    <div style="position: absolute; bottom: 18%; right: 12%; z-index: 15; transform: rotate(20deg);">
+                        <div style="background: #CCFF00; border: 3px solid black; padding: 8px 12px; font-family: 'Archivo Black', sans-serif; font-size: 20px; box-shadow: 6px 6px 0px black;">
+                            →
                         </div>
                     </div>
 
-                    <!-- Floating Stickers - Bottom Left Arrow -->
-                    <div style="position: absolute; bottom: 15%; left: 12%; z-index: 15; transform: rotate(-8deg);">
-                        <div style="background: #FF90E8; border: 4px solid black; padding: 16px 24px; font-family: 'Archivo Black', sans-serif; font-size: 40px; box-shadow: 6px 6px 0px black;">
-                            ↗
-                        </div>
-                    </div>
-
-                    <!-- Floating Stickers - Bottom Right Triangle -->
-                    <div style="position: absolute; bottom: 20%; right: 8%; z-index: 15; transform: rotate(20deg);">
-                        <div style="width: 70px; height: 70px; background: #00FFFF; border: 4px solid black; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); box-shadow: 6px 6px 0px black;"></div>
-                    </div>
-
-                    <!-- Central White Card Container -->
-                    <div style="position: relative; z-index: 20; background: white; border: 4px solid black; box-shadow: 12px 12px 0px black; padding: 60px 80px; max-width: 600px; text-align: center;">
+                    <!-- Central White Card Container (4:3 Landscape Ratio) -->
+                    <div style="position: relative; z-index: 20; background: white; border: 3px solid black; box-shadow: 6px 6px 0px black; padding: 80px 100px; width: 800px; max-width: 90vw; text-align: center;">
 
                         <!-- Hidden Elements (keep for functionality) -->
                         <div style="display: none;">
@@ -291,26 +279,29 @@
                             <input type="text" id="pomodoro-note" placeholder="备注（可选）">
                         </div>
 
-                        <!-- Large Digital Clock -->
-                        <div id="timer" style="font-family: 'Space Mono', monospace; font-size: 120px; font-weight: 900; line-height: 1; color: #000; margin-bottom: 30px; letter-spacing: 0.05em;">25:00</div>
+                        <!-- Massive Digital Clock -->
+                        <div id="timer" style="font-family: 'Space Mono', monospace; font-size: 140px; font-weight: 900; line-height: 1; color: #000; margin-bottom: 60px; letter-spacing: 0.02em;">25:00</div>
 
-                        <!-- Timer Status Label -->
-                        <div id="timer-status" style="font-family: 'Archivo Black', sans-serif; font-size: 24px; color: #000; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 0.1em;">准备开始</div>
+                        <!-- Two Buttons Side-by-Side -->
+                        <div style="display: flex; gap: 24px; margin-bottom: 40px;">
+                            <!-- START Button (Solid) -->
+                            <button id="start-btn" onclick="startTimer()" style="flex: 1; padding: 24px; background: #000; color: white; border: 3px solid black; font-family: 'Archivo Black', sans-serif; font-size: 28px; cursor: pointer; box-shadow: 6px 6px 0px black; transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.05em;">
+                                START
+                            </button>
 
-                        <!-- Start Button (Massive) -->
-                        <button id="start-btn" onclick="startTimer()" style="width: 100%; padding: 28px; background: #000; color: white; border: none; font-family: 'Archivo Black', sans-serif; font-size: 32px; cursor: pointer; box-shadow: 8px 8px 0px #D4FF00; transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">
-                            START
-                        </button>
+                            <!-- RESET Button (Outline) -->
+                            <button id="reset-btn" onclick="resetTimer()" style="flex: 1; padding: 24px; background: white; color: black; border: 3px solid black; font-family: 'Archivo Black', sans-serif; font-size: 28px; cursor: pointer; box-shadow: 6px 6px 0px black; transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.05em;">
+                                RESET
+                            </button>
+                        </div>
 
-                        <!-- Pause Button (Hidden by default) -->
-                        <button id="pause-btn" onclick="pauseTimer()" style="display: none; width: 100%; padding: 28px; background: #FF90E8; color: black; border: 4px solid black; font-family: 'Archivo Black', sans-serif; font-size: 32px; cursor: pointer; box-shadow: 8px 8px 0px black; transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">
+                        <!-- PAUSE Button (Hidden by default, full width when shown) -->
+                        <button id="pause-btn" onclick="pauseTimer()" style="display: none; width: 100%; padding: 24px; background: #FF69B4; color: white; border: 3px solid black; font-family: 'Archivo Black', sans-serif; font-size: 28px; cursor: pointer; box-shadow: 6px 6px 0px black; transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.05em;">
                             PAUSE
                         </button>
 
-                        <!-- Reset Button -->
-                        <button id="reset-btn" onclick="resetTimer()" style="width: 100%; padding: 20px; background: white; color: black; border: 4px solid black; font-family: 'Archivo Black', sans-serif; font-size: 20px; cursor: pointer; box-shadow: 6px 6px 0px black; transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.05em;">
-                            RESET
-                        </button>
+                        <!-- Timer Status Label -->
+                        <div id="timer-status" style="font-family: 'Space Mono', monospace; font-size: 16px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 0.15em;">准备开始</div>
 
                     </div>
 
