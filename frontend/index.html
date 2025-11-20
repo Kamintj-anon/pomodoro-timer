@@ -465,69 +465,91 @@
     </div>
 
     <!-- ========== 个人资料弹窗 ========== -->
+    <!-- ========== 用户配置模态窗口 - Windows 95 Style ========== -->
     <div id="profile-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2><i class="fas fa-user-circle"></i> 个人资料</h2>
-                <button onclick="closeProfileModal()" class="btn-close">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- 用户信息 -->
-                <div style="margin-bottom: 32px;">
-                    <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 24px; margin-bottom: 16px; text-transform: uppercase;">
-                        <i class="fas fa-info-circle"></i> 基本信息
-                    </h3>
-                    <div style="display: grid; gap: 12px;">
-                        <div style="display: flex; justify-content: space-between; padding: 12px; background: #f0f0f0; border: 2px solid black;">
-                            <span style="font-weight: bold;">用户名</span>
-                            <span id="profile-username">-</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; padding: 12px; background: #f0f0f0; border: 2px solid black;">
-                            <span style="font-weight: bold;">邮箱</span>
-                            <span id="profile-email">-</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; padding: 12px; background: #f0f0f0; border: 2px solid black;">
-                            <span style="font-weight: bold;">注册时间</span>
-                            <span id="profile-created">-</span>
-                        </div>
+        <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px;">
+
+            <!-- Retro Window Container -->
+            <div style="position: relative; width: 550px; max-width: 95vw; border: 4px solid black; box-shadow: 10px 10px 0px black; overflow: hidden; background: white;">
+
+                <!-- Window Header Bar (Lime Green) with Controls -->
+                <div style="background: #CCFF00; padding: 16px 20px; border-bottom: 4px solid black; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="font-family: 'Archivo Black', sans-serif; font-size: 18px; color: black; letter-spacing: 0.1em; text-transform: uppercase;">USER PROFILE</div>
+
+                    <!-- Window Control Icons -->
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <!-- Minimize Button -->
+                        <div style="width: 24px; height: 24px; background: white; border: 3px solid black; display: flex; align-items: center; justify-content: center; cursor: pointer; font-family: 'Courier New', monospace; font-size: 20px; font-weight: 900; line-height: 1;">_</div>
+
+                        <!-- Close Button -->
+                        <div onclick="closeProfileModal()" style="width: 24px; height: 24px; background: white; border: 3px solid black; display: flex; align-items: center; justify-content: center; cursor: pointer; font-family: 'Courier New', monospace; font-size: 18px; font-weight: 900; line-height: 1;">X</div>
                     </div>
                 </div>
 
-                <!-- 统计信息 -->
-                <div style="margin-bottom: 32px;">
-                    <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 24px; margin-bottom: 16px; text-transform: uppercase;">
-                        <i class="fas fa-chart-bar"></i> 我的统计
-                    </h3>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                        <div style="text-align: center; padding: 24px; background: #FF90E8; border: 3px solid black; box-shadow: 4px 4px 0px 0px black;">
-                            <div style="font-family: 'Archivo Black', sans-serif; font-size: 48px; margin-bottom: 8px;" id="profile-total-count">0</div>
-                            <div style="font-family: 'Space Mono', monospace; font-weight: bold;">完成番茄钟</div>
-                        </div>
-                        <div style="text-align: center; padding: 24px; background: #00FFFF; border: 3px solid black; box-shadow: 4px 4px 0px 0px black;">
-                            <div style="font-family: 'Archivo Black', sans-serif; font-size: 48px; margin-bottom: 8px;" id="profile-total-duration">0</div>
-                            <div style="font-family: 'Space Mono', monospace; font-weight: bold;">总专注时长</div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Window Body (White with Grid Texture) -->
+                <div style="background: white; padding: 40px 35px; position: relative;">
+                    <!-- Subtle Grid Pattern -->
+                    <div style="position: absolute; inset: 0; opacity: 0.08; background-image: linear-gradient(#d0d0d0 1px, transparent 1px), linear-gradient(90deg, #d0d0d0 1px, transparent 1px); background-size: 20px 20px; pointer-events: none;"></div>
 
-                <!-- 设置 -->
-                <div>
-                    <h3 style="font-family: 'Archivo Black', sans-serif; font-size: 24px; margin-bottom: 16px; text-transform: uppercase;">
-                        <i class="fas fa-cog"></i> 番茄钟设置
-                    </h3>
-                    <div style="display: grid; gap: 16px;">
-                        <div>
-                            <label style="font-weight: bold; display: block; margin-bottom: 8px;">默认时长（分钟）</label>
-                            <input type="number" id="setting-duration" min="1" max="60" value="25" style="width: 100%; padding: 12px; border: 3px solid black; font-family: 'Space Mono', monospace;">
+                    <!-- Content Layer -->
+                    <div style="position: relative; z-index: 1;">
+
+                        <!-- Section 1: Basic Info -->
+                        <div style="margin-bottom: 28px;">
+                            <div style="display: grid; gap: 12px;">
+                                <!-- Username -->
+                                <div style="display: grid; grid-template-columns: 100px 1fr; align-items: center; gap: 12px;">
+                                    <label style="font-family: 'Archivo Black', sans-serif; font-size: 14px; text-transform: uppercase; color: black;">Username</label>
+                                    <div style="padding: 10px 14px; background: white; border: 4px solid black; font-family: 'Courier New', monospace; font-size: 15px;" id="profile-username">-</div>
+                                </div>
+
+                                <!-- Email -->
+                                <div style="display: grid; grid-template-columns: 100px 1fr; align-items: center; gap: 12px;">
+                                    <label style="font-family: 'Archivo Black', sans-serif; font-size: 14px; text-transform: uppercase; color: black;">Email</label>
+                                    <div style="padding: 10px 14px; background: white; border: 4px solid black; font-family: 'Courier New', monospace; font-size: 15px;" id="profile-email">-</div>
+                                </div>
+
+                                <!-- Created Date -->
+                                <div style="display: grid; grid-template-columns: 100px 1fr; align-items: center; gap: 12px;">
+                                    <label style="font-family: 'Archivo Black', sans-serif; font-size: 14px; text-transform: uppercase; color: black;">Joined</label>
+                                    <div style="padding: 10px 14px; background: white; border: 4px solid black; font-family: 'Courier New', monospace; font-size: 15px;" id="profile-created">-</div>
+                                </div>
+                            </div>
                         </div>
-                        <button onclick="saveSettings()" class="btn-primary" style="width: 100%;">
-                            <i class="fas fa-save"></i> 保存设置
+
+                        <!-- Section 2: Statistics (Hot Pink + Electric Cyan) -->
+                        <div style="margin-bottom: 28px;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <!-- Left Box: Hot Pink -->
+                                <div style="text-align: center; padding: 30px 20px; background: #FF69B4; border: 4px solid black; box-shadow: 6px 6px 0px black;">
+                                    <div style="font-family: 'Courier New', monospace; font-size: 60px; font-weight: 900; color: #000; line-height: 1; margin-bottom: 12px;" id="profile-total-count">0</div>
+                                    <div style="font-family: 'Archivo Black', sans-serif; font-size: 12px; color: #000; text-transform: uppercase; letter-spacing: 0.05em;">Tasks Done</div>
+                                </div>
+
+                                <!-- Right Box: Electric Cyan -->
+                                <div style="text-align: center; padding: 30px 20px; background: #00FFFF; border: 4px solid black; box-shadow: 6px 6px 0px black;">
+                                    <div style="font-family: 'Courier New', monospace; font-size: 60px; font-weight: 900; color: #000; line-height: 1; margin-bottom: 12px;" id="profile-total-duration">0</div>
+                                    <div style="font-family: 'Archivo Black', sans-serif; font-size: 12px; color: #000; text-transform: uppercase; letter-spacing: 0.05em;">Hours</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: Settings -->
+                        <div style="margin-bottom: 20px;">
+                            <label style="font-family: 'Archivo Black', sans-serif; font-size: 14px; text-transform: uppercase; color: black; display: block; margin-bottom: 10px;">Default Duration (min)</label>
+                            <input type="number" id="setting-duration" min="1" max="60" value="25" style="width: 100%; padding: 12px 14px; border: 4px solid black; font-family: 'Courier New', monospace; font-size: 16px; box-sizing: border-box;">
+                        </div>
+
+                        <!-- Section 4: Footer - Save Button (Neon Lime Green) -->
+                        <button onclick="saveSettings()" style="width: 100%; padding: 18px; background: #CCFF00; color: black; border: 4px solid black; font-family: 'Archivo Black', sans-serif; font-size: 20px; cursor: pointer; box-shadow: 6px 6px 0px rgba(0,0,0,0.3); transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 900;">
+                            SAVE SETTINGS
                         </button>
+
                     </div>
                 </div>
+
             </div>
+
         </div>
     </div>
 
