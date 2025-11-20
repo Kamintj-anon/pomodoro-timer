@@ -279,9 +279,18 @@
                     <!-- Retro Computer Window Container -->
                     <div style="position: relative; z-index: 20; width: 650px; max-width: 90vw; border: 4px solid black; box-shadow: 10px 10px 0px black; overflow: hidden;">
 
-                        <!-- Window Header Bar (Lime Green) -->
-                        <div style="background: #CCFF00; padding: 16px 20px; border-bottom: 4px solid black;">
+                        <!-- Window Header Bar (Lime Green) with Controls -->
+                        <div style="background: #CCFF00; padding: 16px 20px; border-bottom: 4px solid black; display: flex; justify-content: space-between; align-items: center;">
                             <div style="font-family: 'Archivo Black', sans-serif; font-size: 18px; color: black; letter-spacing: 0.1em; text-transform: uppercase;">CURRENT TASK</div>
+
+                            <!-- Window Control Icons -->
+                            <div style="display: flex; gap: 12px; align-items: center;">
+                                <!-- Minimize Button -->
+                                <div style="width: 24px; height: 24px; background: white; border: 3px solid black; display: flex; align-items: center; justify-content: center; cursor: pointer; font-family: 'Courier New', monospace; font-size: 20px; font-weight: 900; line-height: 1;">_</div>
+
+                                <!-- Close Button -->
+                                <div style="width: 24px; height: 24px; background: white; border: 3px solid black; display: flex; align-items: center; justify-content: center; cursor: pointer; font-family: 'Courier New', monospace; font-size: 18px; font-weight: 900; line-height: 1;">X</div>
+                            </div>
                         </div>
 
                         <!-- Window Body (White with Graph Paper Texture) -->
@@ -318,8 +327,8 @@
                                     PAUSE
                                 </button>
 
-                                <!-- Timer Status Label -->
-                                <div id="timer-status" style="font-family: 'Courier New', monospace; font-size: 13px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 20px;">准备开始</div>
+                                <!-- Timer Status Badge -->
+                                <div id="timer-status" style="display: inline-block; margin-top: 20px; padding: 8px 20px; background: #f0f0f0; border: 3px solid black; font-family: 'Archivo Black', sans-serif; font-size: 14px; font-weight: 900; color: #000; text-transform: uppercase; letter-spacing: 0.1em;">READY</div>
                             </div>
 
                         </div>
