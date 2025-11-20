@@ -20,342 +20,153 @@
 </head>
 <body>
 
-    <!-- ========== 登录/注册页面 ========== -->
-    <!-- ========== MAXIMALIST 登录/注册页面 ========== -->
-    <div id="auth-page" class="page active" style="position: relative; min-height: 100vh; overflow: hidden; background: #f0f0f0;">
+    <!-- ========== 登录/注册页面 - BENTO SPLIT VIEW ========== -->
+    <div id="auth-page" class="page active">
 
-        <!-- 背景图案层 - DOTS PATTERN -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(#000 2px, transparent 2px); background-size: 30px 30px; opacity: 0.1; z-index: 0;"></div>
+        <!-- LEFT SIDE: Acid Yellow with Polka Dots (60%) -->
+        <div style="position: relative; width: 60%; background: #D4FF00; display: flex; align-items: center; justify-content: center; overflow: hidden;">
 
-        <!-- 背景图案层 - GRID PATTERN -->
-        <div style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; background-image: linear-gradient(#000 2px, transparent 2px), linear-gradient(90deg, #000 2px, transparent 2px); background-size: 50px 50px; background-color: #B8FF9F; opacity: 0.2; z-index: 0;"></div>
+            <!-- Black Polka Dot Texture -->
+            <div style="position: absolute; inset: 0; opacity: 0.15; pointer-events: none; background-image: radial-gradient(circle, black 6px, transparent 6px); background-size: 40px 40px;"></div>
 
-        <!-- 巨大轮廓文字背景 -->
-        <div style="position: absolute; top: 10%; left: 0; width: 100%; text-align: center; z-index: 0; pointer-events: none; opacity: 0.15;">
-            <h1 style="font-family: 'Archivo Black', sans-serif; font-size: 15vw; line-height: 0.8; -webkit-text-stroke: 3px black; color: transparent; transform: rotate(-8deg);">FOCUS</h1>
-            <h1 style="font-family: 'Archivo Black', sans-serif; font-size: 15vw; line-height: 0.8; -webkit-text-stroke: 3px black; color: transparent; transform: rotate(5deg); margin-left: 10%;">TIME</h1>
-        </div>
-
-        <!-- 顶部跑马灯 -->
-        <div style="position: absolute; top: 8%; left: -10%; width: 120%; background: #00FFFF; border: 4px solid black; padding: 12px 0; transform: rotate(-3deg); z-index: 5; overflow: hidden; box-shadow: 6px 6px 0px 0px black;">
-            <div class="animate-scroll" style="display: inline-block; white-space: nowrap; font-family: 'Archivo Black', sans-serif; font-size: 24px; text-transform: uppercase;">
-                <span style="margin-right: 40px;">🎯 专注时间管理</span>
-                <span style="margin-right: 40px;">⚡ 提升效率</span>
-                <span style="margin-right: 40px;">🔥 番茄工作法</span>
-                <span style="margin-right: 40px;">✨ 极致专注</span>
-                <span style="margin-right: 40px;">🎯 专注时间管理</span>
-                <span style="margin-right: 40px;">⚡ 提升效率</span>
-                <span style="margin-right: 40px;">🔥 番茄工作法</span>
-                <span style="margin-right: 40px;">✨ 极致专注</span>
-            </div>
-        </div>
-
-        <!-- 底部跑马灯 -->
-        <div style="position: absolute; bottom: 5%; left: -10%; width: 120%; background: #D4FF00; border: 4px solid black; padding: 12px 0; transform: rotate(2deg); z-index: 5; overflow: hidden; box-shadow: 6px 6px 0px 0px black;">
-            <div class="animate-scroll" style="display: inline-block; whitespace: nowrap; font-family: 'Space Mono', monospace; font-size: 20px; font-weight: bold;">
-                <span style="margin-right: 40px;">⭐ FREE FOREVER</span>
-                <span style="margin-right: 40px;">🚀 NO ADS</span>
-                <span style="margin-right: 40px;">💯 100% FOCUS</span>
-                <span style="margin-right: 40px;">🎨 BEAUTIFUL UI</span>
-                <span style="margin-right: 40px;">⭐ FREE FOREVER</span>
-                <span style="margin-right: 40px;">🚀 NO ADS</span>
-                <span style="margin-right: 40px;">💯 100% FOCUS</span>
-                <span style="margin-right: 40px;">🎨 BEAUTIFUL UI</span>
-            </div>
-        </div>
-
-        <!-- 装饰贴纸 - 星星1 -->
-        <div style="position: absolute; top: 5%; left: 5%; z-index: 10; animation: float-smooth 6s ease-in-out infinite;">
-            <div style="width: 100px; height: 100px; background: #FF90E8; border: 4px solid black; transform: rotate(12deg); display: flex; align-items: center; justify-content: center; box-shadow: 6px 6px 0px 0px black;">
-                <i class="fas fa-star" style="font-size: 48px; color: #D4FF00;"></i>
-            </div>
-        </div>
-
-        <!-- 装饰贴纸 - 闪电 -->
-        <div style="position: absolute; top: 15%; right: 8%; z-index: 10; animation: bounce 2s infinite;">
-            <div style="width: 80px; height: 80px; background: #D4FF00; border: 4px solid black; transform: rotate(-15deg); display: flex; align-items: center; justify-content: center; box-shadow: 6px 6px 0px 0px black;">
-                <i class="fas fa-bolt" style="font-size: 40px; color: black;"></i>
-            </div>
-        </div>
-
-        <!-- 装饰贴纸 - 时钟 -->
-        <div style="position: absolute; bottom: 20%; left: 8%; z-index: 10; animation: spin-bounce 8s linear infinite;">
-            <div style="width: 120px; height: 120px; background: #00FFFF; border: 4px solid black; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 8px 8px 0px 0px black;">
-                <i class="fas fa-clock" style="font-size: 56px; color: black;"></i>
-            </div>
-        </div>
-
-        <!-- 装饰贴纸 - 火箭 -->
-        <div style="position: absolute; bottom: 15%; right: 10%; z-index: 10; animation: float-smooth 5s ease-in-out infinite;">
-            <div style="width: 90px; height: 90px; background: #B8FF9F; border: 4px solid black; transform: rotate(25deg); display: flex; align-items: center; justify-content: center; box-shadow: 6px 6px 0px 0px black;">
-                <i class="fas fa-rocket" style="font-size: 44px; color: black;"></i>
-            </div>
-        </div>
-
-        <!-- 浮动标签 - NEW! -->
-        <div style="position: absolute; top: 25%; left: 15%; z-index: 15; transform: rotate(-12deg); animation: pulse-neon 2s ease-in-out infinite;">
-            <div style="position: relative; background: #FF90E8; border: 3px solid black; padding: 8px 20px; font-family: 'Archivo Black', sans-serif; font-size: 18px; box-shadow: 4px 4px 0px 0px black;">
-                <div style="position: absolute; inset: 0; opacity: 0.2; pointer-events: none; background-image: radial-gradient(circle, black 4px, transparent 4px); background-size: 20px 20px;"></div>
-                <span style="position: relative; z-index: 2;">NEW!</span>
-            </div>
-        </div>
-
-        <!-- 浮动标签 - v2.0 -->
-        <div style="position: absolute; top: 35%; right: 12%; z-index: 15; transform: rotate(8deg);">
-            <div style="position: relative; background: #00FFFF; border: 3px solid black; padding: 6px 16px; font-family: 'Space Mono', monospace; font-size: 14px; font-weight: bold; box-shadow: 4px 4px 0px 0px black;">
-                <div style="position: absolute; inset: 0; opacity: 0.22; pointer-events: none; background-image: repeating-linear-gradient(135deg, transparent, transparent 8px, rgba(0,0,0,0.3) 8px, rgba(0,0,0,0.3) 9px);"></div>
-                <span style="position: relative; z-index: 2;">v2.0</span>
-            </div>
-        </div>
-
-        <!-- 浮动标签 - BETA -->
-        <div style="position: absolute; bottom: 35%; left: 10%; z-index: 15; transform: rotate(-6deg);">
-            <div style="position: relative; background: #D4FF00; border: 3px solid black; padding: 8px 18px; font-family: 'Archivo Black', sans-serif; font-size: 16px; box-shadow: 4px 4px 0px 0px black;">
-                <div style="position: absolute; inset: 0; opacity: 0.28; pointer-events: none; background-image: radial-gradient(circle, black 3px, transparent 3px); background-size: 16px 16px;"></div>
-                <span style="position: relative; z-index: 2;">BETA</span>
-            </div>
-        </div>
-
-        <!-- 浮动标签 - HOT! -->
-        <div style="position: absolute; top: 50%; right: 8%; z-index: 15; transform: rotate(15deg); animation: shake-crazy 3s infinite;">
-            <div style="position: relative; background: #FF90E8; border: 3px solid black; padding: 10px 22px; font-family: 'Archivo Black', sans-serif; font-size: 20px; box-shadow: 4px 4px 0px 0px black;">
-                <div style="position: absolute; inset: 0; opacity: 0.18; pointer-events: none; background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.3) 10px, rgba(0,0,0,0.3) 11px), repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(0,0,0,0.3) 10px, rgba(0,0,0,0.3) 11px);"></div>
-                <span style="position: relative; z-index: 2;">HOT! 🔥</span>
-            </div>
-        </div>
-
-        <!-- 浮动标签 - TOP RATED -->
-        <div style="position: absolute; bottom: 45%; right: 18%; z-index: 15; transform: rotate(-10deg);">
-            <div style="position: relative; background: #B8FF9F; border: 3px solid black; padding: 6px 14px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: bold; box-shadow: 4px 4px 0px 0px black;">
-                <div style="position: absolute; inset: 0; opacity: 0.25; pointer-events: none; background-image: radial-gradient(circle, black 2px, transparent 2px); background-size: 12px 12px;"></div>
-                <span style="position: relative; z-index: 2;">⭐ TOP RATED</span>
-            </div>
-        </div>
-
-        <!-- 箭头装饰 -->
-        <div style="position: absolute; top: 30%; left: 25%; z-index: 8; transform: rotate(-25deg); opacity: 0.7;">
-            <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="black" stroke-width="5">
-                <path d="M10 50 Q 30 20, 50 50 T 90 50" stroke-dasharray="5,5"/>
-                <polygon points="85,50 95,55 95,45" fill="black"/>
-            </svg>
-        </div>
-
-        <!-- 主登录容器 -->
-        <div class="auth-container" style="position: relative; z-index: 20; margin-top: 120px; overflow: visible;">
-
-            <!-- 顶部装饰条 -->
-            <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%) rotate(-2deg); z-index: 25; background: #FF90E8; border: 3px solid black; padding: 8px 30px; font-family: 'DM Serif Display', serif; font-style: italic; font-size: 24px; box-shadow: 4px 4px 0px 0px black;">
-                <!-- TEXTURE LAYER 1: Halftone Dots -->
-                <div style="position: absolute; inset: 0; opacity: 0.2; pointer-events: none; background-image: radial-gradient(circle, black 4px, transparent 4px); background-size: 24px 24px;"></div>
-                <!-- TEXTURE LAYER 2: Diagonal Grid -->
-                <div style="position: absolute; inset: 0; opacity: 0.15; pointer-events: none; background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.3) 10px, rgba(0,0,0,0.3) 11px), repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(0,0,0,0.3) 10px, rgba(0,0,0,0.3) 11px);"></div>
-                <span style="position: relative; z-index: 2;">🍅 Pomodoro Master</span>
+            <!-- WELCOME BACK Typography -->
+            <div style="position: relative; z-index: 10; text-align: center;">
+                <h1 style="font-family: 'Archivo Black', sans-serif; font-size: clamp(60px, 10vw, 140px); line-height: 0.9; color: #000; letter-spacing: -0.03em; margin: 0;">
+                    WELCOME
+                </h1>
+                <h1 style="font-family: 'Archivo Black', sans-serif; font-size: clamp(60px, 10vw, 140px); line-height: 0.9; color: #000; letter-spacing: -0.03em; margin: 0;">
+                    BACK
+                </h1>
             </div>
 
-            <!-- 角标装饰 -->
-            <div style="position: absolute; top: -15px; right: -15px; z-index: 30; width: 80px; height: 80px; background: #D4FF00; border: 4px solid black; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 6px 6px 0px 0px black; transform: rotate(12deg);">
-                <!-- TEXTURE: Halftone -->
-                <div style="position: absolute; inset: 0; opacity: 0.25; pointer-events: none; background-image: radial-gradient(circle, black 3px, transparent 3px); background-size: 18px 18px; border-radius: 50%;"></div>
-                <div style="font-family: 'Archivo Black', sans-serif; font-size: 28px; line-height: 1; position: relative; z-index: 2;">100%</div>
-                <div style="font-family: 'Space Mono', monospace; font-size: 10px; position: relative; z-index: 2;">FREE</div>
-            </div>
-
-            <!-- 大标题 -->
-            <h1 style="position: relative; z-index: 22;">
-                <i class="fas fa-clock" style="transform: rotate(-12deg); display: inline-block;"></i>
-                番茄钟
-            </h1>
-
-            <!-- 副标题改造 -->
-            <div style="position: relative; margin-bottom: 30px;">
-                <p class="subtitle" style="position: relative; z-index: 23;">专注时间管理，提升工作效率</p>
-
-                <!-- 副标题装饰 -->
-                <div style="position: absolute; bottom: -10px; right: 10px; background: #00FFFF; border: 2px solid black; padding: 4px 12px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: bold; box-shadow: 3px 3px 0px 0px black; transform: rotate(3deg);">
-                    超过1000+用户
+            <!-- Floating Sticker: Star (overlapping text) -->
+            <div style="position: absolute; top: 20%; right: 15%; z-index: 15; transform: rotate(12deg); animation: float-smooth 6s ease-in-out infinite;">
+                <div style="width: 90px; height: 90px; background: #FF90E8; border: 4px solid black; display: flex; align-items: center; justify-content: center; box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.3);">
+                    <!-- Texture -->
+                    <div style="position: absolute; inset: 0; opacity: 0.2; pointer-events: none; background-image: radial-gradient(circle, black 4px, transparent 4px); background-size: 20px 20px;"></div>
+                    <i class="fas fa-star" style="font-size: 44px; color: #000; position: relative; z-index: 2;"></i>
                 </div>
             </div>
 
-            <!-- 功能标签云 -->
-            <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; justify-content: center;">
-                <div style="position: relative; background: #B8FF9F; border: 2px solid black; padding: 6px 14px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: bold; box-shadow: 3px 3px 0px 0px black; transform: rotate(-3deg);">
-                    <div style="position: absolute; inset: 0; opacity: 0.2; pointer-events: none; background-image: radial-gradient(circle, black 2px, transparent 2px); background-size: 12px 12px;"></div>
-                    <span style="position: relative; z-index: 2;"><i class="fas fa-chart-line"></i> 数据统计</span>
-                </div>
-                <div style="position: relative; background: #FF90E8; border: 2px solid black; padding: 6px 14px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: bold; box-shadow: 3px 3px 0px 0px black; transform: rotate(2deg);">
-                    <div style="position: absolute; inset: 0; opacity: 0.2; pointer-events: none; background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(0,0,0,0.3) 8px, rgba(0,0,0,0.3) 9px);"></div>
-                    <span style="position: relative; z-index: 2;"><i class="fas fa-trophy"></i> 排行榜</span>
-                </div>
-                <div style="position: relative; background: #00FFFF; border: 2px solid black; padding: 6px 14px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: bold; box-shadow: 3px 3px 0px 0px black; transform: rotate(-2deg);">
-                    <div style="position: absolute; inset: 0; opacity: 0.18; pointer-events: none; background-image: radial-gradient(circle, black 2px, transparent 2px); background-size: 14px 14px;"></div>
-                    <span style="position: relative; z-index: 2;"><i class="fas fa-book"></i> 单词打卡</span>
-                </div>
-                <div style="position: relative; background: #D4FF00; border: 2px solid black; padding: 6px 14px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: bold; box-shadow: 3px 3px 0px 0px black; transform: rotate(4deg);">
-                    <div style="position: absolute; inset: 0; opacity: 0.25; pointer-events: none; background-image: repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(0,0,0,0.4) 6px, rgba(0,0,0,0.4) 7px);"></div>
-                    <span style="position: relative; z-index: 2;"><i class="fas fa-palette"></i> 多主题</span>
+            <!-- Floating Sticker: Arrow -->
+            <div style="position: absolute; bottom: 25%; left: 10%; z-index: 15; transform: rotate(-18deg);">
+                <div style="background: #00FFFF; border: 4px solid black; padding: 16px 24px; font-family: 'Archivo Black', sans-serif; font-size: 28px; box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.3);">
+                    <!-- Texture -->
+                    <div style="position: absolute; inset: 0; opacity: 0.18; pointer-events: none; background-image: repeating-linear-gradient(135deg, transparent, transparent 10px, rgba(0,0,0,0.3) 10px, rgba(0,0,0,0.3) 11px);"></div>
+                    <span style="position: relative; z-index: 2;">→</span>
                 </div>
             </div>
 
-            <!-- 登录表单 -->
-            <div id="login-form" class="form-container active" style="position: relative; overflow: visible;">
-
-                <!-- BORDER-CROSSING STICKER: Left Top -->
-                <div style="position: absolute; top: 50px; left: -35px; z-index: 50; background: #00FFFF; border: 3px solid black; padding: 10px 16px; font-family: 'Archivo Black', sans-serif; font-size: 14px; box-shadow: 5px 5px 0px 0px black; transform: rotate(-12deg);">
-                    <div style="position: absolute; inset: 0; opacity: 0.25; pointer-events: none; background-image: radial-gradient(circle, black 3px, transparent 3px); background-size: 16px 16px;"></div>
-                    <span style="position: relative; z-index: 2;">⚡ FAST</span>
+            <!-- Small Badge -->
+            <div style="position: absolute; top: 12%; left: 8%; transform: rotate(-8deg);">
+                <div style="background: #B8FF9F; border: 3px solid black; padding: 8px 16px; font-family: 'Space Mono', monospace; font-size: 14px; font-weight: bold; box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.3);">
+                    <div style="position: absolute; inset: 0; opacity: 0.22; pointer-events: none; background-image: radial-gradient(circle, black 2px, transparent 2px); background-size: 12px 12px;"></div>
+                    <span style="position: relative; z-index: 2;">v2.0</span>
                 </div>
+            </div>
 
-                <!-- BORDER-CROSSING STICKER: Right Middle -->
-                <div style="position: absolute; top: 150px; right: -40px; z-index: 50; background: #D4FF00; border: 3px solid black; padding: 8px 12px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: bold; box-shadow: 4px 4px 0px 0px black; transform: rotate(18deg);">
-                    <div style="position: absolute; inset: 0; opacity: 0.3; pointer-events: none; background-image: repeating-linear-gradient(135deg, transparent, transparent 5px, rgba(0,0,0,0.4) 5px, rgba(0,0,0,0.4) 6px);"></div>
-                    <span style="position: relative; z-index: 2;">💯 SAFE</span>
-                </div>
+        </div>
 
-                <!-- 表单标题带装饰 -->
-                <div style="position: relative; margin-bottom: 24px;">
-                    <h2 style="position: relative; z-index: 2;">登录</h2>
-                    <div style="position: absolute; top: -8px; right: -8px; width: 40px; height: 40px; background: #FF90E8; border: 3px solid black; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 4px 4px 0px 0px black;">
-                        <i class="fas fa-user" style="font-size: 18px;"></i>
+        <!-- RIGHT SIDE: Hot Pink with Vertical Stripes (40%) -->
+        <div style="position: relative; width: 40%; background: #FF90E8; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+
+            <!-- Black Vertical Stripe Texture -->
+            <div style="position: absolute; inset: 0; opacity: 0.12; pointer-events: none; background-image: repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(0,0,0,0.5) 20px, rgba(0,0,0,0.5) 22px);"></div>
+
+
+            <!-- White Form Container with Cyan Inner Border -->
+            <div style="position: relative; z-index: 20; width: 85%; max-width: 450px; background: white; border: 4px solid black; box-shadow: 8px 8px 0px 0px #000; padding: 40px 32px;">
+                
+                <!-- 3px Cyan Inner Border -->
+                <div style="position: absolute; inset: 0; border: 3px solid #00FFFF; pointer-events: none;"></div>
+
+                <!-- Login Form Content -->
+                <div id="login-form" class="form-container active" style="position: relative; z-index: 2;">
+
+                    <!-- Form Title with Cyan Header Bar -->
+                    <div style="background: #00FFFF; border-bottom: 4px solid black; padding: 16px 0; margin: -40px -32px 28px -32px;">
+                        <h2 style="font-family: 'Archivo Black', sans-serif; font-size: 36px; margin: 0; color: #000; letter-spacing: 0.1em; text-align: center;">LOGIN</h2>
                     </div>
-                </div>
+                    <p style="font-family: 'Space Mono', monospace; font-size: 13px; font-weight: bold; margin: 0 0 28px 0; color: #000;">Enter your credentials</p>
 
-                <!-- 邮箱输入 -->
-                <div style="position: relative; margin-bottom: 20px;">
-                    <label style="font-family: 'Space Mono', monospace; font-weight: bold; font-size: 14px; display: block; margin-bottom: 8px;">
-                        <i class="fas fa-envelope"></i> 电子邮箱
-                    </label>
-                    <input type="email" id="login-email" placeholder="your@email.com" required>
-                    <div style="position: absolute; top: 0; right: -25px; background: #B8FF9F; border: 2px solid black; width: 20px; height: 20px; transform: rotate(45deg);"></div>
-                </div>
+                    <!-- Email Input -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="font-family: 'Space Mono', monospace; font-weight: bold; font-size: 13px; display: block; margin-bottom: 8px; color: #000;">
+                            EMAIL
+                        </label>
+                        <input type="email" id="login-email" placeholder="your@email.com" required style="width: 100%; height: 56px; padding: 0 16px; font-family: 'Space Mono', monospace; font-size: 14px; border: 3px solid black; background: white; box-sizing: border-box;">
+                    </div>
 
-                <!-- 密码输入 -->
-                <div style="position: relative; margin-bottom: 24px;">
-                    <label style="font-family: 'Space Mono', monospace; font-weight: bold; font-size: 14px; display: block; margin-bottom: 8px;">
-                        <i class="fas fa-lock"></i> 密码
-                    </label>
-                    <input type="password" id="login-password" placeholder="••••••••" required style="padding-right: 50px; margin-bottom: 0;">
-                    <button type="button" class="toggle-password" onclick="togglePassword('login-password', this)" style="position: absolute; right: 12px; bottom: 14px; background: none; border: none; cursor: pointer; font-size: 16px; padding: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-eye"></i>
-                    </button>
-                    <div style="position: absolute; bottom: 0; left: -25px; background: #00FFFF; border: 2px solid black; width: 20px; height: 20px; border-radius: 50%;"></div>
-                </div>
+                    <!-- Password Input -->
+                    <div style="margin-bottom: 28px;">
+                        <label style="font-family: 'Space Mono', monospace; font-weight: bold; font-size: 13px; display: block; margin-bottom: 8px; color: #000;">
+                            PASSWORD
+                        </label>
+                        <input type="password" id="login-password" placeholder="••••••••" required style="width: 100%; height: 56px; padding: 0 16px; font-family: 'Space Mono', monospace; font-size: 14px; border: 3px solid black; background: white; box-sizing: border-box;">
+                    </div>
 
-                <!-- 登录按钮带装饰 -->
-                <div style="position: relative;">
-                    <button onclick="login()" style="position: relative; z-index: 2;">
-                        <i class="fas fa-sign-in-alt"></i> 立即登录
+                    <!-- Login Button -->
+                    <button onclick="login()" style="width: 100%; padding: 16px; background: #000; color: white; border: none; font-family: 'Archivo Black', sans-serif; font-size: 16px; cursor: pointer; box-shadow: 4px 4px 0px 0px #D4FF00; transition: all 0.15s ease;">
+                        LOGIN →
                     </button>
 
-                    <!-- 按钮箭头装饰 -->
-                    <div style="position: absolute; top: 50%; right: -40px; transform: translateY(-50%);">
-                        <svg width="30" height="30" viewBox="0 0 30 30">
-                            <path d="M5 15 L20 15 M15 10 L20 15 L15 20" stroke="black" stroke-width="3" fill="none"/>
-                        </svg>
+                    <!-- Register Link -->
+                    <p style="font-family: 'Space Mono', monospace; font-size: 13px; margin-top: 24px; text-align: center; color: #666;">
+                        Don't have an account? <a href="javascript:void(0);" onclick="showRegister()" style="color: #000; font-weight: bold; text-decoration: underline;">Register</a>
+                    </p>
+
+                </div>
+
+                <!-- Register Form (hidden by default) -->
+                <div id="register-form" class="form-container" style="position: relative; z-index: 2; display: none;">
+
+                    <!-- Form Title with Cyan Header Bar -->
+                    <div style="background: #00FFFF; border-bottom: 4px solid black; padding: 16px 0; margin: -40px -32px 28px -32px;">
+                        <h2 style="font-family: 'Archivo Black', sans-serif; font-size: 36px; margin: 0; color: #000; letter-spacing: 0.1em; text-align: center;">REGISTER</h2>
                     </div>
-                </div>
+                    <p style="font-family: 'Space Mono', monospace; font-size: 13px; font-weight: bold; margin: 0 0 28px 0; color: #000;">Create your account</p>
 
-                <!-- 切换注册 -->
-                <p class="toggle-form" style="margin-top: 24px; position: relative;">
-                    还没有账号？<a href="javascript:void(0);" onclick="showRegister()" style="font-weight: bold; text-decoration: underline; text-decoration-style: wavy; text-decoration-color: #FF90E8;">立即注册</a>
-                    <span style="position: absolute; right: -20px; top: -5px; font-size: 24px;">→</span>
-                </p>
-            </div>
-
-            <!-- 注册表单 -->
-            <div id="register-form" class="form-container" style="position: relative; overflow: visible;">
-
-                <!-- BORDER-CROSSING STICKER: Left Bottom -->
-                <div style="position: absolute; bottom: 80px; left: -38px; z-index: 50; background: #FF90E8; border: 3px solid black; padding: 12px 18px; font-family: 'Archivo Black', sans-serif; font-size: 16px; box-shadow: 5px 5px 0px 0px black; transform: rotate(-8deg);">
-                    <div style="position: absolute; inset: 0; opacity: 0.2; pointer-events: none; background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.3) 10px, rgba(0,0,0,0.3) 11px);"></div>
-                    <span style="position: relative; z-index: 2;">🚀 NEW</span>
-                </div>
-
-                <!-- BORDER-CROSSING STICKER: Right Top -->
-                <div style="position: absolute; top: 100px; right: -32px; z-index: 50; background: #B8FF9F; border: 3px solid black; padding: 8px 14px; font-family: 'Space Mono', monospace; font-size: 11px; font-weight: bold; box-shadow: 4px 4px 0px 0px black; transform: rotate(15deg);">
-                    <div style="position: absolute; inset: 0; opacity: 0.25; pointer-events: none; background-image: radial-gradient(circle, black 2px, transparent 2px); background-size: 12px 12px;"></div>
-                    <span style="position: relative; z-index: 2;">✨ FREE</span>
-                </div>
-
-                <!-- 表单标题带装饰 -->
-                <div style="position: relative; margin-bottom: 24px;">
-                    <h2 style="position: relative; z-index: 2;">注册</h2>
-                    <div style="position: absolute; top: -8px; right: -8px; width: 40px; height: 40px; background: #00FFFF; border: 3px solid black; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 4px 4px 0px 0px black;">
-                        <i class="fas fa-user-plus" style="font-size: 18px;"></i>
+                    <!-- Username Input -->
+                    <div style="margin-bottom: 18px;">
+                        <label style="font-family: 'Space Mono', monospace; font-weight: bold; font-size: 13px; display: block; margin-bottom: 8px; color: #000;">
+                            USERNAME
+                        </label>
+                        <input type="text" id="register-username" placeholder="Your Name" required style="width: 100%; height: 56px; padding: 0 16px; font-family: 'Space Mono', monospace; font-size: 14px; border: 3px solid black; background: white; box-sizing: border-box;">
                     </div>
-                </div>
 
-                <!-- 用户名输入 -->
-                <div style="position: relative; margin-bottom: 20px;">
-                    <label style="font-family: 'Space Mono', monospace; font-weight: bold; font-size: 14px; display: block; margin-bottom: 8px;">
-                        <i class="fas fa-user"></i> 用户名
-                    </label>
-                    <input type="text" id="register-username" placeholder="酷炫的名字" required>
-                    <div style="position: absolute; top: 0; right: -25px; background: #D4FF00; border: 2px solid black; width: 20px; height: 20px; transform: rotate(45deg);"></div>
-                </div>
+                    <!-- Email Input -->
+                    <div style="margin-bottom: 18px;">
+                        <label style="font-family: 'Space Mono', monospace; font-weight: bold; font-size: 13px; display: block; margin-bottom: 8px; color: #000;">
+                            EMAIL
+                        </label>
+                        <input type="email" id="register-email" placeholder="your@email.com" required style="width: 100%; height: 56px; padding: 0 16px; font-family: 'Space Mono', monospace; font-size: 14px; border: 3px solid black; background: white; box-sizing: border-box;">
+                    </div>
 
-                <!-- 邮箱输入 -->
-                <div style="position: relative; margin-bottom: 20px;">
-                    <label style="font-family: 'Space Mono', monospace; font-weight: bold; font-size: 14px; display: block; margin-bottom: 8px;">
-                        <i class="fas fa-envelope"></i> 电子邮箱
-                    </label>
-                    <input type="email" id="register-email" placeholder="your@email.com" required>
-                    <div style="position: absolute; bottom: 0; left: -25px; background: #FF90E8; border: 2px solid black; width: 20px; height: 20px; border-radius: 50%;"></div>
-                </div>
+                    <!-- Password Input -->
+                    <div style="margin-bottom: 28px;">
+                        <label style="font-family: 'Space Mono', monospace; font-weight: bold; font-size: 13px; display: block; margin-bottom: 8px; color: #000;">
+                            PASSWORD
+                        </label>
+                        <input type="password" id="register-password" placeholder="Min 6 characters" required style="width: 100%; height: 56px; padding: 0 16px; font-family: 'Space Mono', monospace; font-size: 14px; border: 3px solid black; background: white; box-sizing: border-box;">
+                    </div>
 
-                <!-- 密码输入 -->
-                <div style="position: relative; margin-bottom: 24px;">
-                    <label style="font-family: 'Space Mono', monospace; font-weight: bold; font-size: 14px; display: block; margin-bottom: 8px;">
-                        <i class="fas fa-lock"></i> 密码（至少6位）
-                    </label>
-                    <input type="password" id="register-password" placeholder="••••••••" required style="padding-right: 50px; margin-bottom: 0;">
-                    <button type="button" class="toggle-password" onclick="togglePassword('register-password', this)" style="position: absolute; right: 12px; bottom: 14px; background: none; border: none; cursor: pointer; font-size: 16px; padding: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-eye"></i>
-                    </button>
-                    <div style="position: absolute; top: 0; left: -25px; background: #B8FF9F; border: 2px solid black; width: 20px; height: 20px; transform: rotate(45deg);"></div>
-                </div>
-
-                <!-- 注册按钮带装饰 -->
-                <div style="position: relative;">
-                    <button onclick="register()" style="position: relative; z-index: 2;">
-                        <i class="fas fa-rocket"></i> 开始旅程
+                    <!-- Register Button -->
+                    <button onclick="register()" style="width: 100%; padding: 16px; background: #000; color: white; border: none; font-family: 'Archivo Black', sans-serif; font-size: 16px; cursor: pointer; box-shadow: 4px 4px 0px 0px #FF90E8; transition: all 0.15s ease;">
+                        CREATE ACCOUNT →
                     </button>
 
-                    <!-- 按钮星星装饰 -->
-                    <div style="position: absolute; top: -15px; right: -15px;">
-                        <i class="fas fa-star" style="font-size: 24px; color: #D4FF00; -webkit-text-stroke: 2px black;"></i>
-                    </div>
+                    <!-- Login Link -->
+                    <p style="font-family: 'Space Mono', monospace; font-size: 13px; margin-top: 24px; text-align: center; color: #666;">
+                        Already have an account? <a href="javascript:void(0);" onclick="showLogin()" style="color: #000; font-weight: bold; text-decoration: underline;">Login</a>
+                    </p>
+
                 </div>
 
-                <!-- 切换登录 -->
-                <p class="toggle-form" style="margin-top: 24px; position: relative;">
-                    已有账号？<a href="javascript:void(0);" onclick="showLogin()" style="font-weight: bold; text-decoration: underline; text-decoration-style: wavy; text-decoration-color: #00FFFF;">立即登录</a>
-                    <span style="position: absolute; left: -20px; top: -5px; font-size: 24px;">←</span>
-                </p>
             </div>
 
-            <!-- 底部信任标记 -->
-            <div style="margin-top: 40px; padding-top: 20px; border-top: 3px dashed black; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <div style="display: flex; align-items: center; gap: 8px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: bold;">
-                    <i class="fas fa-shield-alt" style="color: #B8FF9F; font-size: 20px; -webkit-text-stroke: 1px black;"></i>
-                    100% 安全
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: bold;">
-                    <i class="fas fa-lock" style="color: #00FFFF; font-size: 20px; -webkit-text-stroke: 1px black;"></i>
-                    数据加密
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: bold;">
-                    <i class="fas fa-heart" style="color: #FF90E8; font-size: 20px; -webkit-text-stroke: 1px black;"></i>
-                    持续更新
-                </div>
-            </div>
         </div>
 
-        <!-- 角落装饰 - 左上 -->
-        <div style="position: absolute; top: 0; left: 0; width: 100px; height: 100px; background: repeating-linear-gradient(45deg, #FF90E8, #FF90E8 10px, #000 10px, #000 20px); opacity: 0.3; z-index: 1;"></div>
-
-        <!-- 角落装饰 - 右下 -->
-        <div style="position: absolute; bottom: 0; right: 0; width: 120px; height: 120px; background: repeating-linear-gradient(-45deg, #00FFFF, #00FFFF 10px, #000 10px, #000 20px); opacity: 0.3; z-index: 1;"></div>
-
+    </div>
     </div>
     <!-- ========== 主应用页面 ========== -->
     <div id="app-page" class="page">
