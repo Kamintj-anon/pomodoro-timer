@@ -238,46 +238,84 @@
         <!-- 主内容区 -->
         <main class="container">
 
-            <!-- 番茄钟标签页 -->
+            <!-- 番茄钟标签页 - Neo-Brutalism Pop Art Style -->
             <div id="timer-tab" class="tab-content active">
-                <section class="timer-section">
-                    <div class="timer-card">
-                        <h2><i class="fas fa-tasks"></i> 当前任务</h2>
 
-                        <!-- 分类选择 -->
-                        <div class="category-selector">
-                            <label><i class="fas fa-folder"></i> 选择分类：</label>
-                            <select id="category-select"></select>
-                            <button onclick="showCategoryManager()" class="btn-icon">
-                                <i class="fas fa-cog"></i>
-                            </button>
-                        </div>
+                <!-- Split Background Container -->
+                <div style="position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
 
-                        <!-- 倒计时显示 -->
-                        <div class="timer-display">
-                            <div id="timer">25:00</div>
-                            <div class="timer-label" id="timer-status">准备开始</div>
-                        </div>
+                    <!-- Left Half: Acid Lime Green with Polka Dots -->
+                    <div style="position: absolute; left: 0; top: 0; width: 50%; height: 100%; background: #B8FF9F; z-index: 1;">
+                        <!-- Polka Dot Pattern -->
+                        <div style="position: absolute; inset: 0; opacity: 0.25; background-image: radial-gradient(circle, black 8px, transparent 8px); background-size: 50px 50px;"></div>
+                    </div>
 
-                        <!-- 控制按钮 -->
-                        <div class="timer-controls">
-                            <button id="start-btn" onclick="startTimer()" class="btn-primary">
-                                <i class="fas fa-play"></i> 开始
-                            </button>
-                            <button id="pause-btn" onclick="pauseTimer()" class="btn-secondary" style="display:none;">
-                                <i class="fas fa-pause"></i> 暂停
-                            </button>
-                            <button id="reset-btn" onclick="resetTimer()" class="btn-outline">
-                                <i class="fas fa-redo"></i> 重置
-                            </button>
-                        </div>
+                    <!-- Right Half: Hot Pink with Vertical Stripes -->
+                    <div style="position: absolute; right: 0; top: 0; width: 50%; height: 100%; background: #FF90E8; z-index: 1;">
+                        <!-- Vertical Stripe Pattern -->
+                        <div style="position: absolute; inset: 0; opacity: 0.2; background-image: repeating-linear-gradient(90deg, transparent, transparent 25px, rgba(0,0,0,0.5) 25px, rgba(0,0,0,0.5) 30px);"></div>
+                    </div>
 
-                        <!-- 备注输入 -->
-                        <div class="note-input">
-                            <input type="text" id="pomodoro-note" placeholder="备注（可选）">
+                    <!-- Floating Stickers - Top Left Star -->
+                    <div style="position: absolute; top: 10%; left: 8%; z-index: 15; transform: rotate(-15deg); animation: float-smooth 5s ease-in-out infinite;">
+                        <div style="width: 80px; height: 80px; background: #00FFFF; border: 4px solid black; display: flex; align-items: center; justify-content: center; box-shadow: 6px 6px 0px black;">
+                            <i class="fas fa-star" style="font-size: 40px; color: black;"></i>
                         </div>
                     </div>
-                </section>
+
+                    <!-- Floating Stickers - Top Right Burst -->
+                    <div style="position: absolute; top: 15%; right: 10%; z-index: 15; transform: rotate(12deg);">
+                        <div style="background: #D4FF00; border: 4px solid black; padding: 20px; font-family: 'Archivo Black', sans-serif; font-size: 32px; box-shadow: 6px 6px 0px black;">
+                            POW!
+                        </div>
+                    </div>
+
+                    <!-- Floating Stickers - Bottom Left Arrow -->
+                    <div style="position: absolute; bottom: 15%; left: 12%; z-index: 15; transform: rotate(-8deg);">
+                        <div style="background: #FF90E8; border: 4px solid black; padding: 16px 24px; font-family: 'Archivo Black', sans-serif; font-size: 40px; box-shadow: 6px 6px 0px black;">
+                            ↗
+                        </div>
+                    </div>
+
+                    <!-- Floating Stickers - Bottom Right Triangle -->
+                    <div style="position: absolute; bottom: 20%; right: 8%; z-index: 15; transform: rotate(20deg);">
+                        <div style="width: 70px; height: 70px; background: #00FFFF; border: 4px solid black; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); box-shadow: 6px 6px 0px black;"></div>
+                    </div>
+
+                    <!-- Central White Card Container -->
+                    <div style="position: relative; z-index: 20; background: white; border: 4px solid black; box-shadow: 12px 12px 0px black; padding: 60px 80px; max-width: 600px; text-align: center;">
+
+                        <!-- Hidden Elements (keep for functionality) -->
+                        <div style="display: none;">
+                            <select id="category-select"></select>
+                            <input type="text" id="pomodoro-note" placeholder="备注（可选）">
+                        </div>
+
+                        <!-- Large Digital Clock -->
+                        <div id="timer" style="font-family: 'Space Mono', monospace; font-size: 120px; font-weight: 900; line-height: 1; color: #000; margin-bottom: 30px; letter-spacing: 0.05em;">25:00</div>
+
+                        <!-- Timer Status Label -->
+                        <div id="timer-status" style="font-family: 'Archivo Black', sans-serif; font-size: 24px; color: #000; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 0.1em;">准备开始</div>
+
+                        <!-- Start Button (Massive) -->
+                        <button id="start-btn" onclick="startTimer()" style="width: 100%; padding: 28px; background: #000; color: white; border: none; font-family: 'Archivo Black', sans-serif; font-size: 32px; cursor: pointer; box-shadow: 8px 8px 0px #D4FF00; transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">
+                            START
+                        </button>
+
+                        <!-- Pause Button (Hidden by default) -->
+                        <button id="pause-btn" onclick="pauseTimer()" style="display: none; width: 100%; padding: 28px; background: #FF90E8; color: black; border: 4px solid black; font-family: 'Archivo Black', sans-serif; font-size: 32px; cursor: pointer; box-shadow: 8px 8px 0px black; transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">
+                            PAUSE
+                        </button>
+
+                        <!-- Reset Button -->
+                        <button id="reset-btn" onclick="resetTimer()" style="width: 100%; padding: 20px; background: white; color: black; border: 4px solid black; font-family: 'Archivo Black', sans-serif; font-size: 20px; cursor: pointer; box-shadow: 6px 6px 0px black; transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.05em;">
+                            RESET
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
 
             <!-- 统计数据标签页 -->
