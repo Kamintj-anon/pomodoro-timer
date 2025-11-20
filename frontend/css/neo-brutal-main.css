@@ -110,6 +110,13 @@ body {
   display: block;
 }
 
+/* Bento Split Login Page */
+#auth-page.page.active {
+  display: flex !important;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -121,7 +128,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--color-yellow);
+  background: #D4FF00 !important; /* Acid Yellow - matches login background */
   border-bottom: var(--border-width) solid var(--color-black);
   box-shadow: 0px 4px 0px 0px rgba(0,0,0,1);
 }
