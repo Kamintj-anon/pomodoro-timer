@@ -284,38 +284,43 @@
                             <div style="font-family: 'Archivo Black', sans-serif; font-size: 18px; color: black; letter-spacing: 0.1em; text-transform: uppercase;">CURRENT TASK</div>
                         </div>
 
-                        <!-- Window Body (White) -->
-                        <div style="background: white; padding: 60px 50px; text-align: center;">
+                        <!-- Window Body (White with Graph Paper Texture) -->
+                        <div style="background: white; padding: 60px 50px; text-align: center; position: relative;">
+                            <!-- Subtle Light Gray Grid Pattern (Graph Paper) -->
+                            <div style="position: absolute; inset: 0; opacity: 0.12; background-image: linear-gradient(#d0d0d0 1px, transparent 1px), linear-gradient(90deg, #d0d0d0 1px, transparent 1px); background-size: 20px 20px; pointer-events: none;"></div>
 
-                            <!-- Hidden Elements (keep for functionality) -->
-                            <div style="display: none;">
-                                <select id="category-select"></select>
-                                <input type="text" id="pomodoro-note" placeholder="备注（可选）">
-                            </div>
+                            <!-- Content Layer -->
+                            <div style="position: relative; z-index: 1;">
+                                <!-- Hidden Elements (keep for functionality) -->
+                                <div style="display: none;">
+                                    <select id="category-select"></select>
+                                    <input type="text" id="pomodoro-note" placeholder="备注（可选）">
+                                </div>
 
-                            <!-- Digital LCD Timer -->
-                            <div id="timer" style="font-family: 'Courier New', monospace; font-size: 110px; font-weight: 900; line-height: 1; color: #000; margin-bottom: 50px; letter-spacing: 0.08em;">25:00</div>
+                                <!-- Digital LCD Timer (8-bit Pixel Art Style) -->
+                                <div id="timer" style="font-family: 'Courier New', monospace; font-size: 110px; font-weight: 900; line-height: 1; color: #000; margin-bottom: 50px; letter-spacing: 0.08em;">25:00</div>
 
-                            <!-- Full Width Buttons -->
-                            <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px;">
-                                <!-- START Button (Black Fill) -->
-                                <button id="start-btn" onclick="startTimer()" style="width: 100%; padding: 20px; background: #000; color: white; border: 4px solid black; font-family: 'Archivo Black', sans-serif; font-size: 22px; cursor: pointer; box-shadow: 6px 6px 0px rgba(0,0,0,0.3); transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 900;">
-                                    START
+                                <!-- Full Width Buttons -->
+                                <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px;">
+                                    <!-- START Button (Neon Lime Green) -->
+                                    <button id="start-btn" onclick="startTimer()" style="width: 100%; padding: 20px; background: #CCFF00; color: black; border: 4px solid black; font-family: 'Archivo Black', sans-serif; font-size: 22px; cursor: pointer; box-shadow: 6px 6px 0px rgba(0,0,0,0.3); transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 900;">
+                                        START
+                                    </button>
+
+                                    <!-- RESET Button (White Fill) -->
+                                    <button id="reset-btn" onclick="resetTimer()" style="width: 100%; padding: 20px; background: white; color: black; border: 4px solid black; font-family: 'Archivo Black', sans-serif; font-size: 22px; cursor: pointer; box-shadow: 6px 6px 0px rgba(0,0,0,0.3); transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 900;">
+                                        RESET
+                                    </button>
+                                </div>
+
+                                <!-- PAUSE Button (Hidden by default, full width) -->
+                                <button id="pause-btn" onclick="pauseTimer()" style="display: none; width: 100%; padding: 20px; background: #CCFF00; color: black; border: 4px solid black; font-family: 'Archivo Black', sans-serif; font-size: 22px; cursor: pointer; box-shadow: 6px 6px 0px rgba(0,0,0,0.3); transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 900;">
+                                    PAUSE
                                 </button>
 
-                                <!-- RESET Button (White Fill) -->
-                                <button id="reset-btn" onclick="resetTimer()" style="width: 100%; padding: 20px; background: white; color: black; border: 4px solid black; font-family: 'Archivo Black', sans-serif; font-size: 22px; cursor: pointer; box-shadow: 6px 6px 0px rgba(0,0,0,0.3); transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 900;">
-                                    RESET
-                                </button>
+                                <!-- Timer Status Label -->
+                                <div id="timer-status" style="font-family: 'Courier New', monospace; font-size: 13px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 20px;">准备开始</div>
                             </div>
-
-                            <!-- PAUSE Button (Hidden by default, full width) -->
-                            <button id="pause-btn" onclick="pauseTimer()" style="display: none; width: 100%; padding: 20px; background: #000; color: white; border: 4px solid black; font-family: 'Archivo Black', sans-serif; font-size: 22px; cursor: pointer; box-shadow: 6px 6px 0px rgba(0,0,0,0.3); transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 900;">
-                                PAUSE
-                            </button>
-
-                            <!-- Timer Status Label -->
-                            <div id="timer-status" style="font-family: 'Courier New', monospace; font-size: 13px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 20px;">准备开始</div>
 
                         </div>
 
