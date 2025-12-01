@@ -1,7 +1,7 @@
 // API 配置
 const API_CONFIG = {
     // 将此处改为你的服务器 IP 地址和端口
-    BASE_URL: 'http://124.220.224.91:8080/api',
+    BASE_URL: '/api',
 
     // 请求超时时间（毫秒）
     TIMEOUT: 10000,
