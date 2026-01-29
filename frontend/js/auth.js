@@ -2,14 +2,20 @@
 
 // 显示注册表单
 function showRegister() {
-    document.getElementById('login-form').classList.remove('active');
-    document.getElementById('register-form').classList.add('active');
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+
+    if (loginForm) loginForm.style.display = 'none';
+    if (registerForm) registerForm.style.display = 'block';
 }
 
 // 显示登录表单
 function showLogin() {
-    document.getElementById('register-form').classList.remove('active');
-    document.getElementById('login-form').classList.add('active');
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+
+    if (registerForm) registerForm.style.display = 'none';
+    if (loginForm) loginForm.style.display = 'block';
 }
 
 // 注册

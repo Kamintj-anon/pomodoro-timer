@@ -177,6 +177,15 @@ function applyLoginTheme() {
     const authPage = document.getElementById('auth-page');
     if (!authPage) return;
 
+    // 检查是否是新的 Bento Split View - 如果是则跳过旧的增强
+    if (authPage.querySelector('.page.active') && authPage.children.length > 0) {
+        const firstChild = authPage.children[0];
+        if (firstChild.style && firstChild.style.width === '60%') {
+            console.log('✓ 检测到 Bento Split View，跳过旧增强');
+            return;
+        }
+    }
+
     // 修改背景为登录主题（强烈粉色/紫色）
     authPage.style.background = `
         radial-gradient(circle at 15% 25%, rgba(255, 144, 232, 0.5) 0%, transparent 40%),
@@ -287,6 +296,15 @@ function enhanceRegisterForm() {
 function applyRegisterTheme() {
     const authPage = document.getElementById('auth-page');
     if (!authPage) return;
+
+    // 检查是否是新的 Bento Split View - 如果是则跳过旧的增强
+    if (authPage.querySelector('.page.active') && authPage.children.length > 0) {
+        const firstChild = authPage.children[0];
+        if (firstChild.style && firstChild.style.width === '60%') {
+            console.log('✓ 检测到 Bento Split View，跳过旧增强');
+            return;
+        }
+    }
 
     // 修改背景为注册主题（明亮黄色/绿色）
     authPage.style.background = `
