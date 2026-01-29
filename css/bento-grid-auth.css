@@ -1,0 +1,515 @@
+/*
+ * BENTO GRID STYLE - PROFESSIONAL LOGIN/LANDING PAGE
+ * Structural Neo-Pop Brutalism Layout
+ * NO random floating elements, rigid grid-based design
+ */
+
+/* =========================================
+   RESET & BASE LAYOUT
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#auth-page {
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Hide all previous decorative elements */
+#auth-page > div[style*="position: absolute"],
+#auth-page > div:not(.auth-bento-container) {
+    display: none !important;
+}
+
+.auth-container {
+    display: none !important;
+}
+
+/* =========================================
+   BENTO GRID STRUCTURE
+   ========================================= */
+
+.auth-bento-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* =========================================
+   TOP BAR - MARQUEE HEADER
+   ========================================= */
+
+.auth-top-bar {
+    height: 60px;
+    background: black;
+    border-bottom: 4px solid black;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.auth-marquee {
+    white-space: nowrap;
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: marquee-scroll 30s linear infinite;
+    padding: 0 40px;
+}
+
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* =========================================
+   MAIN CONTENT AREA - SPLIT LAYOUT
+   ========================================= */
+
+.auth-main-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    position: relative;
+}
+
+/* =========================================
+   LEFT PANEL - BRAND POSTER AREA
+   ========================================= */
+
+.auth-left-panel {
+    background: #D4FF00;
+    border-right: 4px solid black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Halftone Dots Pattern Overlay */
+.auth-left-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.15) 2px, transparent 2px);
+    background-size: 24px 24px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Giant Typography Composition */
+.auth-brand-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 16vw;
+    font-weight: 900;
+    line-height: 0.8;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    text-align: center;
+    z-index: 2;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Structured Badges - Corner Decorations */
+.auth-badge {
+    position: absolute;
+    background: white;
+    border: 4px solid black;
+    padding: 12px 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+}
+
+.auth-badge.top-left {
+    top: 30px;
+    left: 30px;
+    background: #FF90E8;
+}
+
+.auth-badge.top-right {
+    top: 30px;
+    right: 30px;
+    background: #00FFFF;
+}
+
+.auth-badge.bottom-left {
+    bottom: 30px;
+    left: 30px;
+    background: #B8FF9F;
+}
+
+/* Decorative Data Box */
+.auth-data-box {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: black;
+    color: white;
+    border: 4px solid black;
+    padding: 16px 24px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+}
+
+.auth-data-box .data-label {
+    opacity: 0.6;
+    margin-bottom: 4px;
+}
+
+.auth-data-box .data-value {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   RIGHT PANEL - FUNCTIONAL FORM AREA
+   ========================================= */
+
+.auth-right-panel {
+    background: #F5F5F5;
+    border-left: 4px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 50px;
+    position: relative;
+}
+
+/* Form Title */
+.auth-form-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 72px;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    line-height: 1;
+    -webkit-text-stroke: 0px;
+}
+
+.auth-form-subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+/* Form Container - Embedded, NOT floating */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Input Groups */
+.auth-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.auth-input-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+}
+
+/* Massive Blocky Inputs */
+.auth-input {
+    width: 100%;
+    height: 56px;
+    padding: 0 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    font-weight: 600;
+    background: white;
+    border: 4px solid black;
+    outline: none;
+    transition: all 0.2s;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.auth-input:focus {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.auth-input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* Password Input Container */
+.auth-input-wrapper {
+    position: relative;
+}
+
+.auth-input-wrapper .auth-input {
+    padding-right: 60px;
+}
+
+.auth-toggle-password {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: black;
+    padding: 8px;
+    transition: transform 0.2s;
+}
+
+.auth-toggle-password:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* MASSIVE CALL TO ACTION BUTTON */
+.auth-button {
+    width: 100%;
+    height: 64px;
+    background: black;
+    color: white;
+    border: 4px solid black;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.3);
+    margin-top: 16px;
+}
+
+.auth-button:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+.auth-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Toggle Link */
+.auth-toggle-link {
+    margin-top: 32px;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.auth-toggle-link a {
+    color: black;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: text-decoration-thickness 0.2s;
+}
+
+.auth-toggle-link a:hover {
+    text-decoration-thickness: 4px;
+}
+
+/* Corner Badge on Form */
+.auth-form-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #FF90E8;
+    border: 3px solid black;
+    padding: 8px 16px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   BOTTOM BAR - STATUS BAR FOOTER
+   ========================================= */
+
+.auth-bottom-bar {
+    height: 48px;
+    background: black;
+    border-top: 4px solid black;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    gap: 40px;
+}
+
+.auth-status-item {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.auth-status-divider {
+    width: 2px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.auth-status-dot {
+    width: 8px;
+    height: 8px;
+    background: #B8FF9F;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.auth-social-icons {
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
+}
+
+.auth-social-icon {
+    color: white;
+    font-size: 16px;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.auth-social-icon:hover {
+    transform: scale(1.2);
+    color: #D4FF00;
+}
+
+/* =========================================
+   FORM SWITCHING
+   ========================================= */
+
+.form-container {
+    display: none !important;
+}
+
+.form-container.active {
+    display: block !important;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 1024px) {
+    .auth-main-content {
+        grid-template-columns: 50% 50%;
+    }
+
+    .auth-brand-title {
+        font-size: 14vw;
+    }
+
+    .auth-form-title {
+        font-size: 56px;
+    }
+
+    .auth-right-panel {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-main-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40% 60%;
+    }
+
+    .auth-left-panel {
+        border-right: none;
+        border-bottom: 4px solid black;
+    }
+
+    .auth-right-panel {
+        border-left: none;
+        border-top: 4px solid black;
+        padding: 30px 20px;
+    }
+
+    .auth-brand-title {
+        font-size: 20vw;
+    }
+
+    .auth-form-title {
+        font-size: 48px;
+    }
+
+    .auth-badge,
+    .auth-data-box {
+        display: none;
+    }
+
+    .auth-bottom-bar {
+        padding: 0 16px;
+        gap: 16px;
+    }
+
+    .auth-status-item {
+        font-size: 10px;
+    }
+}
+
+/* =========================================
+   UTILITY - HIDE OLD ELEMENTS
+   ========================================= */
+
+[class*="marquee"],
+[class*="chaos"],
+[class*="decorative-column"],
+[style*="animation: float"] {
+    display: none !important;
+}

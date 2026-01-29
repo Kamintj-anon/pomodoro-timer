@@ -1,0 +1,395 @@
+/* ==========================================
+   超级增强版 - 更多颜色和按钮样式
+   ========================================== */
+
+/* === 额外冲突配色变量 === */
+:root {
+  --color-orange-bright: #FF6B35;
+  --color-purple-deep: #6A0572;
+  --color-teal: #1A535C;
+  --color-magenta: #FF006E;
+  --color-violet: #8338EC;
+  --color-emerald: #06FFA5;
+}
+
+/* === 登录页面专属样式（粉色/青色主题）=== */
+#login-form.active ~ * {
+  --primary-color: #FF90E8;
+  --secondary-color: #00FFFF;
+}
+
+.login-theme {
+  background: linear-gradient(135deg, #FF90E8 0%, #00FFFF 100%);
+}
+
+.login-accent {
+  background: #FF90E8;
+}
+
+/* === 注册页面专属样式（黄色/绿色主题）=== */
+#register-form.active ~ * {
+  --primary-color: #D4FF00;
+  --secondary-color: #B8FF9F;
+}
+
+.register-theme {
+  background: linear-gradient(135deg, #D4FF00 0%, #B8FF9F 100%);
+}
+
+.register-accent {
+  background: #D4FF00;
+}
+
+/* === 统一按钮样式（Space Mono粗体大写）=== */
+button,
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-icon,
+.btn-close,
+.btn-logout,
+.btn-leaderboard,
+.btn-profile,
+.btn-theme,
+.category-item button,
+.form-container button {
+  font-family: 'Space Mono', monospace !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* === 模态框内容字体优化 === */
+.modal-content h2,
+.modal-content h3 {
+  font-family: 'Archivo Black', sans-serif !important;
+  text-transform: uppercase !important;
+}
+
+.modal-content label,
+.modal-content p,
+.modal-content span {
+  font-family: 'Space Mono', monospace !important;
+}
+
+/* === 分类管理按钮样式 === */
+.category-item button,
+.category-item .btn-edit,
+.category-item .btn-delete,
+button.btn-edit,
+button.btn-delete {
+  font-family: 'Space Mono', monospace !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-size: 12px !important;
+  padding: 8px 16px !important;
+  border: 3px solid black !important;
+  background: white !important;
+  cursor: pointer !important;
+  transition: all 0.15s !important;
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1) !important;
+  margin: 0 4px !important;
+}
+
+.category-item button:hover,
+.category-item .btn-edit:hover,
+.category-item .btn-delete:hover,
+button.btn-edit:hover,
+button.btn-delete:hover {
+  transform: translate(3px, 3px) !important;
+  box-shadow: none !important;
+}
+
+.category-item .btn-edit,
+button.btn-edit {
+  background: #00FFFF !important;
+}
+
+.category-item .btn-delete,
+button.btn-delete {
+  background: #FF90E8 !important;
+}
+
+/* === 排行榜字体优化 === */
+.leaderboard-item {
+  font-family: 'Space Mono', monospace !important;
+}
+
+.leaderboard-item .user-name {
+  font-weight: 700 !important;
+  font-size: 18px !important;
+}
+
+.rank-badge {
+  font-family: 'Archivo Black', sans-serif !important;
+  font-size: 24px !important;
+}
+
+/* === 统计卡片字体 === */
+.category-stat-card,
+.category-stat-item {
+  font-family: 'Space Mono', monospace;
+}
+
+.category-stat-card h4,
+.category-name {
+  font-family: 'Archivo Black', sans-serif !important;
+  text-transform: uppercase !important;
+}
+
+/* === 历史记录字体 === */
+.history-item {
+  font-family: 'Space Mono', monospace !important;
+}
+
+.history-category {
+  font-family: 'Archivo Black', sans-serif !important;
+  text-transform: uppercase !important;
+  font-size: 16px !important;
+}
+
+/* === 打卡记录字体和布局优化 === */
+.word-record-item {
+  font-family: 'Space Mono', monospace !important;
+  border: 4px solid black !important;
+  background: white !important;
+  padding: 16px !important;
+  margin-bottom: 16px !important;
+  box-shadow: 6px 6px 0px 0px rgba(0,0,0,1) !important;
+  transition: all 0.2s !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+.word-record-item:hover {
+  transform: translate(3px, 3px) !important;
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1) !important;
+}
+
+.word-record-item .record-date {
+  background: #FF90E8 !important;
+  border: 3px solid black !important;
+  padding: 8px 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  box-shadow: 3px 3px 0px 0px black !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.word-record-item .record-date i {
+  font-size: 18px !important;
+}
+
+.word-record-item .record-content {
+  flex: 1 !important;
+}
+
+.word-record-item .record-count {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 8px !important;
+}
+
+.word-record-item .record-count i {
+  color: #FF90E8 !important;
+  font-size: 20px !important;
+  -webkit-text-stroke: 1px black !important;
+}
+
+.word-record-item strong {
+  font-family: 'Archivo Black', sans-serif !important;
+  font-size: 24px !important;
+  color: #FF90E8 !important;
+  -webkit-text-stroke: 1px black !important;
+}
+
+.word-record-item .record-note {
+  padding: 8px !important;
+  background: #D4FF00 !important;
+  border: 2px solid black !important;
+  margin-top: 8px !important;
+  font-size: 14px !important;
+}
+
+.word-record-item .btn-delete-record {
+  font-family: 'Space Mono', monospace !important;
+  font-weight: 700 !important;
+  background: #FF90E8 !important;
+  border: 3px solid black !important;
+  padding: 10px 12px !important;
+  cursor: pointer !important;
+  box-shadow: 3px 3px 0px 0px black !important;
+  transition: all 0.15s !important;
+}
+
+.word-record-item .btn-delete-record:hover {
+  transform: translate(3px, 3px) !important;
+  box-shadow: none !important;
+}
+
+.word-record-item .btn-delete-record i {
+  font-size: 16px !important;
+  color: black !important;
+}
+
+/* === 彩色跑马灯（无emoji）=== */
+.marquee-icon {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+/* === 多色装饰圆点 === */
+.color-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid black;
+  margin: 0 8px;
+  vertical-align: middle;
+}
+
+.color-dot-pink { background: #FF90E8; }
+.color-dot-cyan { background: #00FFFF; }
+.color-dot-yellow { background: #D4FF00; }
+.color-dot-lime { background: #B8FF9F; }
+.color-dot-orange { background: #FF6B35; }
+.color-dot-purple { background: #8338EC; }
+.color-dot-emerald { background: #06FFA5; }
+.color-dot-magenta { background: #FF006E; }
+
+/* === 增强的图标样式 === */
+.icon-styled {
+  -webkit-text-stroke: 2px black;
+  filter: drop-shadow(3px 3px 0px black);
+}
+
+/* === 渐变文字效果 === */
+.gradient-text {
+  background: linear-gradient(135deg, #FF90E8, #00FFFF, #D4FF00, #B8FF9F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === 多层边框效果 === */
+.multi-border {
+  border: 4px solid black;
+  box-shadow:
+    inset 0 0 0 8px white,
+    inset 0 0 0 12px #FF90E8;
+}
+
+/* === 旋转徽章动画 === */
+@keyframes badge-rotate {
+  0% {
+    transform: rotate(-12deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+  100% {
+    transform: rotate(-12deg);
+  }
+}
+
+.badge-animated {
+  animation: badge-rotate 3s ease-in-out infinite;
+}
+
+/* === 彩色阴影效果 === */
+.shadow-colorful {
+  box-shadow:
+    4px 4px 0 #FF90E8,
+    8px 8px 0 #00FFFF,
+    12px 12px 0 #D4FF00,
+    16px 16px 0 black;
+}
+
+.shadow-colorful:hover {
+  transform: translate(12px, 12px);
+  box-shadow:
+    4px 4px 0 black;
+}
+
+/* === 响应式字体调整 === */
+@media (max-width: 768px) {
+  button,
+  .btn-primary,
+  .btn-secondary {
+    font-size: 14px !important;
+    padding: 12px 20px !important;
+  }
+
+  .category-item button {
+    font-size: 10px !important;
+    padding: 6px 12px !important;
+  }
+}
+
+/* === Tab标签页字体增强 === */
+.tab-item {
+  font-family: 'Archivo Black', sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.1em !important;
+}
+
+/* === 输入框标签字体 === */
+label {
+  font-family: 'Space Mono', monospace !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  font-size: 14px !important;
+}
+
+/* === Toast通知字体 === */
+.toast {
+  font-family: 'Space Mono', monospace !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+/* === 登录注册差异化背景 === */
+.auth-bg-login {
+  background:
+    radial-gradient(circle at 20% 30%, #FF90E8 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, #00FFFF 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, #D4FF00 0%, transparent 70%),
+    #f0f0f0;
+}
+
+.auth-bg-register {
+  background:
+    radial-gradient(circle at 30% 20%, #D4FF00 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, #B8FF9F 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, #FF6B35 0%, transparent 70%),
+    #f0f0f0;
+}
+
+/* === 超级霓虹效果 === */
+.super-neon {
+  animation: super-neon-glow 3s ease-in-out infinite;
+}
+
+@keyframes super-neon-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 10px #FF90E8,
+      0 0 20px #FF90E8,
+      0 0 30px #00FFFF,
+      0 0 40px #00FFFF,
+      0 0 50px #D4FF00;
+  }
+  50% {
+    text-shadow:
+      0 0 20px #00FFFF,
+      0 0 30px #00FFFF,
+      0 0 40px #FF90E8,
+      0 0 50px #FF90E8,
+      0 0 60px #B8FF9F;
+  }
+}

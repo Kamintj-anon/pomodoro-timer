@@ -1,0 +1,276 @@
+/* ========================================
+   NEO-BRUTAL DESIGN SYSTEM - CSS VARIABLES
+   ======================================== */
+
+/*
+ * Neo-Pop Brutal 风格变量定义
+ * 参考：Neal.fun NeoPop Brutal Blog
+ * 配色：高饱和度霓虹色 + 纯黑边框 + 白色背景
+ */
+
+:root {
+  /* ============ 主色系 - 霓虹配色 ============ */
+
+  /* Electric Cyan - 主操作按钮、重要元素 */
+  --neon-cyan: #00F0FF;
+  --neon-cyan-dark: #00C0CC;
+  --neon-cyan-light: #66F5FF;
+
+  /* Hot Magenta - 警告、删除、强调 */
+  --neon-magenta: #FF00FF;
+  --neon-magenta-dark: #CC00CC;
+  --neon-magenta-light: #FF66FF;
+
+  /* Neon Yellow - 成功状态、高亮 */
+  --neon-yellow: #FFFF00;
+  --neon-yellow-dark: #CCCC00;
+  --neon-yellow-light: #FFFF66;
+
+  /* Lime Green - 完成状态、进度条 */
+  --neon-lime: #00FF00;
+  --neon-lime-dark: #00CC00;
+  --neon-lime-light: #66FF66;
+
+  /* Purple Haze - 次要操作、标签 */
+  --neon-purple: #9D00FF;
+  --neon-purple-dark: #7A00CC;
+  --neon-purple-light: #B966FF;
+
+  /* Sunset Orange - 紧急、截止日期 */
+  --neon-orange: #FF6B00;
+  --neon-orange-dark: #CC5500;
+  --neon-orange-light: #FF9A4D;
+
+
+  /* ============ 中性色系 ============ */
+
+  /* 背景色 */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F8F8;
+  --bg-tertiary: #F0F0F0;
+
+  /* 文字颜色 */
+  --text-primary: #000000;
+  --text-secondary: #1A1A1A;
+  --text-tertiary: #4D4D4D;
+  --text-disabled: #808080;
+
+  /* 边框颜色 */
+  --border-primary: #000000;
+  --border-secondary: #1A1A1A;
+
+
+  /* ============ 阴影系统 ============ */
+
+  /* 小阴影 - 按钮、标签 */
+  --shadow-sm: 4px 4px 0 var(--border-primary);
+  --shadow-sm-hover: 6px 6px 0 var(--border-primary);
+
+  /* 中阴影 - 卡片、输入框 */
+  --shadow-md: 8px 8px 0 var(--border-primary);
+  --shadow-md-hover: 10px 10px 0 var(--border-primary);
+
+  /* 大阴影 - 容器、弹窗 */
+  --shadow-lg: 12px 12px 0 var(--border-primary);
+  --shadow-lg-hover: 16px 16px 0 var(--border-primary);
+
+  /* 超大阴影 - 模态框 */
+  --shadow-xl: 20px 20px 0 var(--border-primary);
+
+  /* 霓虹发光阴影 */
+  --glow-cyan: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+  --glow-magenta: 0 0 20px var(--neon-magenta), 0 0 40px var(--neon-magenta);
+  --glow-yellow: 0 0 20px var(--neon-yellow), 0 0 40px var(--neon-yellow);
+  --glow-lime: 0 0 20px var(--neon-lime), 0 0 40px var(--neon-lime);
+  --glow-purple: 0 0 20px var(--neon-purple), 0 0 40px var(--neon-purple);
+  --glow-orange: 0 0 20px var(--neon-orange), 0 0 40px var(--neon-orange);
+
+
+  /* ============ 边框系统 ============ */
+
+  /* 边框宽度 */
+  --border-width-sm: 2px;
+  --border-width-md: 4px;
+  --border-width-lg: 6px;
+
+  /* 边框样式 */
+  --border-sm: var(--border-width-sm) solid var(--border-primary);
+  --border-md: var(--border-width-md) solid var(--border-primary);
+  --border-lg: var(--border-width-lg) solid var(--border-primary);
+
+
+  /* ============ 圆角系统 ============ */
+
+  --radius-sm: 8px;   /* 小元素：按钮、标签 */
+  --radius-md: 12px;  /* 中等元素：卡片、输入框 */
+  --radius-lg: 16px;  /* 大元素：容器、弹窗 */
+  --radius-xl: 24px;  /* 超大元素：模态框 */
+
+
+  /* ============ 间距系统 ============ */
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-xxxl: 64px;
+
+
+  /* ============ 字体系统 ============ */
+
+  /* 字体族 */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', monospace;
+
+  /* 字重 */
+  --font-weight-normal: 500;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* 字号 */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 32px;
+  --font-size-xxxl: 48px;
+  --font-size-display: 72px;
+
+  /* 行高 */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.8;
+
+
+  /* ============ 过渡动画 ============ */
+
+  /* 动画时长 */
+  --duration-fast: 0.15s;
+  --duration-normal: 0.3s;
+  --duration-slow: 0.5s;
+  --duration-slower: 0.8s;
+
+  /* 缓动函数 */
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+
+  /* ============ Z-index 层级 ============ */
+
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+
+
+  /* ============ 倾斜角度 ============ */
+
+  --skew-sm: -2deg;
+  --skew-md: -3deg;
+  --skew-lg: -5deg;
+
+  --rotate-sm: 2deg;
+  --rotate-md: 3deg;
+  --rotate-lg: 5deg;
+}
+
+
+/* ============================================
+   DARK MODE - 暗黑模式变量覆盖
+   ============================================ */
+
+[data-theme="dark"] {
+  /* 背景色 - 深色 */
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #1A1A1A;
+  --bg-tertiary: #2A2A2A;
+
+  /* 文字颜色 - 亮色 */
+  --text-primary: #FFFFFF;
+  --text-secondary: #E6E6E6;
+  --text-tertiary: #B3B3B3;
+  --text-disabled: #666666;
+
+  /* 边框颜色 - 亮色 */
+  --border-primary: #FFFFFF;
+  --border-secondary: #E6E6E6;
+
+  /* 阴影系统 - 暗黑模式使用霓虹发光代替硬阴影 */
+  --shadow-sm: 0 0 10px rgba(0, 240, 255, 0.3);
+  --shadow-sm-hover: 0 0 15px rgba(0, 240, 255, 0.5);
+
+  --shadow-md: 0 0 20px rgba(0, 240, 255, 0.4);
+  --shadow-md-hover: 0 0 25px rgba(0, 240, 255, 0.6);
+
+  --shadow-lg: 0 0 30px rgba(0, 240, 255, 0.5);
+  --shadow-lg-hover: 0 0 40px rgba(0, 240, 255, 0.7);
+
+  --shadow-xl: 0 0 50px rgba(0, 240, 255, 0.6);
+
+  /* 霓虹色保持不变 - 在暗黑背景上更加突出 */
+}
+
+
+/* ============================================
+   REDUCED MOTION - 降低动画模式
+   ============================================ */
+
+[data-animation="reduced"] {
+  /* 缩短动画时长 */
+  --duration-fast: 0.05s;
+  --duration-normal: 0.1s;
+  --duration-slow: 0.2s;
+  --duration-slower: 0.3s;
+
+  /* 使用简单的缓动函数 */
+  --ease-bounce: var(--ease-out);
+  --ease-spring: var(--ease-out);
+}
+
+[data-animation="off"] {
+  /* 完全禁用动画 */
+  --duration-fast: 0s;
+  --duration-normal: 0s;
+  --duration-slow: 0s;
+  --duration-slower: 0s;
+}
+
+
+/* ============================================
+   MOBILE - 移动端简化
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    /* 简化边框 */
+    --border-width-md: 2px;
+    --border-width-lg: 3px;
+
+    /* 简化阴影 */
+    --shadow-sm: 2px 2px 0 var(--border-primary);
+    --shadow-md: 4px 4px 0 var(--border-primary);
+    --shadow-lg: 6px 6px 0 var(--border-primary);
+    --shadow-xl: 8px 8px 0 var(--border-primary);
+
+    /* 减小间距 */
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+    --spacing-xxl: 32px;
+
+    /* 缩小字号 */
+    --font-size-xl: 20px;
+    --font-size-xxl: 28px;
+    --font-size-xxxl: 36px;
+    --font-size-display: 48px;
+  }
+}

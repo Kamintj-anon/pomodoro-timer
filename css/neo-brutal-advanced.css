@@ -1,0 +1,894 @@
+/* ========================================
+   NEO-BRUTAL ADVANCED EFFECTS
+   高级视觉效果 - 3D、渐变、粒子、全息
+   ======================================== */
+
+/* ========================================
+   1. 动态网格背景
+   ======================================== */
+.animated-grid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, var(--border-primary) 1px, transparent 1px),
+    linear-gradient(0deg, var(--border-primary) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+  opacity: 0.1;
+}
+
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+/* 渐变网格叠加 */
+.gradient-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(0, 240, 255, 0.15),
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 80%,
+    rgba(255, 0, 255, 0.15),
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 40% 20%,
+    rgba(255, 255, 0, 0.1),
+    transparent 50%
+  );
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+/* 噪点纹理 */
+.noise-texture {
+  position: relative;
+}
+
+.noise-texture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* ========================================
+   2. 玻璃态射效果 (Glassmorphism)
+   ======================================== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: var(--border-sm);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 240, 255, 0.2),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 12px 48px 0 rgba(0, 240, 255, 0.3),
+    inset 0 2px 0 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+[data-theme="dark"] .glass-card {
+  background: rgba(10, 10, 10, 0.4);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 240, 255, 0.3),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   3. 3D 卡片效果
+   ======================================== */
+.card-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.card-3d-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-3d:hover .card-3d-inner {
+  transform: rotateY(180deg);
+}
+
+.card-3d-front,
+.card-3d-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: var(--border-md);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.card-3d-back {
+  transform: rotateY(180deg);
+  background: var(--neon-purple);
+}
+
+/* 3D 倾斜悬浮效果 */
+.card-tilt {
+  transform-style: preserve-3d;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.card-tilt:hover {
+  transform:
+    perspective(1000px)
+    rotateX(var(--rotate-x, 0deg))
+    rotateY(var(--rotate-y, 0deg))
+    translateZ(20px);
+}
+
+/* ========================================
+   4. 全息效果
+   ======================================== */
+.holographic {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--neon-cyan) 0%,
+    var(--neon-magenta) 25%,
+    var(--neon-yellow) 50%,
+    var(--neon-lime) 75%,
+    var(--neon-purple) 100%
+  );
+  background-size: 400% 400%;
+  animation: holographicShift 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes holographicShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.holographic-border {
+  position: relative;
+  border: 4px solid transparent;
+  background:
+    linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
+    linear-gradient(135deg,
+      var(--neon-cyan),
+      var(--neon-magenta),
+      var(--neon-yellow),
+      var(--neon-lime)
+    ) border-box;
+  background-size: 400% 400%;
+  animation: holographicBorder 6s linear infinite;
+}
+
+@keyframes holographicBorder {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ========================================
+   5. RGB 分离效果
+   ======================================== */
+.rgb-split {
+  position: relative;
+  animation: rgbSplit 3s ease-in-out infinite;
+}
+
+@keyframes rgbSplit {
+  0%, 100% {
+    text-shadow:
+      0 0 0 var(--neon-cyan),
+      0 0 0 var(--neon-magenta);
+  }
+  25% {
+    text-shadow:
+      -3px 0 0 rgba(0, 240, 255, 0.8),
+      3px 0 0 rgba(255, 0, 255, 0.8);
+  }
+  75% {
+    text-shadow:
+      3px 0 0 rgba(0, 240, 255, 0.8),
+      -3px 0 0 rgba(255, 0, 255, 0.8);
+  }
+}
+
+/* ========================================
+   6. 扫描线动画
+   ======================================== */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 4px
+  );
+  pointer-events: none;
+  animation: scanlineMove 8s linear infinite;
+}
+
+@keyframes scanlineMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+
+.scanlines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 240, 255, 0.5),
+    transparent
+  );
+  animation: scanBeam 4s ease-in-out infinite;
+}
+
+@keyframes scanBeam {
+  0% { top: 0; }
+  50% { top: 100%; }
+  100% { top: 0; }
+}
+
+/* ========================================
+   7. 光晕效果
+   ======================================== */
+.glow-intense {
+  position: relative;
+  box-shadow:
+    0 0 20px currentColor,
+    0 0 40px currentColor,
+    0 0 60px currentColor,
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px currentColor,
+      0 0 40px currentColor,
+      0 0 60px currentColor,
+      inset 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 30px currentColor,
+      0 0 60px currentColor,
+      0 0 90px currentColor,
+      inset 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* 文字光晕 */
+.text-glow {
+  text-shadow:
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 30px currentColor;
+  animation: textGlowPulse 2s ease-in-out infinite;
+}
+
+@keyframes textGlowPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor;
+  }
+  50% {
+    text-shadow:
+      0 0 20px currentColor,
+      0 0 40px currentColor,
+      0 0 60px currentColor;
+  }
+}
+
+/* ========================================
+   8. 磁性按钮效果
+   ======================================== */
+.magnetic-btn {
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.magnetic-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 240, 255, 0.2) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.magnetic-btn:hover::before {
+  opacity: 1;
+  animation: magneticPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes magneticPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* ========================================
+   9. 液态动画
+   ======================================== */
+.liquid-blob {
+  position: relative;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation: liquidMorph 8s ease-in-out infinite;
+}
+
+@keyframes liquidMorph {
+  0%, 100% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  25% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  75% {
+    border-radius: 50% 50% 50% 50% / 40% 60% 50% 70%;
+  }
+}
+
+/* 液态按钮 */
+.btn-liquid {
+  position: relative;
+  overflow: hidden;
+  border: var(--border-md);
+  border-radius: var(--radius-sm);
+}
+
+.btn-liquid::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-liquid:hover::before {
+  width: 300%;
+  height: 300%;
+}
+
+/* ========================================
+   10. 粒子爆炸效果增强
+   ======================================== */
+@keyframes particleExplode {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform:
+      translate(var(--confetti-x), var(--confetti-y))
+      rotate(var(--confetti-rotate))
+      scale(0);
+    opacity: 0;
+  }
+}
+
+.confetti-piece {
+  animation: particleExplode var(--duration, 1200ms) cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ========================================
+   11. 涟漪扩散效果
+   ======================================== */
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: rippleExpand 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes rippleExpand {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   12. 浮动几何图形
+   ======================================== */
+.floating-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.1;
+  animation: float var(--float-duration, 20s) ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-100px) rotate(180deg);
+  }
+}
+
+.shape-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid var(--neon-cyan);
+}
+
+.shape-square {
+  width: 80px;
+  height: 80px;
+  border: 4px solid var(--neon-magenta);
+  transform: rotate(45deg);
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 87px solid var(--neon-yellow);
+}
+
+/* ========================================
+   13. 光标追踪效果
+   ======================================== */
+.cursor-trail {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--neon-cyan);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease;
+  animation: cursorPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes cursorPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.4;
+  }
+}
+
+/* ========================================
+   14. 装饰性角落元素
+   ======================================== */
+.corner-decoration {
+  position: relative;
+}
+
+.corner-decoration::before,
+.corner-decoration::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--neon-cyan);
+}
+
+.corner-decoration::before {
+  top: -3px;
+  left: -3px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner-decoration::after {
+  bottom: -3px;
+  right: -3px;
+  border-left: none;
+  border-top: none;
+}
+
+/* ========================================
+   15. 仪表盘/圆形进度
+   ======================================== */
+.circular-progress {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--neon-cyan) var(--progress, 0%),
+    var(--bg-secondary) var(--progress, 0%)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: progressSpin 2s ease-in-out;
+}
+
+@keyframes progressSpin {
+  from {
+    --progress: 0%;
+  }
+}
+
+.circular-progress::before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: var(--bg-primary);
+}
+
+.circular-progress-text {
+  position: relative;
+  z-index: 1;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-black);
+  color: var(--text-primary);
+}
+
+/* ========================================
+   16. 3D 轮播画廊
+   ======================================== */
+.carousel-3d {
+  perspective: 1200px;
+  width: 400px;
+  height: 300px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.carousel-3d-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: carousel3dRotate 20s linear infinite;
+}
+
+@keyframes carousel3dRotate {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.carousel-3d-item {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -100px;
+  border: var(--border-md);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-lg);
+  backface-visibility: hidden;
+}
+
+.carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+.carousel-3d-item:nth-child(2) { transform: rotateY(60deg) translateZ(400px); }
+.carousel-3d-item:nth-child(3) { transform: rotateY(120deg) translateZ(400px); }
+.carousel-3d-item:nth-child(4) { transform: rotateY(180deg) translateZ(400px); }
+.carousel-3d-item:nth-child(5) { transform: rotateY(240deg) translateZ(400px); }
+.carousel-3d-item:nth-child(6) { transform: rotateY(300deg) translateZ(400px); }
+
+/* ========================================
+   17. 时间线组件
+   ======================================== */
+.timeline {
+  position: relative;
+  padding: var(--spacing-xl) 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--border-primary);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+  display: flex;
+  align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--neon-cyan);
+  border: 4px solid var(--bg-primary);
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: timelineDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes timelineDotPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 240, 255, 0);
+  }
+}
+
+.timeline-content {
+  width: 45%;
+  padding: var(--spacing-lg);
+  background: var(--bg-primary);
+  border: var(--border-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  animation: slideInTimeline 0.6s ease-out;
+}
+
+@keyframes slideInTimeline {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========================================
+   18. 通知系统
+   ======================================== */
+.notification-container {
+  position: fixed;
+  top: 80px;
+  right: 24px;
+  z-index: 9999;
+  max-width: 400px;
+}
+
+.notification {
+  background: var(--bg-primary);
+  border: var(--border-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  animation: notificationSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes notificationSlideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.notification::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--neon-cyan);
+}
+
+.notification.success::before { background: var(--neon-lime); }
+.notification.warning::before { background: var(--neon-yellow); }
+.notification.error::before { background: var(--neon-magenta); }
+
+.notification-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.notification-close:hover {
+  color: var(--text-primary);
+}
+
+/* ========================================
+   19. 加载骨架屏
+   ======================================== */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 0%,
+    var(--bg-tertiary) 50%,
+    var(--bg-secondary) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeletonLoading 1.5s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeletonLoading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-text {
+  height: 16px;
+  margin-bottom: 8px;
+}
+
+.skeleton-title {
+  height: 24px;
+  width: 60%;
+  margin-bottom: 16px;
+}
+
+.skeleton-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/* ========================================
+   20. 响应式优化
+   ======================================== */
+@media (max-width: 768px) {
+  .glass-card {
+    backdrop-filter: blur(10px);
+  }
+
+  .card-3d:hover .card-3d-inner {
+    transform: rotateY(0deg);
+  }
+
+  .floating-shapes {
+    display: none;
+  }
+
+  .cursor-trail {
+    display: none;
+  }
+
+  .carousel-3d {
+    perspective: 800px;
+    width: 300px;
+    height: 200px;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: row !important;
+  }
+
+  .timeline-content {
+    width: calc(100% - 60px);
+    margin-left: 40px;
+  }
+
+  .timeline-dot {
+    left: 20px;
+  }
+}
+
+/* 降低动画模式 */
+[data-animation="reduced"] .liquid-blob,
+[data-animation="reduced"] .holographic,
+[data-animation="reduced"] .scanlines::before,
+[data-animation="reduced"] .scanlines::after {
+  animation: none;
+}
+
+[data-animation="off"] .animated-grid-bg,
+[data-animation="off"] .gradient-overlay,
+[data-animation="off"] .floating-shapes {
+  display: none;
+}
