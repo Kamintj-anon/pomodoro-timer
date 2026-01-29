@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"time"
 	"net/http"
 	"pomodoro-api/database"
 	"pomodoro-api/models"
@@ -176,4 +177,110 @@ func GetLeaderboard(c *gin.Context) {
 		Scan(&userStats)
 
 	c.JSON(http.StatusOK, userStats)
+}
+
+// CheckinStatsResponse 打卡统计响应
+type CheckinStatsResponse struct {
+	StreakDays      int  `json:"streak_days"`       // 连续打卡天数
+	TodayDuration   int  `json:"today_duration"`    // 今日学习时长（秒）
+	TodayGoal       int  `json:"today_goal"`        // 今日目标（秒）
+	TodayCompleted  bool `json:"today_completed"`   // 今日是否完成目标
+	TodayCount      int  `json:"today_count"`       // 今日番茄钟数量
+	ExamDate        *string `json:"exam_date"`      // 考试日期
+	ExamName        string  `json:"exam_name"`      // 考试名称
+	DaysUntilExam   int  `json:"days_until_exam"`   // 距离考试天数
+}
+
+// GetCheckinStats 获取打卡统计
+func GetCheckinStats(c *gin.Context) {
+	userID := c.GetUint("user_id")
+
+	// 获取用户设置
+	var setting models.Setting
+	database.DB.Where("user_id = ?", userID).First(&setting)
+
+	// 今日学习时长
+	today := time.Now().Format("2006-01-02")
+	var todayStats struct {
+		Duration int
+		Count    int
+	}
+	database.DB.Model(&models.Pomodoro{}).
+		Select("COALESCE(SUM(duration), 0) as duration, COUNT(*) as count").
+		Where("user_id = ? AND completed = ? AND DATE(started_at) = ?", userID, true, today).
+		Scan(&todayStats)
+
+	// 计算连续打卡天数
+	streakDays := calculateStreak(userID, setting.DailyGoal)
+
+	// 计算距离考试天数
+	daysUntilExam := 0
+	if setting.ExamDate != nil && *setting.ExamDate != "" {
+		examDate, err := time.Parse("2006-01-02", *setting.ExamDate)
+		if err == nil {
+			daysUntilExam = int(examDate.Sub(time.Now()).Hours() / 24) + 1
+			if daysUntilExam < 0 {
+				daysUntilExam = 0
+			}
+		}
+	}
+
+	response := CheckinStatsResponse{
+		StreakDays:     streakDays,
+		TodayDuration:  todayStats.Duration,
+		TodayGoal:      setting.DailyGoal,
+		TodayCompleted: todayStats.Duration >= setting.DailyGoal,
+		TodayCount:     todayStats.Count,
+		ExamDate:       setting.ExamDate,
+		ExamName:       setting.ExamName,
+		DaysUntilExam:  daysUntilExam,
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
+// calculateStreak 计算连续打卡天数
+func calculateStreak(userID uint, dailyGoal int) int {
+	type DayDuration struct {
+		Date     string
+		Duration int
+	}
+
+	var results []DayDuration
+	database.DB.Model(&models.Pomodoro{}).
+		Select("DATE(started_at) as date, SUM(duration) as duration").
+		Where("user_id = ? AND completed = ?", userID, true).
+		Group("DATE(started_at)").
+		Order("date DESC").
+		Limit(365).
+		Scan(&results)
+
+	if len(results) == 0 {
+		return 0
+	}
+
+	streak := 0
+	today := time.Now()
+
+	for i, r := range results {
+		date, err := time.Parse("2006-01-02", r.Date)
+		if err != nil {
+			continue
+		}
+
+		// 计算期望的日期（今天往前数）
+		expectedDate := today.AddDate(0, 0, -i)
+
+		// 日期必须匹配且达到目标
+		if date.Format("2006-01-02") == expectedDate.Format("2006-01-02") && r.Duration >= dailyGoal {
+			streak++
+		} else if i == 0 && date.Format("2006-01-02") == today.AddDate(0, 0, -1).Format("2006-01-02") && r.Duration >= dailyGoal {
+			// 如果今天还没学习，但昨天达标了，从昨天开始计算
+			streak++
+		} else {
+			break
+		}
+	}
+
+	return streak
 }

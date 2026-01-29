@@ -31,6 +31,7 @@ const API_ENDPOINTS = {
     STATS_TOTAL: '/stats/total',
     STATS_CATEGORIES: '/stats/categories',
     STATS_DAILY: '/stats/daily',
+    STATS_CHECKIN: '/stats/checkin',
 
     // 设置
     SETTINGS: '/settings',

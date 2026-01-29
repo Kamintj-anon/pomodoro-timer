@@ -237,6 +237,55 @@
 
         <!-- 主内容区 -->
         <main class="container">
+            <!-- 学习目标与考试倒计时面板 -->
+            <div id="checkin-panel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px; padding: 0 10px;">
+                
+                <!-- 考试倒计时卡片 -->
+                <div id="exam-countdown" style="display: none; background: linear-gradient(135deg, #FF6B6B, #FF8E53); border: 4px solid black; padding: 24px; box-shadow: 8px 8px 0px black; position: relative; overflow: hidden;">
+                    <div style="position: absolute; inset: 0; opacity: 0.1; background-image: radial-gradient(circle, white 2px, transparent 2px); background-size: 20px 20px;"></div>
+                    <div style="position: relative; z-index: 1; color: white;">
+                        <div style="font-family: Space Mono, monospace; font-size: 12px; font-weight: bold; margin-bottom: 8px; opacity: 0.9;">距离 <span id="exam-name">考试</span></div>
+                        <div style="display: flex; align-items: baseline; gap: 8px;">
+                            <span id="days-until-exam" style="font-family: Archivo Black, sans-serif; font-size: 56px; line-height: 1;">0</span>
+                            <span style="font-family: Space Mono, monospace; font-size: 18px; font-weight: bold;">天</span>
+                        </div>
+                        <div style="font-family: Space Mono, monospace; font-size: 13px; margin-top: 8px; opacity: 0.8;">保持专注，全力冲刺！</div>
+                    </div>
+                </div>
+                
+                <!-- 连续打卡天数卡片 -->
+                <div style="background: #B8FF9F; border: 4px solid black; padding: 24px; box-shadow: 8px 8px 0px black; position: relative; overflow: hidden;">
+                    <div style="position: absolute; inset: 0; opacity: 0.15; background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.1) 10px, rgba(0,0,0,0.1) 12px);"></div>
+                    <div style="position: relative; z-index: 1;">
+                        <div style="font-family: Space Mono, monospace; font-size: 12px; font-weight: bold; margin-bottom: 8px;"><i class="fas fa-fire" style="color: #FF6B6B;"></i> 连续打卡</div>
+                        <div style="display: flex; align-items: baseline; gap: 8px;">
+                            <span id="streak-days" style="font-family: Archivo Black, sans-serif; font-size: 48px; line-height: 1;">0</span>
+                            <span style="font-family: Space Mono, monospace; font-size: 18px; font-weight: bold;">天</span>
+                        </div>
+                        <div style="font-family: Space Mono, monospace; font-size: 13px; margin-top: 8px; color: #666;">坚持就是胜利</div>
+                    </div>
+                </div>
+                
+                <!-- 今日目标进度卡片 -->
+                <div style="background: white; border: 4px solid black; padding: 24px; box-shadow: 8px 8px 0px black; position: relative;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <div style="font-family: Space Mono, monospace; font-size: 12px; font-weight: bold;"><i class="fas fa-bullseye" style="color: #FF6B6B;"></i> 今日目标</div>
+                        <span id="today-status-icon"><i class="fas fa-clock" style="color: #FF9800;"></i></span>
+                    </div>
+                    <div style="font-family: Space Mono, monospace; font-size: 14px; margin-bottom: 12px;">
+                        <span id="today-duration">0 分钟</span> / <span id="today-goal">2 小时</span>
+                    </div>
+                    <div id="today-progress" style="background: #eee; border: 3px solid black; height: 24px; overflow: hidden;">
+                        <div id="today-progress-bar" class="progress-fill" style="height: 100%; width: 0%; background: #CCFF00; transition: width 0.5s ease;"></div>
+                    </div>
+                    <button onclick="showGoalSettingsModal()" style="margin-top: 16px; padding: 8px 16px; background: white; border: 3px solid black; font-family: Space Mono, monospace; font-size: 12px; font-weight: bold; cursor: pointer; box-shadow: 3px 3px 0px black;">
+                        <i class="fas fa-cog"></i> 设置目标
+                    </button>
+                </div>
+                
+            </div>
+
+
 
             <!-- 番茄钟标签页 - Retro Computer Window UI -->
             <div id="timer-tab" class="tab-content active">
@@ -620,6 +669,7 @@
     <script src="js/profile.js?v=1762781155"></script>
     <script src="js/leaderboard.js?v=1762781155"></script>
     <script src="js/words.js?v=1762781155"></script>
+    <script src="js/checkin.js?v=1762781156"></script>
     <script src="js/theme.js?v=1762781155"></script>
     <script src="js/enhanced-effects.js?v=1762781155"></script>
     <script src="js/ultra-enhance.js?v=1762781155"></script>
@@ -640,5 +690,58 @@
         }
     }
     </script>
+
+    <!-- ========== 目标设置弹窗 ========== -->
+    <div id="goal-settings-modal" class="modal">
+        <div class="modal-content" style="max-width: 500px;">
+            <div class="modal-header" style="background: linear-gradient(135deg, #FF6B6B, #FF8E53); color: white;">
+                <h2 style="color: white;"><i class="fas fa-bullseye"></i> 学习目标设置</h2>
+                <button onclick="closeGoalSettingsModal()" class="btn-close" style="color: white;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" style="padding: 32px;">
+                <!-- 每日目标 -->
+                <div style="margin-bottom: 28px;">
+                    <label style="font-family: Archivo Black, sans-serif; font-size: 16px; display: block; margin-bottom: 12px;">
+                        <i class="fas fa-clock" style="color: #FF6B6B;"></i> 每日学习目标（分钟）
+                    </label>
+                    <input type="number" id="daily-goal-input" min="10" max="720" value="120" 
+                           style="width: 100%; padding: 16px; border: 4px solid black; font-family: Space Mono, monospace; font-size: 18px; box-shadow: 4px 4px 0px black;">
+                    <div style="font-family: Space Mono, monospace; font-size: 12px; color: #666; margin-top: 8px;">
+                        建议：每天 2-4 小时（120-240 分钟）
+                    </div>
+                </div>
+                
+                <!-- 考试名称 -->
+                <div style="margin-bottom: 28px;">
+                    <label style="font-family: Archivo Black, sans-serif; font-size: 16px; display: block; margin-bottom: 12px;">
+                        <i class="fas fa-graduation-cap" style="color: #FF6B6B;"></i> 考试名称
+                    </label>
+                    <input type="text" id="exam-name-input" placeholder="例如：雅思考试" 
+                           style="width: 100%; padding: 16px; border: 4px solid black; font-family: Space Mono, monospace; font-size: 16px; box-shadow: 4px 4px 0px black;">
+                </div>
+                
+                <!-- 考试日期 -->
+                <div style="margin-bottom: 32px;">
+                    <label style="font-family: Archivo Black, sans-serif; font-size: 16px; display: block; margin-bottom: 12px;">
+                        <i class="fas fa-calendar-alt" style="color: #FF6B6B;"></i> 考试日期
+                    </label>
+                    <input type="date" id="exam-date-input" 
+                           style="width: 100%; padding: 16px; border: 4px solid black; font-family: Space Mono, monospace; font-size: 16px; box-shadow: 4px 4px 0px black;">
+                    <div style="font-family: Space Mono, monospace; font-size: 12px; color: #666; margin-top: 8px;">
+                        设置考试日期后，首页会显示倒计时
+                    </div>
+                </div>
+                
+                <!-- 保存按钮 -->
+                <button onclick="saveGoalSettings()" 
+                        style="width: 100%; padding: 20px; background: #CCFF00; color: black; border: 4px solid black; font-family: Archivo Black, sans-serif; font-size: 18px; cursor: pointer; box-shadow: 6px 6px 0px black; text-transform: uppercase;">
+                    <i class="fas fa-save"></i> 保存设置
+                </button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
